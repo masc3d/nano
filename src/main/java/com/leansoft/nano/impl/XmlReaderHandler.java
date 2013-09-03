@@ -108,6 +108,32 @@ class XmlReaderHandler extends DefaultHandler {
 					}
 					
 				}
+            else if (schema == null && ms.getAnyElementSchema() != null)
+            {
+               
+					MappingSchema newMs = MappingSchema.fromClass(helper.bindClazz);
+					Constructor con = null;
+					try {
+						con = TypeReflector.getConstructor(helper.bindClazz);
+					} catch (NoSuchMethodException nsme) {
+						throw new ReaderException("No-arg constructor is missing, type = " + helper.bindClazz.getName());
+					}
+					Object newObj = con.newInstance();
+					if (attrs != null && attrs.getLength() > 0) {
+						this.populateAttributes(newObj, attrs, newMs);
+					}
+					
+               helper.bindObject = newObj;
+               Field anyField = ms.getAnyElementSchema().getField();
+               if (!anyField.isAccessible())
+               {
+                 anyField.setAccessible(true);
+               }
+               List<Object> anyList = new ArrayList<Object>();
+               anyList.add(newObj);
+               anyField.set(obj, anyList);
+					helper.valueStack.push(newObj);
+            }
 			}
 			
 	    } catch (Exception ex) {

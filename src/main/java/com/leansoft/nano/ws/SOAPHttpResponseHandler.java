@@ -1,6 +1,7 @@
 package com.leansoft.nano.ws;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Map;
 
 import org.apache.http.Header;
@@ -17,6 +18,7 @@ import com.leansoft.nano.ws.SoapQueryHandler;
 import com.leansoft.nano.Format;
 import com.leansoft.nano.exception.UnmarshallException;
 import com.leansoft.nano.impl.SOAPReader;
+import com.leansoft.nano.impl.XmlSAXReader;
 import com.leansoft.nano.log.ALog;
 import com.leansoft.nano.util.MapPrettyPrinter;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -52,8 +54,8 @@ public class SOAPHttpResponseHandler extends AsyncHttpResponseHandler {
     }
 	
 	
-	@Override
-    protected void sendSuccessMessage(int statusCode, Header[] headers, String responseBody) {
+//	@Override
+    protected void sendSuccessMessage(int statusCode, Header[] headers, InputStream responseBody) {
 		try {
 			// unmarshalling
 			Object responseObject = this.convertSOAPToObject(responseBody);
@@ -69,7 +71,7 @@ public class SOAPHttpResponseHandler extends AsyncHttpResponseHandler {
 		}
     }
 	
-    protected void sendFailureMessage(Throwable e, String errorMessage, String responseBody) {
+    protected void sendFailureMessage(Throwable e, String errorMessage, InputStream responseBody) {
     	if (e instanceof HttpResponseException) {
     		HttpResponseException httpResponseException = (HttpResponseException)e;
     		if (httpResponseException.getStatusCode() >= 300 && responseBody != null) {// may be still a successful response
@@ -87,24 +89,39 @@ public class SOAPHttpResponseHandler extends AsyncHttpResponseHandler {
         
     	sendMessage(obtainMessage(FAILURE_MESSAGE, new Object[]{e, errorMessage}));
     }
-	
-	private Object convertSOAPToObject(String responseContent) throws UnmarshallException {
+    
+    private StringBuilder streamToString(InputStream is) throws IOException
+    {
+        StringBuilder sb = new StringBuilder();
+        int read = 0;
+        byte [] buffer = new byte[16384];
+        while ( (read = is.read(buffer)) > 0)
+        {
+           sb.append( new String(buffer, 0, read, "UTF-8"));
+        }
+        buffer = null;
+        return sb;
+    }
+    
+	private Object convertSOAPToObject(InputStream responseContent) throws UnmarshallException {
 		
 		try {
 			Format format = new Format(true, charset);
-			SOAPReader soapReader = new SOAPReader(format);
+         
+         XmlSAXReader soapReader = new XmlSAXReader(format, bindClazz);
 			if (soapVersion == SOAPVersion.SOAP11) {
-				com.leansoft.nano.soap11.Envelope envelope = soapReader.read(com.leansoft.nano.soap11.Envelope.class, bindClazz, responseContent);
-				
+				com.leansoft.nano.soap11.Envelope envelope = soapReader.read(com.leansoft.nano.soap11.Envelope.class, responseContent);
+            
 				if (envelope != null && envelope.body != null && envelope.body.any != null && envelope.body.any.size() > 0) {
 					return envelope.body.any.get(0);
 				}
 				
 			} else {
-				com.leansoft.nano.soap12.Envelope envelope = soapReader.read(com.leansoft.nano.soap12.Envelope.class, bindClazz, responseContent);
+				com.leansoft.nano.soap12.Envelope envelope = soapReader.read(com.leansoft.nano.soap12.Envelope.class, responseContent);
 				if (envelope != null && envelope.body != null && envelope.body.any != null && envelope.body.any.size() > 0) {
 					return envelope.body.any.get(0);
 				}
+            return null;
 			}
 		
 		} catch (Exception e) {
@@ -144,13 +161,17 @@ public class SOAPHttpResponseHandler extends AsyncHttpResponseHandler {
     // Interface to AsyncHttpRequest
     protected void sendResponseMessage(HttpResponse response) {
         StatusLine status = response.getStatusLine();
-        String responseBody = null;
+        InputStream responseBody = null;
         try {
-            HttpEntity entity = null;
             HttpEntity temp = response.getEntity();
             if(temp != null) {
-                entity = new BufferedHttpEntity(temp);
-                responseBody = EntityUtils.toString(entity, "UTF-8");
+                /*InputStream is = temp.getContent();
+                StringBuilder bd = streamToString(is);
+                responseBody = bd.toString();
+                bd = null;
+                //HINT!
+                Runtime.getRuntime().gc();*/
+                responseBody = temp.getContent();
             }
         } catch(IOException e) {
             sendFailureMessage(e, "error to get response body", responseBody);
@@ -159,7 +180,7 @@ public class SOAPHttpResponseHandler extends AsyncHttpResponseHandler {
         }
       if (soapHandler != null)
       {
-         soapHandler.handleResponse(status.getStatusCode(), MapPrettyPrinter.printMap(this.getHeaderMap(response)), responseBody);
+//         soapHandler.handleResponse(status.getStatusCode(), MapPrettyPrinter.printMap(this.getHeaderMap(response)), responseBody);
       }
 		if (debug) {
 			ALog.d(TAG, "Response HTTP status : " + status.getStatusCode());
@@ -168,7 +189,7 @@ public class SOAPHttpResponseHandler extends AsyncHttpResponseHandler {
 			ALog.d(TAG, "Response HTTP headers : ");
 			ALog.d(TAG, headers);
 			ALog.d(TAG, "Response message : ");
-			ALog.debugLongMessage(TAG, responseBody);
+			//ALog.debugLongMessage(TAG, responseBody);
 		}
 
         if(status.getStatusCode() >= 300) {

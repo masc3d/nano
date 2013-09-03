@@ -31,6 +31,7 @@ public class XmlSAXReader implements IReader {
 	
     private SAXParserFactory spf;
 	private Format format;
+   private Class<?> bindClazz;
 	
 	public XmlSAXReader() {
 		this(new Format());
@@ -40,6 +41,11 @@ public class XmlSAXReader implements IReader {
 		this.format = format;
 		spf = SAXParserFactory.newInstance();
 		spf.setNamespaceAware(true);
+	}
+   
+   public XmlSAXReader(Format format, Class<?> bindClazz) {
+		this(format);
+      this.bindClazz = bindClazz;
 	}
 
 	public <T> T read(Class<? extends T> type, InputStream source)
@@ -66,7 +72,6 @@ public class XmlSAXReader implements IReader {
 			SAXParser saxParser = spf.newSAXParser();
 			XMLReader xmlReader = saxParser.getXMLReader();
 			
-			XmlReaderHelper helper = new XmlReaderHelper();
 			
 			Constructor con = null;
 			try {
@@ -75,6 +80,8 @@ public class XmlSAXReader implements IReader {
 				throw new ReaderException("No-arg contructor is missing, type = " + type.getName());
 			}
 			Object obj = con.newInstance();
+         
+         XmlReaderHelper helper = new XmlReaderHelper(bindClazz);
 			helper.valueStack.push(obj);
 			
 			XmlReaderHandler saxHandler = new XmlReaderHandler(helper);
@@ -82,6 +89,7 @@ public class XmlSAXReader implements IReader {
 			
 			xmlReader.parse(new InputSource(source));
 			
+         
 			if (helper.valueStack.size() == 1) { // has one and only one object left on the stack
 				return (T)helper.valueStack.pop(); // read is successful, just return the object
 			} else {

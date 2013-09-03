@@ -36,6 +36,8 @@ import com.leansoft.nano.util.StringUtil;
  *
  */
 public class XmlPullWriter implements IWriter {
+
+        public static boolean elementFormDefault_qualified = false; // tg fix
 	
 	protected static final String IDENT_PROPERTY = "http://xmlpull.org/v1/doc/features.html#indent-output";
 	protected static final String PROPERTY_SERIALIZER_INDENTATION = "http://xmlpull.org/v1/doc/properties.html#serializer-indentation";
@@ -208,7 +210,7 @@ public class XmlPullWriter implements IWriter {
 		String xmlName = res.getXmlName();
 		
 		serializer.startTag(namespace, xmlName);
-		this.writeObject(serializer, source, namespace);
+		this.writeObject(serializer, source, elementFormDefault_qualified?namespace:""); //tg fix
 		serializer.endTag(namespace, xmlName);
 	}
 	
