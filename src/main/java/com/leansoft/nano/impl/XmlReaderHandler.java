@@ -111,39 +111,52 @@ class XmlReaderHandler extends DefaultHandler {
             else if (schema == null && ms.getAnyElementSchema() != null)
             {
                Class<?> bindClazz = helper.bindClazz;
-					MappingSchema newMs = MappingSchema.fromClass(helper.bindClazz);
-               String xmlName = newMs.getRootElementSchema().getXmlName();
-               if (!xmlName.equalsIgnoreCase(localName))
+               MappingSchema newMs = null;
+               boolean soap11 = obj instanceof com.leansoft.nano.soap11.Body;
+               boolean soap12 = obj instanceof com.leansoft.nano.soap12.Body;
+               if (soap11 || soap12)
                {
-                  newMs = MappingSchema.fromClass(helper.bindFaultClazz);
-                  xmlName = newMs.getRootElementSchema().getXmlName();
+                  newMs = MappingSchema.fromClass(bindClazz);
+                  String xmlName = newMs.getRootElementSchema().getXmlName();
                   if (!xmlName.equalsIgnoreCase(localName))
                   {
-                     throw new ReaderException("Root response element name mismatch, " + localName + " != " + xmlName);
+                     newMs = MappingSchema.fromClass(helper.bindFaultClazz);
+                     xmlName = newMs.getRootElementSchema().getXmlName();
+                     if (!xmlName.equalsIgnoreCase(localName))
+                     {
+                        throw new ReaderException("Root response element name mismatch, " + localName + " != " + xmlName);
+                     }
+                     bindClazz = helper.bindFaultClazz;
                   }
-                  bindClazz = helper.bindFaultClazz;
                }
-					Constructor con = null;
-					try {
-						con = TypeReflector.getConstructor(bindClazz);
-					} catch (NoSuchMethodException nsme) {
-						throw new ReaderException("No-arg constructor is missing, type = " + bindClazz.getName());
-					}
-					Object newObj = con.newInstance();
-					if (attrs != null && attrs.getLength() > 0) {
-						this.populateAttributes(newObj, attrs, newMs);
-					}
-					
+               else
+               {
+                  bindClazz = Object.class;
+                  newMs = MappingSchema.fromClass(bindClazz);
+               }
+               
+               Constructor con = null;
+               try {
+                  con = TypeReflector.getConstructor(bindClazz);
+               } catch (NoSuchMethodException nsme) {
+                  throw new ReaderException("No-arg constructor is missing, type = " + bindClazz.getName());
+               }
+               Object newObj = con.newInstance();
+               if (attrs != null && attrs.getLength() > 0)
+               {
+                  this.populateAttributes(newObj, attrs, newMs);
+               }
+               
                helper.bindObject = newObj;
                Field anyField = ms.getAnyElementSchema().getField();
                if (!anyField.isAccessible())
                {
-                 anyField.setAccessible(true);
+                  anyField.setAccessible(true);
                }
                List<Object> anyList = new ArrayList<Object>();
                anyList.add(newObj);
                anyField.set(obj, anyList);
-					helper.valueStack.push(newObj);
+               helper.valueStack.push(newObj);
             }
 			}
 			
