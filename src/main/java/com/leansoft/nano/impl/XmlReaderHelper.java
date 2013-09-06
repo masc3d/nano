@@ -18,11 +18,12 @@ class XmlReaderHelper {
 	public int depth = 0;
    
    public Object bindObject = null;
-	
+   
 	public StringBuilder textBuilder = new StringBuilder();
 	
 	public FastStack<Object> valueStack = new FastStack<Object>(5);
    
+   public Class<?> bindFaultClazz;
    public Class<?> bindClazz;
    
 	public boolean isRoot() {

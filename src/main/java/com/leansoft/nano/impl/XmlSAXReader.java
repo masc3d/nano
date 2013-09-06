@@ -82,6 +82,14 @@ public class XmlSAXReader implements IReader {
 			Object obj = con.newInstance();
          
          XmlReaderHelper helper = new XmlReaderHelper(bindClazz);
+         if (type.getName().equals(com.leansoft.nano.soap11.Envelope.class.getName()) )
+         {
+            helper.bindFaultClazz = com.leansoft.nano.soap11.Fault.class;
+         }
+         else if (type.getName().equals(com.leansoft.nano.soap12.Envelope.class.getName()))
+         {
+            helper.bindFaultClazz = com.leansoft.nano.soap12.Fault.class;
+         }
 			helper.valueStack.push(obj);
 			
 			XmlReaderHandler saxHandler = new XmlReaderHandler(helper);

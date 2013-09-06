@@ -110,17 +110,24 @@ class XmlReaderHandler extends DefaultHandler {
 				}
             else if (schema == null && ms.getAnyElementSchema() != null)
             {
+               Class<?> bindClazz = helper.bindClazz;
 					MappingSchema newMs = MappingSchema.fromClass(helper.bindClazz);
                String xmlName = newMs.getRootElementSchema().getXmlName();
                if (!xmlName.equalsIgnoreCase(localName))
                {
-                  throw new ReaderException("Root response element name mismatch, " + localName + " != " + xmlName);
+                  newMs = MappingSchema.fromClass(helper.bindFaultClazz);
+                  xmlName = newMs.getRootElementSchema().getXmlName();
+                  if (!xmlName.equalsIgnoreCase(localName))
+                  {
+                     throw new ReaderException("Root response element name mismatch, " + localName + " != " + xmlName);
+                  }
+                  bindClazz = helper.bindFaultClazz;
                }
 					Constructor con = null;
 					try {
-						con = TypeReflector.getConstructor(helper.bindClazz);
+						con = TypeReflector.getConstructor(bindClazz);
 					} catch (NoSuchMethodException nsme) {
-						throw new ReaderException("No-arg constructor is missing, type = " + helper.bindClazz.getName());
+						throw new ReaderException("No-arg constructor is missing, type = " + bindClazz.getName());
 					}
 					Object newObj = con.newInstance();
 					if (attrs != null && attrs.getLength() > 0) {
