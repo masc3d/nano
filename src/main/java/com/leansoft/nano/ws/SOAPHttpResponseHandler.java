@@ -1,6 +1,8 @@
 package com.leansoft.nano.ws;
 
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
 import java.io.InputStream;
 import java.util.Map;
 
@@ -72,6 +74,7 @@ public class SOAPHttpResponseHandler extends AsyncHttpResponseHandler {
     }
 	
     protected void sendFailureMessage(Throwable e, String errorMessage, InputStream responseBody) {
+      StringBuilder errorBuilder = new StringBuilder(errorMessage);
     	if (e instanceof HttpResponseException) {
     		HttpResponseException httpResponseException = (HttpResponseException)e;
     		if (httpResponseException.getStatusCode() >= 300 && responseBody != null) {// may be still a successful response
@@ -85,23 +88,40 @@ public class SOAPHttpResponseHandler extends AsyncHttpResponseHandler {
 					// ignore
 				}
     		}
+         try
+         {
+            errorBuilder.append( streamToString(responseBody) );
+         }
+         catch(IOException ex)
+         {
+            // ignore
+         }
     	}
         
-    	sendMessage(obtainMessage(FAILURE_MESSAGE, new Object[]{e, errorMessage}));
+    	sendMessage(obtainMessage(FAILURE_MESSAGE, new Object[]{e, errorBuilder.toString()}));
     }
     
-    private StringBuilder streamToString(InputStream is) throws IOException
-    {
-        StringBuilder sb = new StringBuilder();
-        int read = 0;
-        byte [] buffer = new byte[16384];
-        while ( (read = is.read(buffer)) > 0)
-        {
-           sb.append( new String(buffer, 0, read, "UTF-8"));
-        }
-        buffer = null;
-        return sb;
-    }
+   private StringBuilder streamToString(InputStream is) throws IOException
+   {
+      StringBuilder sb = new StringBuilder();
+      String inputLine ;
+      BufferedReader in = new BufferedReader(new InputStreamReader(is));
+      try
+      {
+         while ((inputLine = in.readLine()) != null)
+         {
+            sb.append(inputLine);
+         }
+      }
+      finally
+      {
+         if (in != null)
+         {
+            in.close();
+         }
+      }
+      return sb;
+   }
     
 	private Object convertSOAPToObject(InputStream responseContent) throws UnmarshallException {
 		
@@ -164,13 +184,8 @@ public class SOAPHttpResponseHandler extends AsyncHttpResponseHandler {
         InputStream responseBody = null;
         try {
             HttpEntity temp = response.getEntity();
-            if(temp != null) {
-                /*InputStream is = temp.getContent();
-                StringBuilder bd = streamToString(is);
-                responseBody = bd.toString();
-                bd = null;
-                //HINT!
-                Runtime.getRuntime().gc();*/
+            if(temp != null)
+            {
                 responseBody = temp.getContent();
             }
         } catch(IOException e) {

@@ -110,8 +110,12 @@ class XmlReaderHandler extends DefaultHandler {
 				}
             else if (schema == null && ms.getAnyElementSchema() != null)
             {
-               
 					MappingSchema newMs = MappingSchema.fromClass(helper.bindClazz);
+               String xmlName = newMs.getRootElementSchema().getXmlName();
+               if (!xmlName.equalsIgnoreCase(localName))
+               {
+                  throw new ReaderException("Root response element name mismatch, " + localName + " != " + xmlName);
+               }
 					Constructor con = null;
 					try {
 						con = TypeReflector.getConstructor(helper.bindClazz);
