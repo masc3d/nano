@@ -18,6 +18,7 @@ import com.leansoft.nano.exception.ReaderException;
 import com.leansoft.nano.transform.Transformer;
 import com.leansoft.nano.util.StringUtil;
 import com.leansoft.nano.util.TypeReflector;
+import com.leansoft.nano.custom.types.AnyObject;
 
 /**
  * SAX handler implementation for XmlSaxReader
@@ -131,7 +132,7 @@ class XmlReaderHandler extends DefaultHandler {
                }
                else
                {
-                  bindClazz = Object.class;
+                  bindClazz = AnyObject.class;
                   newMs = MappingSchema.fromClass(bindClazz);
                }
                
@@ -215,6 +216,10 @@ class XmlReaderHandler extends DefaultHandler {
 						field.set(obj, value);
 					}
 				}
+            else if (obj instanceof AnyObject)
+            {
+               ((AnyObject)obj).content = helper.textBuilder.toString();
+            }
 				
 				Object parentObj = helper.valueStack.peek();
 				MappingSchema parentMs = MappingSchema.fromObject(parentObj);
