@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import java.lang.ref.WeakReference;
 /**
  * Nano async client supporting SOAP Messaging.
  * 
@@ -98,7 +99,10 @@ public abstract class NanoSOAPClient {
 			
          if (soapHandler != null)
          {
-            soapHandler.handleRequest(urlWithQueryString, MapPrettyPrinter.printMap(asyncHttpClient.getHeaders()), soapMessage);
+            StringBuilder sb = new StringBuilder(soapMessage);
+            new WeakReference<StringBuilder>(sb);
+            soapHandler.handleRequest(urlWithQueryString, MapPrettyPrinter.printMap(asyncHttpClient.getHeaders()), sb);
+            sb = null;
          }
          
 			if (debug) {
