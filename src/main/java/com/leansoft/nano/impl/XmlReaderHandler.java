@@ -12,6 +12,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import com.leansoft.nano.annotation.schema.AttributeSchema;
 import com.leansoft.nano.annotation.schema.ElementSchema;
+import com.leansoft.nano.annotation.schema.AnyElementSchema;
 import com.leansoft.nano.annotation.schema.RootElementSchema;
 import com.leansoft.nano.annotation.schema.ValueSchema;
 import com.leansoft.nano.exception.ReaderException;
@@ -154,9 +155,14 @@ class XmlReaderHandler extends DefaultHandler {
                {
                   anyField.setAccessible(true);
                }
-               List<Object> anyList = new ArrayList<Object>();
-               anyList.add(newObj);
-               anyField.set(obj, anyList);
+               
+               List list = (List)anyField.get(obj);
+               if (list == null)
+               {
+                  list = new ArrayList();
+                  anyField.set(obj, list);
+               }
+               list.add(newObj);
                helper.valueStack.push(newObj);
             }
 			}
