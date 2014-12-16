@@ -8,11 +8,13 @@ import java.io.ByteArrayOutputStream;
 public class InputStreamWrapper extends InputStream
 {
    private InputStream is;
+   private boolean useBuffer;
    
    private ByteArrayOutputStream bos = new ByteArrayOutputStream();
    
-   public InputStreamWrapper(InputStream is)
+   public InputStreamWrapper(InputStream is, boolean useBuffer)
    {
+      this.useBuffer = useBuffer;
       this.is = is;
    }
    
@@ -20,7 +22,7 @@ public class InputStreamWrapper extends InputStream
    public int read() throws IOException
    {
       int ch = is.read();
-      if (ch != -1)
+      if (ch != -1 && useBuffer)
       {
          bos.write(ch);
       }
