@@ -6,6 +6,7 @@ import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -36,6 +37,8 @@ import com.leansoft.nano.util.StringUtil;
  *
  */
 public class XmlPullWriter implements IWriter {
+   
+   private static final List<IValueSerializer> valueSerializers = new ArrayList<IValueSerializer>();
 	
 	protected static final String IDENT_PROPERTY = "http://xmlpull.org/v1/doc/features.html#indent-output";
 	protected static final String PROPERTY_SERIALIZER_INDENTATION = "http://xmlpull.org/v1/doc/properties.html#serializer-indentation";
@@ -44,6 +47,11 @@ public class XmlPullWriter implements IWriter {
 
 	protected XmlPullParserFactory factory;
    protected boolean qualifiedFromDefault = false;
+   
+   public static void registerValueSerializer(IValueSerializer serializer)
+   {
+      valueSerializers.add(serializer);
+   }
    
 	public XmlPullWriter() {
 		this(new Format(), false);
@@ -228,23 +236,30 @@ public class XmlPullWriter implements IWriter {
 		}
 	}
 	
-	private void writeValue(XmlSerializer serializer, Object source, MappingSchema ms) throws Exception {
-		ValueSchema vs = ms.getValueSchema();
-		if (vs == null) return; // no ValueSchema, do nothing
-		
-		Field field = vs.getField();
-		Object value = field.get(source);
-		if (value != null) {
-			String text = Transformer.write(value, field.getType());
-			if (!StringUtil.isEmpty(text)) {
-				if(vs.isData()) {
-					serializer.cdsect(text);
-				} else {
-					serializer.text(text);
-				}
-			}
-		}
-	}
+   private void writeValue(XmlSerializer serializer, Object source, MappingSchema ms)
+         throws Exception
+   {
+      ValueSchema vs = ms.getValueSchema();
+      if (vs == null) return; // no ValueSchema, do nothing
+
+      Field field = vs.getField();
+      Object value = field.get(source);
+      if (value != null)
+      {
+         String text = Transformer.write(value, field.getType());
+         if (!StringUtil.isEmpty(text) || field.getType() == String.class)
+         {
+            if (vs.isData())
+            {
+               serializer.cdsect(text);
+            }
+            else
+            {
+               serializer.text(text);
+            }
+         }
+      }
+   }
 	
 	private void writeElements(XmlSerializer serializer, Object source, MappingSchema ms, String namespace) throws Exception {
 		Map<String, Object> field2SchemaMapping = ms.getField2SchemaMapping();
@@ -286,7 +301,7 @@ public class XmlPullWriter implements IWriter {
 		// primitives
 		if(Transformer.isPrimitive(type)) {
 			String value = Transformer.write(source, type);
-			if(StringUtil.isEmpty(value)) return;
+			if(StringUtil.isEmpty(value) && type != String.class) return;
 			
 			serializer.startTag(namespace, xmlName);
 			if(es.isData()) {

@@ -10,8 +10,6 @@ import com.leansoft.nano.exception.MappingException;
 import com.leansoft.nano.exception.WriterException;
 import com.leansoft.nano.util.StringUtil;
 
-import com.leansoft.nano.log.ALog;
-
 public class SOAPWriter extends XmlPullWriter {
 	
 	static final String SOAP_PREFIX = "soapenv";
@@ -19,7 +17,7 @@ public class SOAPWriter extends XmlPullWriter {
 	static final String XSI_NAMESPACE = "http://www.w3.org/2001/XMLSchema-instance";
 	static final String XSD_PREFIX = "xsd";
 	static final String XSD_NAMESPACE = "http://www.w3.org/2001/XMLSchema";
-	static final String INNER_PREFIX = "inner"; //tg fix
+	static final String INNER_PREFIX = "n"; //tg fix
 	
    private boolean qualifiedFromDefault = false;;
    
