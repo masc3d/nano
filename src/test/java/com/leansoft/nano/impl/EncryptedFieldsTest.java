@@ -26,8 +26,9 @@ import junit.framework.TestCase;
 public class EncryptedFieldsTest extends TestCase 
 {
 
-  public class CommentItemType implements Serializable 
+  private static class CommentItemType implements Serializable 
   {
+     
      private static final long serialVersionUID = -1L;
      @Value(encrypted = true)
      @Order(value=0)
@@ -59,7 +60,7 @@ public class EncryptedFieldsTest extends TestCase
       // no annotation
       public String id;
 
-      @com.leansoft.nano.annotation.Element(encrypted = true)
+      @com.leansoft.nano.annotation.Element
       public CommentItemType tubeComment;
    
       @Element(encrypted = true)
@@ -187,7 +188,7 @@ public class EncryptedFieldsTest extends TestCase
       }
    }
 
-   public void testDecryption()
+   public void testDecryption() throws ReaderException, MappingException
    {
       String inputXml= 
             "<?xml version=\"1.0\" encoding=\"utf-8\"?><patient>\n" + 
@@ -210,15 +211,17 @@ public class EncryptedFieldsTest extends TestCase
       catch (ReaderException e1)
       {
          e1.printStackTrace();
+         throw e1;
       }
       catch (MappingException e1)
       {
          e1.printStackTrace();
+         throw e1;
       }
 
    }
    
-   public void testNoDecryption()
+   public void testNoDecryption() throws ReaderException, MappingException
    {
       String inputXml= 
             "<?xml version=\"1.0\" encoding=\"utf-8\"?><patient>\n" + 
@@ -241,10 +244,12 @@ public class EncryptedFieldsTest extends TestCase
       catch (ReaderException e1)
       {
          e1.printStackTrace();
+         throw e1;
       }
       catch (MappingException e1)
       {
          e1.printStackTrace();
+         throw e1;
       }
 
    }
