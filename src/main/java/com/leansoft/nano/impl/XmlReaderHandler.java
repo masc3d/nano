@@ -16,6 +16,7 @@ import com.leansoft.nano.annotation.schema.AnyElementSchema;
 import com.leansoft.nano.annotation.schema.RootElementSchema;
 import com.leansoft.nano.annotation.schema.ValueSchema;
 import com.leansoft.nano.exception.ReaderException;
+import com.leansoft.nano.transform.StringTransform;
 import com.leansoft.nano.transform.Transformer;
 import com.leansoft.nano.util.StringUtil;
 import com.leansoft.nano.util.TypeReflector;
@@ -30,9 +31,15 @@ import com.leansoft.nano.custom.types.AnyObject;
 class XmlReaderHandler extends DefaultHandler {
 	
 	private XmlReaderHelper helper;
+	private StringTransform tr;
 	
 	public XmlReaderHandler(XmlReaderHelper helper) {
 		this.helper = helper;
+	}
+
+	public XmlReaderHandler(XmlReaderHelper helper, StringTransform tr) {
+		this(helper);
+		this.tr = tr; 
 	}
 
 	private void populateAttributes(Object obj, Attributes attrs, MappingSchema ms) throws Exception {
@@ -199,6 +206,10 @@ class XmlReaderHandler extends DefaultHandler {
 							list.add(value);
 						} else {
 							Object value = Transformer.read(xmlData, field.getType());
+							if (tr != null && es.isEncrypted() && (value.getClass() == String.class))
+							{
+								value =  tr.read((String)value);
+							}
 							field.set(obj, value);
 						}
 					}
@@ -219,6 +230,10 @@ class XmlReaderHandler extends DefaultHandler {
 					String xmlData = helper.textBuilder.toString();
 					if (!StringUtil.isEmpty(xmlData)) {
 						Object value = Transformer.read(xmlData, field.getType());
+						if (vs.getEncrypted() && (tr != null) && (value.getClass() == String.class))
+						{
+							value = tr.read((String)value);//decrypt annotated field
+						}
 						field.set(obj, value);
 					}
 				}

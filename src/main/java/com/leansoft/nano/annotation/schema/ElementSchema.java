@@ -18,8 +18,17 @@ public class ElementSchema {
 	
 	private boolean list = false;
 	
+	private boolean encrypted = false;
+	
 	private Class<?> parameterizedType;
 
+	public boolean isEncrypted() {
+		return encrypted;
+	}
+	
+	public void setEncrypted(boolean encrypted) {
+		this.encrypted = encrypted;
+	}
 	/**
 	 * Check if this is a java.util.List filed, such as List<T>
 	 * 

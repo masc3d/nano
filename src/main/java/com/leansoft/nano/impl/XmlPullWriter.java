@@ -27,6 +27,7 @@ import com.leansoft.nano.annotation.schema.RootElementSchema;
 import com.leansoft.nano.annotation.schema.ValueSchema;
 import com.leansoft.nano.exception.MappingException;
 import com.leansoft.nano.exception.WriterException;
+import com.leansoft.nano.transform.StringTransform;
 import com.leansoft.nano.transform.Transformer;
 import com.leansoft.nano.util.StringUtil;
 
@@ -37,8 +38,6 @@ import com.leansoft.nano.util.StringUtil;
  *
  */
 public class XmlPullWriter implements IWriter {
-   
-   private static final List<IValueSerializer> valueSerializers = new ArrayList<IValueSerializer>();
 	
 	protected static final String IDENT_PROPERTY = "http://xmlpull.org/v1/doc/features.html#indent-output";
 	protected static final String PROPERTY_SERIALIZER_INDENTATION = "http://xmlpull.org/v1/doc/properties.html#serializer-indentation";
@@ -46,12 +45,13 @@ public class XmlPullWriter implements IWriter {
 	protected Format format;
 
 	protected XmlPullParserFactory factory;
-   protected boolean qualifiedFromDefault = false;
+	protected boolean qualifiedFromDefault = false;
+	private StringTransform tr=null;
    
-   public static void registerValueSerializer(IValueSerializer serializer)
-   {
-      valueSerializers.add(serializer);
-   }
+	public XmlPullWriter(StringTransform tr) {
+		this();
+		this.tr =  tr;
+	}
    
 	public XmlPullWriter() {
 		this(new Format(), false);
@@ -59,7 +59,7 @@ public class XmlPullWriter implements IWriter {
 
 	public XmlPullWriter(Format format, boolean qualifiedFromDefault) {
 		this.format = format;
-      this.qualifiedFromDefault = qualifiedFromDefault;
+		this.qualifiedFromDefault = qualifiedFromDefault;
 		try {
 			factory = XmlPullParserFactory.newInstance(System
 					.getProperty(XmlPullParserFactory.PROPERTY_NAME), null);
@@ -247,6 +247,10 @@ public class XmlPullWriter implements IWriter {
       if (value != null)
       {
          String text = Transformer.write(value, field.getType());
+         if (vs.getEncrypted() && tr != null)
+         {
+             text = tr.write(text);
+         }
          if (!StringUtil.isEmpty(text) || field.getType() == String.class)
          {
             if (vs.isData())
@@ -301,6 +305,10 @@ public class XmlPullWriter implements IWriter {
 		// primitives
 		if(Transformer.isPrimitive(type)) {
 			String value = Transformer.write(source, type);
+			if (tr != null && es.isEncrypted())
+			{
+				value = tr.write(value);
+			}
 			if(StringUtil.isEmpty(value) && type != String.class) return;
 			
 			serializer.startTag(namespace, xmlName);
