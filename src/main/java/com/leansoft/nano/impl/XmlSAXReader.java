@@ -18,6 +18,7 @@ import com.leansoft.nano.Format;
 import com.leansoft.nano.IReader;
 import com.leansoft.nano.exception.MappingException;
 import com.leansoft.nano.exception.ReaderException;
+import com.leansoft.nano.transform.StringTransform;
 import com.leansoft.nano.transform.Transformer;
 import com.leansoft.nano.util.TypeReflector;
 
@@ -29,13 +30,19 @@ import com.leansoft.nano.util.TypeReflector;
  */
 public class XmlSAXReader implements IReader {
 	
-    private SAXParserFactory spf;
+	private SAXParserFactory spf;
 	private Format format;
-   private Class<?> bindClazz;
-	
+	private Class<?> bindClazz;
+	private StringTransform tr=null;
 	public XmlSAXReader() {
 		this(new Format());
 	}
+
+	public XmlSAXReader(StringTransform tr) {
+		this();
+		this.tr = tr;
+	}
+   
 	
 	public XmlSAXReader(Format format) {
 		this.format = format;
@@ -43,9 +50,9 @@ public class XmlSAXReader implements IReader {
 		spf.setNamespaceAware(true);
 	}
    
-   public XmlSAXReader(Format format, Class<?> bindClazz) {
+	public XmlSAXReader(Format format, Class<?> bindClazz) {
 		this(format);
-      this.bindClazz = bindClazz;
+		this.bindClazz = bindClazz;
 	}
 
 	public <T> T read(Class<? extends T> type, InputStream source)
@@ -81,18 +88,18 @@ public class XmlSAXReader implements IReader {
 			}
 			Object obj = con.newInstance();
          
-         XmlReaderHelper helper = new XmlReaderHelper(bindClazz);
-         if (type.getName().equals(com.leansoft.nano.soap11.Envelope.class.getName()) )
-         {
-            helper.bindFaultClazz = com.leansoft.nano.soap11.Fault.class;
-         }
-         else if (type.getName().equals(com.leansoft.nano.soap12.Envelope.class.getName()))
-         {
-            helper.bindFaultClazz = com.leansoft.nano.soap12.Fault.class;
-         }
+			XmlReaderHelper helper = new XmlReaderHelper(bindClazz);
+			if (type.getName().equals(com.leansoft.nano.soap11.Envelope.class.getName()) )
+			{
+				helper.bindFaultClazz = com.leansoft.nano.soap11.Fault.class;
+			}
+			else if (type.getName().equals(com.leansoft.nano.soap12.Envelope.class.getName()))
+			{
+				helper.bindFaultClazz = com.leansoft.nano.soap12.Fault.class;
+			}
 			helper.valueStack.push(obj);
 			
-			XmlReaderHandler saxHandler = new XmlReaderHandler(helper);
+			XmlReaderHandler saxHandler = new XmlReaderHandler(helper, tr);
 			xmlReader.setContentHandler(saxHandler);
 			
 			xmlReader.parse(new InputSource(source));

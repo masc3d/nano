@@ -16,6 +16,7 @@ import com.leansoft.nano.annotation.schema.AnyElementSchema;
 import com.leansoft.nano.annotation.schema.RootElementSchema;
 import com.leansoft.nano.annotation.schema.ValueSchema;
 import com.leansoft.nano.exception.ReaderException;
+import com.leansoft.nano.transform.StringTransform;
 import com.leansoft.nano.transform.Transformer;
 import com.leansoft.nano.util.StringUtil;
 import com.leansoft.nano.util.TypeReflector;
@@ -30,9 +31,15 @@ import com.leansoft.nano.custom.types.AnyObject;
 class XmlReaderHandler extends DefaultHandler {
 	
 	private XmlReaderHelper helper;
+	private StringTransform tr;
 	
 	public XmlReaderHandler(XmlReaderHelper helper) {
 		this.helper = helper;
+	}
+
+	public XmlReaderHandler(XmlReaderHelper helper, StringTransform tr) {
+		this(helper);
+		this.tr = tr; 
 	}
 
 	private void populateAttributes(Object obj, Attributes attrs, MappingSchema ms) throws Exception {
@@ -110,61 +117,61 @@ class XmlReaderHandler extends DefaultHandler {
 					}
 					
 				}
-            else if (schema == null && ms.getAnyElementSchema() != null)
-            {
-               Class<?> bindClazz = helper.bindClazz;
-               MappingSchema newMs = null;
-               boolean soap11 = obj instanceof com.leansoft.nano.soap11.Body;
-               boolean soap12 = obj instanceof com.leansoft.nano.soap12.Body;
-               if (soap11 || soap12)
-               {
-                  newMs = MappingSchema.fromClass(bindClazz);
-                  String xmlName = newMs.getRootElementSchema().getXmlName();
-                  if (!xmlName.equalsIgnoreCase(localName))
-                  {
-                     newMs = MappingSchema.fromClass(helper.bindFaultClazz);
-                     xmlName = newMs.getRootElementSchema().getXmlName();
-                     if (!xmlName.equalsIgnoreCase(localName))
-                     {
-                        throw new ReaderException("Root response element name mismatch, " + localName + " != " + xmlName);
-                     }
-                     bindClazz = helper.bindFaultClazz;
-                  }
-               }
-               else
-               {
-                  bindClazz = AnyObject.class;
-                  newMs = MappingSchema.fromClass(bindClazz);
-               }
+				else if (schema == null && ms.getAnyElementSchema() != null)
+				{
+					Class<?> bindClazz = helper.bindClazz;
+					MappingSchema newMs = null;
+					boolean soap11 = obj instanceof com.leansoft.nano.soap11.Body;
+					boolean soap12 = obj instanceof com.leansoft.nano.soap12.Body;
+					if (soap11 || soap12)
+					{
+						newMs = MappingSchema.fromClass(bindClazz);
+						String xmlName = newMs.getRootElementSchema().getXmlName();
+						if (!xmlName.equalsIgnoreCase(localName))
+						{
+							newMs = MappingSchema.fromClass(helper.bindFaultClazz);
+							xmlName = newMs.getRootElementSchema().getXmlName();
+							if (!xmlName.equalsIgnoreCase(localName))
+							{
+								throw new ReaderException("Root response element name mismatch, " + localName + " != " + xmlName);
+							}
+							bindClazz = helper.bindFaultClazz;
+						}
+					}
+					else
+					{
+						bindClazz = AnyObject.class;
+						newMs = MappingSchema.fromClass(bindClazz);
+					}
                
-               Constructor con = null;
-               try {
-                  con = TypeReflector.getConstructor(bindClazz);
-               } catch (NoSuchMethodException nsme) {
-                  throw new ReaderException("No-arg constructor is missing, type = " + bindClazz.getName());
-               }
-               Object newObj = con.newInstance();
-               if (attrs != null && attrs.getLength() > 0)
-               {
-                  this.populateAttributes(newObj, attrs, newMs);
-               }
+					Constructor con = null;
+					try {
+						con = TypeReflector.getConstructor(bindClazz);
+					} catch (NoSuchMethodException nsme) {
+						throw new ReaderException("No-arg constructor is missing, type = " + bindClazz.getName());
+					}
+					Object newObj = con.newInstance();
+					if (attrs != null && attrs.getLength() > 0)
+					{
+						this.populateAttributes(newObj, attrs, newMs);
+					}
                
-               helper.bindObject = newObj;
-               Field anyField = ms.getAnyElementSchema().getField();
-               if (!anyField.isAccessible())
-               {
-                  anyField.setAccessible(true);
-               }
+					helper.bindObject = newObj;
+					Field anyField = ms.getAnyElementSchema().getField();
+					if (!anyField.isAccessible())
+					{
+						anyField.setAccessible(true);
+					}
                
-               List list = (List)anyField.get(obj);
-               if (list == null)
-               {
-                  list = new ArrayList();
-                  anyField.set(obj, list);
-               }
-               list.add(newObj);
-               helper.valueStack.push(newObj);
-            }
+					List list = (List)anyField.get(obj);
+					if (list == null)
+					{
+						list = new ArrayList();
+						anyField.set(obj, list);
+					}
+					list.add(newObj);
+					helper.valueStack.push(newObj);
+				}
 			}
 			
 	    } catch (Exception ex) {
@@ -199,6 +206,10 @@ class XmlReaderHandler extends DefaultHandler {
 							list.add(value);
 						} else {
 							Object value = Transformer.read(xmlData, field.getType());
+							if (tr != null && es.isEncrypted() && (value.getClass() == String.class))
+							{
+								value =  tr.read((String)value);
+							}
 							field.set(obj, value);
 						}
 					}
@@ -219,13 +230,17 @@ class XmlReaderHandler extends DefaultHandler {
 					String xmlData = helper.textBuilder.toString();
 					if (!StringUtil.isEmpty(xmlData)) {
 						Object value = Transformer.read(xmlData, field.getType());
+						if (vs.getEncrypted() && (tr != null) && (value.getClass() == String.class))
+						{
+							value = tr.read((String)value);//decrypt annotated field
+						}
 						field.set(obj, value);
 					}
 				}
-            else if (obj instanceof AnyObject)
-            {
-               ((AnyObject)obj).content = helper.textBuilder.toString();
-            }
+				else if (obj instanceof AnyObject)
+				{
+					((AnyObject)obj).content = helper.textBuilder.toString();
+				}
 				
 				Object parentObj = helper.valueStack.peek();
 				MappingSchema parentMs = MappingSchema.fromObject(parentObj);

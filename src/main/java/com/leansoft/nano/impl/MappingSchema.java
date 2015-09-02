@@ -173,6 +173,10 @@ class MappingSchema {
 					elementSchema.setXmlName(xmlElement.name());
 				}
 				
+				if (xmlElement.encrypted())
+				{
+					elementSchema.setEncrypted(true);
+				}
 				// List validation
 				handleList(field, elementSchema);
 				
@@ -214,6 +218,7 @@ class MappingSchema {
 				
 				valueSchema = new ValueSchema();
 				valueSchema.setData(xmlValue.data());
+				valueSchema.setEncrypted(xmlValue.encrypted());
 				valueSchema.setField(field);
 				
 			} else if (field.isAnnotationPresent(AnyElement.class)) {

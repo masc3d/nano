@@ -19,7 +19,7 @@ public class SOAPWriter extends XmlPullWriter {
 	static final String XSD_NAMESPACE = "http://www.w3.org/2001/XMLSchema";
 	static final String INNER_PREFIX = "n"; //tg fix
 	
-   private boolean qualifiedFromDefault = false;;
+	private boolean qualifiedFromDefault = false;;
    
 	public SOAPWriter() {
 		super();
