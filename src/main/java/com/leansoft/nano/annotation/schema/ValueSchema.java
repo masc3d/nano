@@ -14,8 +14,6 @@ public class ValueSchema {
 	
 	private Field field;
 
-	private boolean encrypted;
-
 	/**
 	 * Indicates if the string content of the field should be put 
 	 * in a CDATA container on serialization
@@ -52,16 +50,6 @@ public class ValueSchema {
 	 */
 	public void setField(Field field) {
 		this.field = field;
-	}
-
-	public void setEncrypted(boolean encrypted)
-	{
-		this.encrypted = encrypted;
-	}
-   
-	public boolean getEncrypted()
-	{
-		return this.encrypted;
 	}
 	
 }

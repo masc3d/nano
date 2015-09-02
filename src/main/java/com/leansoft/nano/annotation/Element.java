@@ -32,12 +32,4 @@ public @interface Element {
 	 * @return true or false
 	 */
 	public boolean data() default false;
-
-	/**
-	 * Indicates if the string content of the field should
-	 * be encrypted
-	 * 
-	 * @return true or false
-	 */
-	public boolean encrypted() default false;
 }

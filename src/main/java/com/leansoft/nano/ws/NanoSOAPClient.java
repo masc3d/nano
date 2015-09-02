@@ -34,7 +34,7 @@ public abstract class NanoSOAPClient {
 	
 	private String charset = "UTF-8";
 	
-	private boolean qualifiedFromDefault = false;
+   private boolean qualifiedFromDefault = false;
 	private boolean debug = false;
 	
 	private SOAPVersion soapVersion = SOAPVersion.SOAP11;
@@ -97,13 +97,13 @@ public abstract class NanoSOAPClient {
 			
 			String urlWithQueryString = NanoXMLClient.getUrlWithQueryString(endpointUrl, urlParams);
 			
-			if (soapHandler != null)
-			{
-				StringBuilder sb = new StringBuilder(soapMessage);
-				new WeakReference<StringBuilder>(sb);
-				soapHandler.handleRequest(urlWithQueryString, MapPrettyPrinter.printMap(asyncHttpClient.getHeaders()), sb);
-				sb = null;
-			}
+         if (soapHandler != null)
+         {
+            StringBuilder sb = new StringBuilder(soapMessage);
+            new WeakReference<StringBuilder>(sb);
+            soapHandler.handleRequest(urlWithQueryString, MapPrettyPrinter.printMap(asyncHttpClient.getHeaders()), sb);
+            sb = null;
+         }
          
 			if (debug) {
 				ALog.d(TAG, "Sending request to : " + urlWithQueryString);
@@ -131,10 +131,10 @@ public abstract class NanoSOAPClient {
 		
 	}
 	
-	public void setQualifiedFromDefault(boolean qualifiedFromDefault)
-	{
-   		this.qualifiedFromDefault = qualifiedFromDefault;
-	}
+   public void setQualifiedFromDefault(boolean qualifiedFromDefault)
+   {
+      this.qualifiedFromDefault = qualifiedFromDefault;
+   }
 	
 	private String convertObjectToSOAP(Object requestObject) throws MarshallException {
 		Format format = new Format(true, charset);

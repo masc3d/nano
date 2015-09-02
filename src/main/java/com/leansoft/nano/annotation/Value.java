@@ -24,7 +24,4 @@ public @interface Value {
 	 * @return true or false
 	 */
 	public boolean data() default false;
-	
-	public boolean encrypted() default false;
-
 }
