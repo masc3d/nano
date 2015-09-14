@@ -40,4 +40,13 @@ public @interface Element {
 	 * @return true or false
 	 */
 	public boolean encrypted() default false;
+	
+	/**
+	 * Comma separated list of fields.
+	 * Indicates what fields inside the structure we need to encrypt.
+	 * Typically used when you have structure generated out of wsdl
+	 * and can not add annotation to the needed fields inside the structure
+	 * @return list of field names
+	 */
+	public String sub_fields_to_encrypt() default "";
 }

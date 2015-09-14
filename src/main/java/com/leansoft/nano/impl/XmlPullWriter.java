@@ -29,6 +29,7 @@ import com.leansoft.nano.exception.MappingException;
 import com.leansoft.nano.exception.WriterException;
 import com.leansoft.nano.transform.StringTransform;
 import com.leansoft.nano.transform.Transformer;
+import com.leansoft.nano.util.FastStack;
 import com.leansoft.nano.util.StringUtil;
 
 /**
@@ -47,6 +48,8 @@ public class XmlPullWriter implements IWriter {
 	protected XmlPullParserFactory factory;
 	protected boolean qualifiedFromDefault = false;
 	private StringTransform tr=null;
+   private FastStack<ElementSchema> elementSchemaStack = new FastStack<ElementSchema>(5);
+   
    
 	public XmlPullWriter(StringTransform tr) {
 		this();
@@ -239,29 +242,44 @@ public class XmlPullWriter implements IWriter {
    private void writeValue(XmlSerializer serializer, Object source, MappingSchema ms)
          throws Exception
    {
-      ValueSchema vs = ms.getValueSchema();
-      if (vs == null) return; // no ValueSchema, do nothing
-
-      Field field = vs.getField();
-      Object value = field.get(source);
-      if (value != null)
+      if (!(source instanceof  com.leansoft.nano.custom.types.AnyObject))
       {
-         String text = Transformer.write(value, field.getType());
-         if (vs.getEncrypted() && tr != null)
+         ValueSchema vs = ms.getValueSchema();
+         if (vs == null) return; // no ValueSchema, do nothing
+         Field field = vs.getField();
+         Object value = field.get(source);
+         if (value != null)
          {
-             text = tr.write(text);
+            String text = Transformer.write(value, field.getType());
+            if (needsToBeEncrypted(vs))
+            {
+               text = tr.write(text);
+            }
+            if (!StringUtil.isEmpty(text) || field.getType() == String.class)
+            {
+               if (vs.isData())
+               {
+                  serializer.cdsect(text);
+               }
+               else
+               {
+                  serializer.text(text);
+               }
+            }
          }
-         if (!StringUtil.isEmpty(text) || field.getType() == String.class)
+      }
+      else
+      {
+         ElementSchema currentElementSchema = elementSchemaStack.peek();
+         String textToWrite = ((com.leansoft.nano.custom.types.AnyObject)source).content;
+         if (tr != null && 
+             currentElementSchema != null &&
+             (currentElementSchema.isEncrypted() || currentElementSchema.needToEncryptSubField("content"))
+            )
          {
-            if (vs.isData())
-            {
-               serializer.cdsect(text);
-            }
-            else
-            {
-               serializer.text(text);
-            }
+            textToWrite = tr.write(textToWrite);
          }
+         serializer.text(textToWrite);
       }
    }
 	
@@ -290,6 +308,35 @@ public class XmlPullWriter implements IWriter {
 		}
 	}
 	
+	  private boolean needsToBeEncrypted(ElementSchema es)
+	  {
+	     return tr!= null && 
+	          (
+	              es.isEncrypted() || 
+	              (elementSchemaStack.size() > 0 && 
+	                    elementSchemaStack.peek().needToEncryptSubField(es.getXmlName())
+	              )
+	          );
+	  }
+
+	  private boolean needsToBeEncrypted(ValueSchema vs)
+	  {
+	      return tr!= null && 
+	             (
+	                    vs.isEncrypted()  
+	                 || (   elementSchemaStack.size()>0
+	                     && (
+	                           elementSchemaStack.peek().isEncrypted()  //for value we can take into account annotation for enclosing element
+	                           || (
+	                                 elementSchemaStack.size() > 1 
+	                                 && elementSchemaStack.peek2nd().needToEncryptSubField(elementSchemaStack.peek().getXmlName())
+	                              )
+	                           || elementSchemaStack.peek().needToEncryptSubField(vs.getField().getName())  
+	                         )
+	                    )
+	             );
+	   }
+
 	private void writeElement(XmlSerializer serializer, Object source, ElementSchema es, String namespace) throws Exception {
 		Class<?> type = null;
 		if (es.isList()) {
@@ -305,7 +352,7 @@ public class XmlPullWriter implements IWriter {
 		// primitives
 		if(Transformer.isPrimitive(type)) {
 			String value = Transformer.write(source, type);
-			if (tr != null && es.isEncrypted())
+			if (needsToBeEncrypted(es))
 			{
 				value = tr.write(value);
 			}
@@ -324,7 +371,13 @@ public class XmlPullWriter implements IWriter {
 		
 		// object
 		serializer.startTag(namespace, xmlName);
+		if (!es.isEncrypted() && needsToBeEncrypted(es) )
+		{
+		   es.setEncrypted(true); //if current element is listed among encypted subfields, then mark it as encrypted 
+		}
+		this.elementSchemaStack.push(es);
 		this.writeObject(serializer, source, namespace);
+      this.elementSchemaStack.pop();
 		serializer.endTag(namespace, xmlName);
 	}
 

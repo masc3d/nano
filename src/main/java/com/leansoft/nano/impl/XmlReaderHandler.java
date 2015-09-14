@@ -3,6 +3,7 @@ package com.leansoft.nano.impl;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -63,12 +64,12 @@ class XmlReaderHandler extends DefaultHandler {
 			// clear the textBuilder
 			helper.clearTextBuffer();
 			
-			if (helper.depth > helper.valueStack.size() + 1) {
+			if (helper.depth > helper.getValueStackSize() + 1) {
 				// unexpected xml element, just ignore
 				return;
 			}
 			
-			Object obj = helper.valueStack.peek();
+			Object obj = helper.peekFromValueStack();
 			MappingSchema ms = MappingSchema.fromObject(obj);
 			if(helper.isRoot()) { // first time root element mapping
 				RootElementSchema res = ms.getRootElementSchema();
@@ -113,7 +114,7 @@ class XmlReaderHandler extends DefaultHandler {
 							this.populateAttributes(newObj, attrs, newMs);
 						}
 						
-						helper.valueStack.push(newObj);
+						helper.pushToValueStack(newObj, es);
 					}
 					
 				}
@@ -170,7 +171,7 @@ class XmlReaderHandler extends DefaultHandler {
                   anyField.set(obj, list);
                }
                list.add(newObj);
-               helper.valueStack.push(newObj);
+               helper.pushToValueStack(newObj, null);
             }
 			}
 			
@@ -179,14 +180,15 @@ class XmlReaderHandler extends DefaultHandler {
 		}
 	}
 	
+	 
 	public void endElement(String uri, String localName, String name) throws SAXException {
 		try {
-			if (helper.depth > helper.valueStack.size() + 1) {
+			if (helper.depth > helper.getValueStackSize() + 1) {
 				// unexpected xml element, just ignore
 				helper.depth--;
 				return;
-			} else if (helper.depth == helper.valueStack.size() + 1) { // handle primitive field
-				Object obj = helper.valueStack.peek();
+			} else if (helper.depth == helper.getValueStackSize() + 1) { // handle primitive field
+				Object obj = helper.peekFromValueStack();
 				MappingSchema ms = MappingSchema.fromObject(obj);
 				Map<String, Object> xml2SchemaMapping = ms.getXml2SchemaMapping();
 				Object schema = xml2SchemaMapping.get(localName);
@@ -206,7 +208,12 @@ class XmlReaderHandler extends DefaultHandler {
 							list.add(value);
 						} else {
 							Object value = Transformer.read(xmlData, field.getType());
-							if (tr != null && es.isEncrypted() && (value.getClass() == String.class))
+							if (tr != null && 
+							      (  es.isEncrypted()
+							       ||helper.needToEncryptField(localName)
+							      ) && (value.getClass() == String.class))
+							   
+							   
 							{
 								value =  tr.read((String)value);
 							}
@@ -214,12 +221,14 @@ class XmlReaderHandler extends DefaultHandler {
 						}
 					}
 				}
-			} else if (helper.depth == helper.valueStack.size()) { // handle object field
-				Object obj = helper.valueStack.pop();
+			} else if (helper.depth == helper.getValueStackSize()) { // handle object field
+			   boolean currentSubFieldEncrypted = helper.needToEncryptField(localName);
+			   boolean currentElementEncrypted = helper.needToEncryptTopElement();
+				Object obj = helper.popFromValueStack();
 				MappingSchema ms = MappingSchema.fromObject(obj);
 				
-				if (helper.valueStack.size() == 0) {  // the end
-					helper.valueStack.push(obj);
+				if (helper.getValueStackSize() == 0) {  // the end
+					helper.pushToValueStack(obj, null);
 					helper.depth --;
 					return;
 				}
@@ -230,7 +239,14 @@ class XmlReaderHandler extends DefaultHandler {
 					String xmlData = helper.textBuilder.toString();
 					if (!StringUtil.isEmpty(xmlData)) {
 						Object value = Transformer.read(xmlData, field.getType());
-						if (vs.getEncrypted() && (tr != null) && (value.getClass() == String.class))
+						if (tr != null && (value.getClass() == String.class) &&
+						     (
+						        vs.isEncrypted()
+						      ||currentElementEncrypted
+						      ||currentSubFieldEncrypted
+						      ||helper.needToEncryptField(localName)
+						     )
+						   )
 						{
 							value = tr.read((String)value);//decrypt annotated field
 						}
@@ -239,10 +255,17 @@ class XmlReaderHandler extends DefaultHandler {
 				}
             else if (obj instanceof AnyObject)
             {
-               ((AnyObject)obj).content = helper.textBuilder.toString();
+               String content = helper.textBuilder.toString();
+               //here apply trick for special case where "content" field was listed to decrypt in enclosing object
+               if (tr != null && (helper.needToEncryptField("content")||helper.needToEncryptTopElement()) )
+               {
+                  content = tr.read(content); 
+               }
+               
+               ((AnyObject)obj).content = content;
             }
 				
-				Object parentObj = helper.valueStack.peek();
+				Object parentObj = helper.peekFromValueStack();
 				MappingSchema parentMs = MappingSchema.fromObject(parentObj);
 				Map<String, Object> parentXml2SchemaMapping = parentMs.getXml2SchemaMapping();
 				

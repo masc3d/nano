@@ -98,7 +98,7 @@ public class XmlSAXReader implements IReader {
          {
             helper.bindFaultClazz = com.leansoft.nano.soap12.Fault.class;
          }
-			helper.valueStack.push(obj);
+			helper.pushToValueStack(obj, null);
 			
 			XmlReaderHandler saxHandler = new XmlReaderHandler(helper, tr);
 			xmlReader.setContentHandler(saxHandler);
@@ -106,8 +106,8 @@ public class XmlSAXReader implements IReader {
 			xmlReader.parse(new InputSource(source));
 			
          
-			if (helper.valueStack.size() == 1) { // has one and only one object left on the stack
-				return (T)helper.valueStack.pop(); // read is successful, just return the object
+			if (helper.getValueStackSize() == 1) { // has one and only one object left on the stack
+				return (T)helper.popFromValueStack(); // read is successful, just return the object
 			} else {
 				throw new ReaderException("Error to read/descrialize object, no result to return");
 			}

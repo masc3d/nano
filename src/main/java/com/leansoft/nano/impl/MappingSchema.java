@@ -50,6 +50,11 @@ class MappingSchema {
 	// use LRU cache to limit memory consumption.
 	private static Map<Class<?>, MappingSchema> schemaCache = Collections.synchronizedMap(new LRUCache<Class<?>, MappingSchema>(CACHE_SIZE));
 	
+	public static void clearCaches()
+	{
+		schemaCache.clear();
+	}
+	
 	private MappingSchema(Class<?> type) throws MappingException {
 		this.type = type;
 		
@@ -176,6 +181,11 @@ class MappingSchema {
 				if (xmlElement.encrypted())
 				{
 					elementSchema.setEncrypted(true);
+				}
+				
+				if (!xmlElement.sub_fields_to_encrypt().isEmpty())
+				{
+				   elementSchema.setSubFieldsToEncrypt(xmlElement.sub_fields_to_encrypt().split(","));
 				}
 				// List validation
 				handleList(field, elementSchema);

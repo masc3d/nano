@@ -59,7 +59,7 @@ public class ValueSchema {
 		this.encrypted = encrypted;
 	}
    
-	public boolean getEncrypted()
+	public boolean isEncrypted()
 	{
 		return this.encrypted;
 	}
