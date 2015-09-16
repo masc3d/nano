@@ -109,7 +109,7 @@ public class XmlSAXReader implements IReader {
 			if (helper.getValueStackSize() == 1) { // has one and only one object left on the stack
 				return (T)helper.popFromValueStack(); // read is successful, just return the object
 			} else {
-				throw new ReaderException("Error to read/descrialize object, no result to return");
+				throw new ReaderException("Error to read/deserialize object, no result to return");
 			}
 		} catch (SAXException se) {
 			if (se.getException() instanceof MappingException) {
@@ -120,11 +120,11 @@ public class XmlSAXReader implements IReader {
 				ReaderException re = (ReaderException)(se.getException());
 				throw re;
 			}
-			throw new ReaderException("Error to read/descrialize object", se);
+			throw new ReaderException("Error to read/deserialize object", se);
 		} catch (ReaderException re) {
 			throw re;
 		} catch (Exception e) {
-			throw new ReaderException("Error to read/descrialize object", e);
+			throw new ReaderException("Error to read/deserialize object", e);
 		}
 		
 	}

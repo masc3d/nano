@@ -207,16 +207,15 @@ class XmlReaderHandler extends DefaultHandler {
 							}
 							list.add(value);
 						} else {
+						   if (tr != null && 
+                           (  es.isEncrypted()
+                            ||helper.needToEncryptField(localName)
+                           ) 
+                         )
+                     {
+						      xmlData =  tr.read(xmlData);
+		               }						   
 							Object value = Transformer.read(xmlData, field.getType());
-							if (tr != null && 
-							      (  es.isEncrypted()
-							       ||helper.needToEncryptField(localName)
-							      ) && (value.getClass() == String.class))
-							   
-							   
-							{
-								value =  tr.read((String)value);
-							}
 							field.set(obj, value);
 						}
 					}
@@ -237,19 +236,19 @@ class XmlReaderHandler extends DefaultHandler {
 				if (vs != null) {
 					Field field = vs.getField();
 					String xmlData = helper.textBuilder.toString();
+               if (tr != null &&
+                     (
+                        vs.isEncrypted()
+                      ||currentElementEncrypted
+                      ||currentSubFieldEncrypted
+                      ||helper.needToEncryptField(localName)
+                     )
+                   )
+                {
+                  xmlData = tr.read(xmlData);//decrypt annotated field
+                }
 					if (!StringUtil.isEmpty(xmlData)) {
 						Object value = Transformer.read(xmlData, field.getType());
-						if (tr != null && (value.getClass() == String.class) &&
-						     (
-						        vs.isEncrypted()
-						      ||currentElementEncrypted
-						      ||currentSubFieldEncrypted
-						      ||helper.needToEncryptField(localName)
-						     )
-						   )
-						{
-							value = tr.read((String)value);//decrypt annotated field
-						}
 						field.set(obj, value);
 					}
 				}

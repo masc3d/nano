@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.crypto.BadPaddingException;
@@ -11,7 +14,6 @@ import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
-
 
 import com.leansoft.nano.NanoBaseUnitTest;
 import com.leansoft.nano.annotation.AnyElement;
@@ -24,6 +26,8 @@ import com.leansoft.nano.exception.MappingException;
 import com.leansoft.nano.exception.ReaderException;
 import com.leansoft.nano.exception.WriterException;
 import com.leansoft.nano.transform.StringTransform;
+import com.leansoft.nano.transform.Transformable;
+import com.leansoft.nano.transform.Transformer;
 import com.leansoft.nano.util.Base64;
 
 public class EncryptedFieldsTest extends NanoBaseUnitTest 
@@ -95,6 +99,15 @@ public class EncryptedFieldsTest extends NanoBaseUnitTest
       @Order(value=3)
       public PersonInfoTST personInfo;
 
+      @Element(encrypted = true)
+      private Date dob;
+      
+      @Element(encrypted = true)
+      private SpecValueStruct spcval;
+
+      @Element(encrypted = true)
+      private BooleanValue bb;
+      
       @Element 
       @Order(value=2)
       public String verySecretField;
@@ -169,6 +182,16 @@ public class EncryptedFieldsTest extends NanoBaseUnitTest
      public Boolean hidden;  
    }
   
+   private static class BooleanValue  implements Serializable 
+   {
+      private static final long serialVersionUID = -1L;
+      @Value
+      @Order(value=0)
+      public Boolean somevalue;
+      
+   }
+  
+   
   
    //@RootElement(name="pat")
    private static class Patient 
@@ -275,12 +298,62 @@ public class EncryptedFieldsTest extends NanoBaseUnitTest
      return ret;
   }
   
+  
+  public static class CustomValue{
+     private String data;
+     
+     public CustomValue(String data) {
+        this.data = data;
+     }
+     
+     public String toString() {
+        return data;
+     }
+  }
+  
+  public static class CustomValueTransform implements Transformable<CustomValue> {
+     final static String PREFIX="cust:";
+     final static String SUFFIX=":cust";
+     public CustomValue read(String value) throws Exception 
+     {
+        if (value.startsWith(PREFIX) && value.endsWith(SUFFIX))
+        {
+           return new CustomValue(value.substring(PREFIX.length(), value.length() - SUFFIX.length()));
+        }
+        throw new Exception("error pasring ");
+     }
+
+     public String write(CustomValue value) throws Exception {
+        return PREFIX+value.toString()+SUFFIX;
+     }
+     
+  }
+
+  
+  private static class SpecValueStruct
+  {
+     @Value
+     public CustomValue val;
+  }
+
+  
+  public void testCustomTransform() {
+     assertFalse(Transformer.isTransformable(CustomValue.class));
+     Transformer.register(CustomValue.class, new CustomValueTransform());
+     assertTrue(Transformer.isTransformable(CustomValue.class));
+  }
+
   public void testEncrypt() throws WriterException, MappingException
   {
+     Transformer.register(CustomValue.class, new CustomValueTransform());
+
      UploadTubeInfoTST dtstruct = new UploadTubeInfoTST();
      dtstruct.dateOfBirth = createMixedDate("2015-09-03", "15:00");
      
      dtstruct.patientInfo = new PatientInfoTST();
+     dtstruct.patientInfo.dob = new GregorianCalendar(2010, Calendar.SEPTEMBER, 16, 9, 42,22).getTime();
+     dtstruct.patientInfo.spcval = new SpecValueStruct();
+     dtstruct.patientInfo.spcval.val = new CustomValue("ff");
      dtstruct.patientInfo.regularField = "regularFieldInNested1_value";
      dtstruct.patientInfo.secretField = "secretFieldInNested1_value";
      dtstruct.patientInfo.verySecretField = "notQuiteVerySecretInNested1_value";
@@ -294,6 +367,7 @@ public class EncryptedFieldsTest extends NanoBaseUnitTest
      dtstruct.patientInfo.personInfo.secretField = "notQuiteSecretFieldInNested2_value";
      dtstruct.patientInfo.personInfo.lastName = "verySecretInNested2_value";
      dtstruct.patientInfo.personInfo.dob = createMixedDate("2015-09-04", "12:58");
+     
            
      XmlPullWriter writer = new XmlPullWriter(new FieldEncryptor());
      String str  = writer.write(dtstruct);
@@ -322,6 +396,8 @@ public class EncryptedFieldsTest extends NanoBaseUnitTest
               "            </DateOfBirth>\n" + 
               "        </personInfo>\n" + 
               "        <comment1 OverrideMode=\"false\">asAbd5Hfa7fuOHm9XYcHgrx/rQW8J47iCy1QjbAO/jw=</comment1>\n" + 
+              "        <dob>Xyq2H7VONGpuCw3doUQ0MtAqab7VDNrBOqql+u4BhZ4=</dob>\n" +
+              "        <spcval>PpPCAurA899R/PH36+/fOQ==</spcval>\n" +
               "    </patientInfo>\n" + 
               "</UploadTubeInfo>"; 
      assertEquals(expected, str);
@@ -331,7 +407,8 @@ public class EncryptedFieldsTest extends NanoBaseUnitTest
   
   public void testDecrypt() throws WriterException, MappingException, ReaderException
   {
-     String expected =
+     Transformer.register(CustomValue.class, new CustomValueTransform());
+     String inputXml =
            "<?xml version=\"1.0\" encoding=\"utf-8\"?><UploadTubeInfo>\n" + 
            "    <DateOfBirth nil=\"false\">\n" + 
            "        <justField>justFieldValue</justField>\n" + 
@@ -356,12 +433,14 @@ public class EncryptedFieldsTest extends NanoBaseUnitTest
            "            </DateOfBirth>\n" + 
            "        </personInfo>\n" + 
            "        <comment1 OverrideMode=\"false\">asAbd5Hfa7fuOHm9XYcHgrx/rQW8J47iCy1QjbAO/jw=</comment1>\n" + 
+           "        <dob>Xyq2H7VONGpuCw3doUQ0MtAqab7VDNrBOqql+u4BhZ4=</dob>\n" +
+           "        <spcval>PpPCAurA899R/PH36+/fOQ==</spcval>\n" +
            "    </patientInfo>\n" + 
            "</UploadTubeInfo>"; 
         
         
      XmlSAXReader reader = new XmlSAXReader(new FieldEncryptor());
-     UploadTubeInfoTST fromXmlDbStruct = (UploadTubeInfoTST)reader.read(UploadTubeInfoTST.class, expected);
+     UploadTubeInfoTST fromXmlDbStruct = (UploadTubeInfoTST)reader.read(UploadTubeInfoTST.class, inputXml);
      assertEquals(2, fromXmlDbStruct.dateOfBirth.content.size());
      assertEquals("2015-09-03",((AnyObject)fromXmlDbStruct.dateOfBirth.content.get(0)).content);
      assertEquals("15:00", ((AnyObject)fromXmlDbStruct.dateOfBirth.content.get(1)).content);
@@ -382,6 +461,8 @@ public class EncryptedFieldsTest extends NanoBaseUnitTest
      assertEquals(2, fromXmlDbStruct.patientInfo.personInfo.dob.content.size());
      assertEquals("2015-09-04",((AnyObject)fromXmlDbStruct.patientInfo.personInfo.dob.content.get(0)).content);
      assertEquals("12:58", ((AnyObject)fromXmlDbStruct.patientInfo.personInfo.dob.content.get(1)).content);
+     assertEquals("ff", fromXmlDbStruct.patientInfo.spcval.val.data );
+     assertEquals(new GregorianCalendar(2010, Calendar.SEPTEMBER, 16, 9, 42,22).getTime(), fromXmlDbStruct.patientInfo.dob);
    }
    
    public void testNoEncryption() throws WriterException, MappingException
