@@ -116,7 +116,6 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
                     <source>1.6</source>
-                    <target>1.6</target>
                     <encoding>UTF-8</encoding>
                     <links>
                         <link>http://docs.oracle.com/javase/6/docs/api/</link>
