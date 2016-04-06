@@ -3,7 +3,6 @@
 package com.leansoft.nano.person;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 @RootElement(name = "persons", namespace = "http://www.leansoft.com/person")
@@ -11,26 +10,26 @@ public class PersonListType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element
-	private List<PersonType> person;
-	
-    
-	/**
-	 * public getter
-	 *
+    @Element
+    private List<PersonType> person;
+
+
+    /**
+     * public getter
+     *
      * @returns java.util.List<com.leansoft.nano.person.PersonType>
-	 */
-	public List<PersonType> getPerson() {
-	    return this.person;
-	}
-	
-	/**
-	 * public setter
-	 *
+     */
+    public List<PersonType> getPerson() {
+        return this.person;
+    }
+
+    /**
+     * public setter
+     *
      * @param java.util.List<com.leansoft.nano.person.PersonType>
-	 */
-	public void setPerson(List<PersonType> person) {
-	    this.person = person;
-	}
+     */
+    public void setPerson(List<PersonType> person) {
+        this.person = person;
+    }
 
 }

@@ -35,7 +35,7 @@ public class ImageLoaderHandler extends Handler {
     }
 
     public ImageLoaderHandler(ImageView imageView, String imageUrl,
- Drawable errorDrawable) {
+                              Drawable errorDrawable) {
         this(imageView, imageUrl);
         this.errorDrawable = errorDrawable;
     }
@@ -56,11 +56,9 @@ public class ImageLoaderHandler extends Handler {
     /**
      * Override this method if you need custom handler logic. Note that this method can actually be
      * called directly for performance reasons, in which case the message will be null
-     * 
-     * @param bitmap
-     *            the bitmap returned from the image loader
-     * @param msg
-     *            the handler message; can be null
+     *
+     * @param bitmap the bitmap returned from the image loader
+     * @param msg    the handler message; can be null
      * @return true if the view was updated with the new image, false if it was discarded
      */
     protected boolean handleImageLoaded(Bitmap bitmap, Message msg) {

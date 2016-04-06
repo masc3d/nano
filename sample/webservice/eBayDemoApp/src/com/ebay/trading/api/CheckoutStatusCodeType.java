@@ -3,65 +3,53 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Indicates the current Checkout status for an order line item.
- * 
  */
 public enum CheckoutStatusCodeType {
 
     /**
-     * 
-   * (out) Checkout complete.
-   * 
+     * (out) Checkout complete.
      */
     CHECKOUT_COMPLETE("CheckoutComplete"),
-  
+
 
     /**
-     * 
-   * (out) Checkout incomplete.
-   * 
+     * (out) Checkout incomplete.
      */
     CHECKOUT_INCOMPLETE("CheckoutIncomplete"),
-  
+
 
     /**
-     * 
-   * (out) Buyer requests total from seller.
-   * 
+     * (out) Buyer requests total from seller.
      */
     BUYER_REQUESTS_TOTAL("BuyerRequestsTotal"),
-  
+
 
     /**
-     * 
-   * (out) Seller responded to buyer's request.
-   * 
+     * (out) Seller responded to buyer's request.
      */
     SELLER_RESPONDED("SellerResponded"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for future use.
-   * 
+     * (out) Reserved for future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     CheckoutStatusCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static CheckoutStatusCodeType fromValue(String v) {
         if (v != null) {
-            for (CheckoutStatusCodeType c: CheckoutStatusCodeType.values()) {
+            for (CheckoutStatusCodeType c : CheckoutStatusCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

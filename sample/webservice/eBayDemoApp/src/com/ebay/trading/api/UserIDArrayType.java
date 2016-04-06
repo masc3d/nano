@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Contains an array of eBay UserID entries.
- * 
  */
 public class UserIDArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "UserID")
-	@Order(value=0)
-	public List<String> userID;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "UserID")
+    @Order(value = 0)
+    public List<String> userID;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

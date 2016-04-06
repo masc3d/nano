@@ -3,39 +3,36 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
- * 
  * Contains a message posted to a dispute. The message can be posted
  * by the buyer, the seller, or an eBay representative.
- * 
  */
 public class DisputeMessageType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "MessageID")
-	@Order(value=0)
-	public Integer messageID;	
-	
-	@Element(name = "MessageSource")
-	@Order(value=1)
-	public DisputeMessageSourceCodeType messageSource;	
-	
-	@Element(name = "MessageCreationTime")
-	@Order(value=2)
-	public Date messageCreationTime;	
-	
-	@Element(name = "MessageText")
-	@Order(value=3)
-	public String messageText;	
-	
-	@AnyElement
-	@Order(value=4)
-	public List<Object> any;	
-	
-    
+    @Element(name = "MessageID")
+    @Order(value = 0)
+    public Integer messageID;
+
+    @Element(name = "MessageSource")
+    @Order(value = 1)
+    public DisputeMessageSourceCodeType messageSource;
+
+    @Element(name = "MessageCreationTime")
+    @Order(value = 2)
+    public Date messageCreationTime;
+
+    @Element(name = "MessageText")
+    @Order(value = 3)
+    public String messageText;
+
+    @AnyElement
+    @Order(value = 4)
+    public List<Object> any;
+
+
 }

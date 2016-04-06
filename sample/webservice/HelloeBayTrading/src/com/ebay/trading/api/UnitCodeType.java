@@ -3,98 +3,78 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Units of measure that you can use to specify properties such as weight and size
  * dimensions.
- * 
  */
 public enum UnitCodeType {
 
     /**
-     * 
-   * Kilograms
-   * 
+     * Kilograms
      */
     KG("kg"),
-  
+
 
     /**
-     * 
-   * Grams
-   * 
+     * Grams
      */
     GM("gm"),
-  
+
 
     /**
-     * 
-   * Pounds
-   * 
+     * Pounds
      */
     LBS("lbs"),
-  
+
 
     /**
-     * 
-   * Ounces
-   * 
+     * Ounces
      */
     OZ("oz"),
-  
+
 
     /**
-     * 
-   * Centimeters
-   * 
+     * Centimeters
      */
     CM("cm"),
-  
+
 
     /**
-     * 
-   * Milimeters
-   * 
+     * Milimeters
      */
     MM("mm"),
-  
+
 
     /**
-     * 
-   * Inches
-   * 
+     * Inches
      */
     INCHES("inches"),
-  
+
 
     /**
-     * 
-   * Feet
-   * 
+     * Feet
      */
     FT("ft"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     UnitCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static UnitCodeType fromValue(String v) {
         if (v != null) {
-            for (UnitCodeType c: UnitCodeType.values()) {
+            for (UnitCodeType c : UnitCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

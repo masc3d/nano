@@ -3,26 +3,23 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Creates or modifies a promotional sale. Promotional sales enable sellers
  * to apply discounts and/or free shipping across many listings.
- * 
  */
 @RootElement(name = "SetPromotionalSaleRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class SetPromotionalSaleRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Action")
-	@Order(value=0)
-	public ModifyActionCodeType action;	
-	
-	@Element(name = "PromotionalSaleDetails")
-	@Order(value=1)
-	public PromotionalSaleType promotionalSaleDetails;	
-	
-    
+    @Element(name = "Action")
+    @Order(value = 0)
+    public ModifyActionCodeType action;
+
+    @Element(name = "PromotionalSaleDetails")
+    @Order(value = 1)
+    public PromotionalSaleType promotionalSaleDetails;
+
+
 }

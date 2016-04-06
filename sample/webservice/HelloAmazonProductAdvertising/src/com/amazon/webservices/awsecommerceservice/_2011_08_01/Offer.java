@@ -3,7 +3,6 @@
 package com.amazon.webservices.awsecommerceservice._2011_08_01;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 @RootElement(name = "Offer", namespace = "http://webservices.amazon.com/AWSECommerceService/2011-08-01")
@@ -11,25 +10,25 @@ public class Offer implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Merchant")
-	@Order(value=0)
-	public Merchant merchant;	
-	
-	@Element(name = "OfferAttributes")
-	@Order(value=1)
-	public OfferAttributes offerAttributes;	
-	
-	@Element(name = "OfferListing")
-	@Order(value=2)
-	public List<OfferListing> offerListing;	
-	
-	@Element(name = "LoyaltyPoints")
-	@Order(value=3)
-	public LoyaltyPoints loyaltyPoints;	
-	
-	@Element(name = "Promotions")
-	@Order(value=4)
-	public Promotions promotions;	
-	
-    
+    @Element(name = "Merchant")
+    @Order(value = 0)
+    public Merchant merchant;
+
+    @Element(name = "OfferAttributes")
+    @Order(value = 1)
+    public OfferAttributes offerAttributes;
+
+    @Element(name = "OfferListing")
+    @Order(value = 2)
+    public List<OfferListing> offerListing;
+
+    @Element(name = "LoyaltyPoints")
+    @Order(value = 3)
+    public LoyaltyPoints loyaltyPoints;
+
+    @Element(name = "Promotions")
+    @Order(value = 4)
+    public Promotions promotions;
+
+
 }

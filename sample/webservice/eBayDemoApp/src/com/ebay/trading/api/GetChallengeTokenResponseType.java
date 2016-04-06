@@ -3,29 +3,26 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Response to GetChallengeToken request.
- * 
  */
 @RootElement(name = "GetChallengeTokenResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetChallengeTokenResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ChallengeToken")
-	@Order(value=0)
-	public String challengeToken;	
-	
-	@Element(name = "ImageChallengeURL")
-	@Order(value=1)
-	public String imageChallengeURL;	
-	
-	@Element(name = "AudioChallengeURL")
-	@Order(value=2)
-	public String audioChallengeURL;	
-	
-    
+    @Element(name = "ChallengeToken")
+    @Order(value = 0)
+    public String challengeToken;
+
+    @Element(name = "ImageChallengeURL")
+    @Order(value = 1)
+    public String imageChallengeURL;
+
+    @Element(name = "AudioChallengeURL")
+    @Order(value = 2)
+    public String audioChallengeURL;
+
+
 }

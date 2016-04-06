@@ -3,22 +3,19 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Represents a list of disputes. Can hold zero or more Dispute
  * types, each of which describes a dispute.
- * 
  */
 public class DisputeArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Dispute")
-	@Order(value=0)
-	public List<DisputeType> dispute;	
-	
-    
+    @Element(name = "Dispute")
+    @Order(value = 0)
+    public List<DisputeType> dispute;
+
+
 }

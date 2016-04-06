@@ -3,59 +3,49 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * ListingFlowCodeType - Type declaration to be used by other schema.
  * Identifies the listing flows on the eBay Web site for use with calls like
  * GetItemRecommendations.
- * 
  */
 public enum ListingFlowCodeType {
 
     /**
-     * 
-   * (in) AddItem (Sell Your Item) listing flow.
-   * 
+     * (in) AddItem (Sell Your Item) listing flow.
      */
     ADD_ITEM("AddItem"),
-  
+
 
     /**
-     * 
-   * (in) ReviseItem (Revise Your Item) listing flow.
-   * 
+     * (in) ReviseItem (Revise Your Item) listing flow.
      */
     REVISE_ITEM("ReviseItem"),
-  
+
 
     /**
-     * 
-   * (in) RelistItem listing flow.
-   * 
+     * (in) RelistItem listing flow.
      */
     RELIST_ITEM("RelistItem"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     ListingFlowCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static ListingFlowCodeType fromValue(String v) {
         if (v != null) {
-            for (ListingFlowCodeType c: ListingFlowCodeType.values()) {
+            for (ListingFlowCodeType c : ListingFlowCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

@@ -3,57 +3,47 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * List of possible statuses for Store custom pages.
- * 
  */
 public enum StoreCustomPageStatusCodeType {
 
     /**
-     * 
-   * The page is visible.
-   * 
+     * The page is visible.
      */
     ACTIVE("Active"),
-  
+
 
     /**
-     * 
-   * The page is to be deleted.
-   * 
+     * The page is to be deleted.
      */
     DELETE("Delete"),
-  
+
 
     /**
-     * 
-   * The page is not visible.
-   * 
+     * The page is not visible.
      */
     INACTIVE("Inactive"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     StoreCustomPageStatusCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static StoreCustomPageStatusCodeType fromValue(String v) {
         if (v != null) {
-            for (StoreCustomPageStatusCodeType c: StoreCustomPageStatusCodeType.values()) {
+            for (StoreCustomPageStatusCodeType c : StoreCustomPageStatusCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

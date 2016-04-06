@@ -3,20 +3,17 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Pricing data returned from the Product Pricing engine.
- * 
  */
 public class PricingRecommendationsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ProductInfo")
-	@Order(value=0)
-	public ProductInfoType productInfo;	
-	
-    
+    @Element(name = "ProductInfo")
+    @Order(value = 0)
+    public ProductInfoType productInfo;
+
+
 }

@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Returns a summary of pending or paid payments that Half.com created for the seller
  * identified by the authentication token in the request. Only returns payments that
  * occurred within a particular pay period. Each payment is for one transaction for
@@ -22,36 +20,35 @@ import java.util.List;
  * the month. Payments are submitted to the seller's financial institution a certain
  * number of days after the current pay period ends (see the Half.com online help for
  * details).
- * 
  */
 @RootElement(name = "GetSellerPaymentsResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetSellerPaymentsResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "PaginationResult")
-	@Order(value=0)
-	public PaginationResultType paginationResult;	
-	
-	@Element(name = "HasMorePayments")
-	@Order(value=1)
-	public Boolean hasMorePayments;	
-	
-	@Element(name = "SellerPayment")
-	@Order(value=2)
-	public List<SellerPaymentType> sellerPayment;	
-	
-	@Element(name = "PaymentsPerPage")
-	@Order(value=3)
-	public Integer paymentsPerPage;	
-	
-	@Element(name = "PageNumber")
-	@Order(value=4)
-	public Integer pageNumber;	
-	
-	@Element(name = "ReturnedPaymentCountActual")
-	@Order(value=5)
-	public Integer returnedPaymentCountActual;	
-	
-    
+    @Element(name = "PaginationResult")
+    @Order(value = 0)
+    public PaginationResultType paginationResult;
+
+    @Element(name = "HasMorePayments")
+    @Order(value = 1)
+    public Boolean hasMorePayments;
+
+    @Element(name = "SellerPayment")
+    @Order(value = 2)
+    public List<SellerPaymentType> sellerPayment;
+
+    @Element(name = "PaymentsPerPage")
+    @Order(value = 3)
+    public Integer paymentsPerPage;
+
+    @Element(name = "PageNumber")
+    @Order(value = 4)
+    public Integer pageNumber;
+
+    @Element(name = "ReturnedPaymentCountActual")
+    @Order(value = 5)
+    public Integer returnedPaymentCountActual;
+
+
 }

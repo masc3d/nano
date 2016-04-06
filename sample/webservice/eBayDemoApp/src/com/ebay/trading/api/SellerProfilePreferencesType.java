@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
- *   Type defining the <b>SellerProfilePreferences</b> container. This container
+ * Type defining the <b>SellerProfilePreferences</b> container. This container
  * consists of a flag that indicates whether or not the seller has opted into Business
  * Policies, as well as a list of Business Policies profiles that have been set up for the
  * seller's account.
@@ -15,19 +13,18 @@ import com.leansoft.nano.annotation.*;
  * <span class="tablenote"><strong>Note:</strong>
  * Business Policies are not yet available for use on the eBay platform.
  * </span>
- * 
  */
 public class SellerProfilePreferencesType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "SellerProfileOptedIn")
-	@Order(value=0)
-	public Boolean sellerProfileOptedIn;	
-	
-	@Element(name = "SupportedSellerProfiles")
-	@Order(value=1)
-	public SupportedSellerProfilesType supportedSellerProfiles;	
-	
-    
+    @Element(name = "SellerProfileOptedIn")
+    @Order(value = 0)
+    public Boolean sellerProfileOptedIn;
+
+    @Element(name = "SupportedSellerProfiles")
+    @Order(value = 1)
+    public SupportedSellerProfilesType supportedSellerProfiles;
+
+
 }

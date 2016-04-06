@@ -3,49 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Calculated Shipping Rate Options.
- * 
  */
 public enum CalculatedShippingRateOptionCodeType {
 
     /**
-     * 
-   * Calculate the Actual Shipping Rate from Combined Item Weight
-   * 
+     * Calculate the Actual Shipping Rate from Combined Item Weight
      */
     COMBINED_ITEM_WEIGHT("CombinedItemWeight"),
-  
+
 
     /**
-     * 
-   * Calculate the Actual Shipping Rate from Individual Item Weight
-   * 
+     * Calculate the Actual Shipping Rate from Individual Item Weight
      */
     INDIVIDUAL_ITEM_WEIGHT("IndividualItemWeight"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     CalculatedShippingRateOptionCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static CalculatedShippingRateOptionCodeType fromValue(String v) {
         if (v != null) {
-            for (CalculatedShippingRateOptionCodeType c: CalculatedShippingRateOptionCodeType.values()) {
+            for (CalculatedShippingRateOptionCodeType c : CalculatedShippingRateOptionCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

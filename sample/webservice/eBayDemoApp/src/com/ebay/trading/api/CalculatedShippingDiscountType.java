@@ -3,30 +3,27 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Details of an individual discount profile defined by the
  * user for calculated shipping.
- * 
  */
 public class CalculatedShippingDiscountType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "DiscountName")
-	@Order(value=0)
-	public DiscountNameCodeType discountName;	
-	
-	@Element(name = "DiscountProfile")
-	@Order(value=1)
-	public List<DiscountProfileType> discountProfile;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "DiscountName")
+    @Order(value = 0)
+    public DiscountNameCodeType discountName;
+
+    @Element(name = "DiscountProfile")
+    @Order(value = 1)
+    public List<DiscountProfileType> discountProfile;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

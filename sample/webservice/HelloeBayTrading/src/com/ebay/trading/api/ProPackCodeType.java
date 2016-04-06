@@ -3,65 +3,53 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Specifies whether a listing feature is enabled for this site and whether it is restricted to a set of sellers.
- * 
  */
 public enum ProPackCodeType {
 
     /**
-     * 
-   * The listing feature is enabled for the site.
-   * 
+     * The listing feature is enabled for the site.
      */
     ENABLED("Enabled"),
-  
+
 
     /**
-     * 
-   * The listing feature is disabled for the site.
-   * 
+     * The listing feature is disabled for the site.
      */
     DISABLED("Disabled"),
-  
+
 
     /**
-     * 
-   * The listing feature is restricted to PowerSellers.
-   * 
+     * The listing feature is restricted to PowerSellers.
      */
     POWER_SELLER_ONLY("PowerSellerOnly"),
-  
+
 
     /**
-     * 
-   * The listing feature is restricted to TopRatedSellers.
-   * 
+     * The listing feature is restricted to TopRatedSellers.
      */
     TOP_RATED_SELLER_ONLY("TopRatedSellerOnly"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     ProPackCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static ProPackCodeType fromValue(String v) {
         if (v != null) {
-            for (ProPackCodeType c: ProPackCodeType.values()) {
+            for (ProPackCodeType c : ProPackCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

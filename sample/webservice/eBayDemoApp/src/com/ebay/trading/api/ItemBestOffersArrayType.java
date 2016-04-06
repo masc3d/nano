@@ -3,26 +3,23 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * A collection of details about the best offers received for a specific item. Empty if there are no best offers. Includes the buyer and seller messages only if
  * the ReturnAll detail level is used.
- * 
  */
 public class ItemBestOffersArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ItemBestOffers")
-	@Order(value=0)
-	public List<ItemBestOffersType> itemBestOffers;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "ItemBestOffers")
+    @Order(value = 0)
+    public List<ItemBestOffersType> itemBestOffers;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

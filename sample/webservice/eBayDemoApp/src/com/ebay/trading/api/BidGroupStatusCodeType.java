@@ -3,53 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * This type is deprecated as the Bid Assistant feature is no longer available.
- * 
- * 
  */
 public enum BidGroupStatusCodeType {
 
     /**
-     * 
-   * 
-   * (out) Indicates that the bid group is open.
-   * 
+     * (out) Indicates that the bid group is open.
      */
     OPEN("Open"),
-  
+
 
     /**
-     * 
-   * 
-   * (out) Indicates that the bid group is Closed.
-   * 
+     * (out) Indicates that the bid group is Closed.
      */
     CLOSED("Closed"),
-  
+
 
     /**
-     * 
-   * 
-   * Reserved for future use.
-   * 
+     * Reserved for future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     BidGroupStatusCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static BidGroupStatusCodeType fromValue(String v) {
         if (v != null) {
-            for (BidGroupStatusCodeType c: BidGroupStatusCodeType.values()) {
+            for (BidGroupStatusCodeType c : BidGroupStatusCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

@@ -3,7 +3,6 @@
 package com.dataaccess.webservicesserver;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.math.BigDecimal;
 
 @RootElement(name = "NumberToDollars", namespace = "http://www.dataaccess.com/webservicesserver/")
@@ -11,9 +10,9 @@ public class NumberToDollars implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element
-	@Order(value=0)
-	public BigDecimal dNum;	
-	
-    
+    @Element
+    @Order(value = 0)
+    public BigDecimal dNum;
+
+
 }

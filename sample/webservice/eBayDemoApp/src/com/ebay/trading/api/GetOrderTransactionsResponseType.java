@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Response to GetOrderTransactions request.
- * 
  */
 @RootElement(name = "GetOrderTransactionsResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetOrderTransactionsResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "OrderArray")
-	@Order(value=0)
-	public OrderArrayType orderArray;	
-	
-    
+    @Element(name = "OrderArray")
+    @Order(value = 0)
+    public OrderArrayType orderArray;
+
+
 }

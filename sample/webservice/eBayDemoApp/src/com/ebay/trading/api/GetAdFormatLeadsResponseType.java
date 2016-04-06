@@ -3,27 +3,24 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Returns number of leads and contact and other information for each lead. One
  * AdFormatLead node is returned for each lead.
- * 
  */
 @RootElement(name = "GetAdFormatLeadsResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetAdFormatLeadsResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "AdFormatLead")
-	@Order(value=0)
-	public List<AdFormatLeadType> adFormatLead;	
-	
-	@Element(name = "AdFormatLeadCount")
-	@Order(value=1)
-	public Integer adFormatLeadCount;	
-	
-    
+    @Element(name = "AdFormatLead")
+    @Order(value = 0)
+    public List<AdFormatLeadType> adFormatLead;
+
+    @Element(name = "AdFormatLeadCount")
+    @Order(value = 1)
+    public Integer adFormatLeadCount;
+
+
 }

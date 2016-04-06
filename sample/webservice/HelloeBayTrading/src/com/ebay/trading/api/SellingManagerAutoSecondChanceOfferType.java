@@ -3,42 +3,39 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Defines the options available for an automated
  * second chance offer rule.
- * 
  */
 public class SellingManagerAutoSecondChanceOfferType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "SecondChanceOfferCondition")
-	@Order(value=0)
-	public SellingManagerAutoSecondChanceOfferTypeCodeType secondChanceOfferCondition;	
-	
-	@Element(name = "Amount")
-	@Order(value=1)
-	public AmountType amount;	
-	
-	@Element(name = "ProfitPercent")
-	@Order(value=2)
-	public Float profitPercent;	
-	
-	@Element(name = "Duration")
-	@Order(value=3)
-	public SecondChanceOfferDurationCodeType duration;	
-	
-	@Element(name = "ListingHoldInventoryLevel")
-	@Order(value=4)
-	public Integer listingHoldInventoryLevel;	
-	
-	@AnyElement
-	@Order(value=5)
-	public List<Object> any;	
-	
-    
+    @Element(name = "SecondChanceOfferCondition")
+    @Order(value = 0)
+    public SellingManagerAutoSecondChanceOfferTypeCodeType secondChanceOfferCondition;
+
+    @Element(name = "Amount")
+    @Order(value = 1)
+    public AmountType amount;
+
+    @Element(name = "ProfitPercent")
+    @Order(value = 2)
+    public Float profitPercent;
+
+    @Element(name = "Duration")
+    @Order(value = 3)
+    public SecondChanceOfferDurationCodeType duration;
+
+    @Element(name = "ListingHoldInventoryLevel")
+    @Order(value = 4)
+    public Integer listingHoldInventoryLevel;
+
+    @AnyElement
+    @Order(value = 5)
+    public List<Object> any;
+
+
 }

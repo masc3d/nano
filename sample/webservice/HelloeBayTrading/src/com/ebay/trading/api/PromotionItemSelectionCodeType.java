@@ -3,53 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * This type is deprecated as Cross Promotions are no longer supported in the APIs.
- * 
- * 
  */
 public enum PromotionItemSelectionCodeType {
 
     /**
-     * 
-   * 
-   * (out) Manual selection.
-   * 
+     * (out) Manual selection.
      */
     MANUAL("Manual"),
-  
+
 
     /**
-     * 
-   * 
-   * (out) Automatic selection.
-   * 
+     * (out) Automatic selection.
      */
     AUTOMATIC("Automatic"),
-  
+
 
     /**
-     * 
-   * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     PromotionItemSelectionCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static PromotionItemSelectionCodeType fromValue(String v) {
         if (v != null) {
-            for (PromotionItemSelectionCodeType c: PromotionItemSelectionCodeType.values()) {
+            for (PromotionItemSelectionCodeType c : PromotionItemSelectionCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

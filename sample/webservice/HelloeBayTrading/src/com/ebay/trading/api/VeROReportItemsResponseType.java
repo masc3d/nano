@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Contains a packet ID and status for the items reported by the VeRO Program member.
- * 
  */
 @RootElement(name = "VeROReportItemsResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class VeROReportItemsResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "VeROReportPacketID")
-	@Order(value=0)
-	public Long veROReportPacketID;	
-	
-	@Element(name = "VeROReportPacketStatus")
-	@Order(value=1)
-	public VeROReportPacketStatusCodeType veROReportPacketStatus;	
-	
-    
+    @Element(name = "VeROReportPacketID")
+    @Order(value = 0)
+    public Long veROReportPacketID;
+
+    @Element(name = "VeROReportPacketStatus")
+    @Order(value = 1)
+    public VeROReportPacketStatusCodeType veROReportPacketStatus;
+
+
 }

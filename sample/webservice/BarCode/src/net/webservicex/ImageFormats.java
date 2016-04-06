@@ -5,48 +5,48 @@ package net.webservicex;
 public enum ImageFormats {
 
     BMP("BMP"),
-  
+
 
     EMF("EMF"),
-  
+
 
     EXIF("EXIF"),
-  
+
 
     GIF("GIF"),
-  
+
 
     ICON("ICON"),
-  
+
 
     JPEG("JPEG"),
-  
+
 
     MEMORY_BMP("MemoryBMP"),
-  
+
 
     PNG("PNG"),
-  
+
 
     TIFF("TIFF"),
-  
+
 
     WMF("WMF");
-  
-  
+
+
     private final String value;
-  
+
     ImageFormats(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static ImageFormats fromValue(String v) {
         if (v != null) {
-            for (ImageFormats c: ImageFormats.values()) {
+            for (ImageFormats c : ImageFormats.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

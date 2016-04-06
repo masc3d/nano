@@ -3,23 +3,20 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Returns the URL of an eBay Picture Services image whose expiration date was
  * extended.
- * 
  */
 @RootElement(name = "ExtendSiteHostedPicturesResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class ExtendSiteHostedPicturesResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "PictureURL")
-	@Order(value=0)
-	public List<String> pictureURL;	
-	
-    
+    @Element(name = "PictureURL")
+    @Order(value = 0)
+    public List<String> pictureURL;
+
+
 }

@@ -3,29 +3,26 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Container of token and user reply.
- * 
  */
 public class BotBlockRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "BotBlockToken")
-	@Order(value=0)
-	public String botBlockToken;	
-	
-	@Element(name = "BotBlockUserInput")
-	@Order(value=1)
-	public String botBlockUserInput;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "BotBlockToken")
+    @Order(value = 0)
+    public String botBlockToken;
+
+    @Element(name = "BotBlockUserInput")
+    @Order(value = 1)
+    public String botBlockUserInput;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

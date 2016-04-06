@@ -3,49 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * JPG or GIF format.
- * 
  */
 public enum PictureFormatCodeType {
 
     /**
-     * 
-   * JPG format.
-   * 
+     * JPG format.
      */
     JPG("JPG"),
-  
+
 
     /**
-     * 
-   * GIF format.
-   * 
+     * GIF format.
      */
     GIF("GIF"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     PictureFormatCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static PictureFormatCodeType fromValue(String v) {
         if (v != null) {
-            for (PictureFormatCodeType c: PictureFormatCodeType.values()) {
+            for (PictureFormatCodeType c : PictureFormatCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

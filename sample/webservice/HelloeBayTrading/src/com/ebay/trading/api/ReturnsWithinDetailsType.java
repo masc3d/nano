@@ -3,32 +3,29 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Type defining the <b>ReturnPolicyDetails.ReturnsWithin</b> container that
  * is returned in <b>GeteBayDetails</b>. This container contains the values
  * that may be used in the <b>ReturnPolicy.ReturnsWithinOption</b> field of
  * Add/Revise/Relist API calls.
- * 
  */
 public class ReturnsWithinDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ReturnsWithinOption")
-	@Order(value=0)
-	public String returnsWithinOption;	
-	
-	@Element(name = "Description")
-	@Order(value=1)
-	public String description;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "ReturnsWithinOption")
+    @Order(value = 0)
+    public String returnsWithinOption;
+
+    @Element(name = "Description")
+    @Order(value = 1)
+    public String description;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

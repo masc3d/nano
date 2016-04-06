@@ -4,64 +4,61 @@ import java.lang.reflect.Field;
 
 /**
  * This bean stores mapping between an XML value and a POJO field.
- * 
- * @author bulldog
  *
+ * @author bulldog
  */
 public class ValueSchema {
 
-	private boolean data;
-	
-	private Field field;
+    private boolean data;
 
-	private boolean encrypted;
+    private Field field;
 
-	/**
-	 * Indicates if the string content of the field should be put 
-	 * in a CDATA container on serialization
-	 * 
-	 * @return true or false
-	 */
-	public boolean isData() {
-		return data;
-	}
+    private boolean encrypted;
 
-	/**
-	 * Set if the string content of the field should be put 
-	 * in a CDATA container on serialization
-	 * 
-	 * @param data
-	 */
-	public void setData(boolean data) {
-		this.data = data;
-	}
+    /**
+     * Indicates if the string content of the field should be put
+     * in a CDATA container on serialization
+     *
+     * @return true or false
+     */
+    public boolean isData() {
+        return data;
+    }
 
-	/**
-	 * Get POJO field
-	 * 
-	 * @return POJO field
-	 */
-	public Field getField() {
-		return field;
-	}
+    /**
+     * Set if the string content of the field should be put
+     * in a CDATA container on serialization
+     *
+     * @param data
+     */
+    public void setData(boolean data) {
+        this.data = data;
+    }
 
-	/**
-	 * Get POJO field
-	 * 
-	 * @param field
-	 */
-	public void setField(Field field) {
-		this.field = field;
-	}
+    /**
+     * Get POJO field
+     *
+     * @return POJO field
+     */
+    public Field getField() {
+        return field;
+    }
 
-	public void setEncrypted(boolean encrypted)
-	{
-		this.encrypted = encrypted;
-	}
-   
-	public boolean isEncrypted()
-	{
-		return this.encrypted;
-	}
-	
+    /**
+     * Get POJO field
+     *
+     * @param field
+     */
+    public void setField(Field field) {
+        this.field = field;
+    }
+
+    public void setEncrypted(boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+
+    public boolean isEncrypted() {
+        return this.encrypted;
+    }
+
 }

@@ -3,24 +3,21 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Details about items involved in the summary for the specified time period.
- * 
  */
 public class ItemTotalsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "TotalQuantity")
-	@Order(value=0)
-	public Long totalQuantity;	
-	
-	@Element(name = "TotalValue")
-	@Order(value=1)
-	public AmountType totalValue;	
-	
-    
+    @Element(name = "TotalQuantity")
+    @Order(value = 0)
+    public Long totalQuantity;
+
+    @Element(name = "TotalValue")
+    @Order(value = 1)
+    public AmountType totalValue;
+
+
 }

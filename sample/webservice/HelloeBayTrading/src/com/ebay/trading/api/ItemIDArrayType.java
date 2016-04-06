@@ -3,26 +3,23 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Type defining the <b>PromotionalSaleItemIDArray</b> container, which
  * consists of an array of listings to which a Promotional Sale applies.
- * 
  */
 public class ItemIDArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ItemID")
-	@Order(value=0)
-	public List<String> itemID;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "ItemID")
+    @Order(value = 0)
+    public List<String> itemID;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

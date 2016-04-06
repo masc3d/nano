@@ -3,55 +3,52 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
- * 
- *         Type defining the <b>SiteHostedPictureDetails</b> container that is returned
+ * Type defining the <b>SiteHostedPictureDetails</b> container that is returned
  * in an <b>UploadSiteHostedPictures</b> call.
- *       
  */
 public class SiteHostedPictureDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "PictureName")
-	@Order(value=0)
-	public String pictureName;	
-	
-	@Element(name = "PictureSet")
-	@Order(value=1)
-	public PictureSetCodeType pictureSet;	
-	
-	@Element(name = "PictureFormat")
-	@Order(value=2)
-	public PictureFormatCodeType pictureFormat;	
-	
-	@Element(name = "FullURL")
-	@Order(value=3)
-	public String fullURL;	
-	
-	@Element(name = "BaseURL")
-	@Order(value=4)
-	public String baseURL;	
-	
-	@Element(name = "PictureSetMember")
-	@Order(value=5)
-	public List<PictureSetMemberType> pictureSetMember;	
-	
-	@Element(name = "ExternalPictureURL")
-	@Order(value=6)
-	public String externalPictureURL;	
-	
-	@Element(name = "UseByDate")
-	@Order(value=7)
-	public Date useByDate;	
-	
-	@AnyElement
-	@Order(value=8)
-	public List<Object> any;	
-	
-    
+    @Element(name = "PictureName")
+    @Order(value = 0)
+    public String pictureName;
+
+    @Element(name = "PictureSet")
+    @Order(value = 1)
+    public PictureSetCodeType pictureSet;
+
+    @Element(name = "PictureFormat")
+    @Order(value = 2)
+    public PictureFormatCodeType pictureFormat;
+
+    @Element(name = "FullURL")
+    @Order(value = 3)
+    public String fullURL;
+
+    @Element(name = "BaseURL")
+    @Order(value = 4)
+    public String baseURL;
+
+    @Element(name = "PictureSetMember")
+    @Order(value = 5)
+    public List<PictureSetMemberType> pictureSetMember;
+
+    @Element(name = "ExternalPictureURL")
+    @Order(value = 6)
+    public String externalPictureURL;
+
+    @Element(name = "UseByDate")
+    @Order(value = 7)
+    public Date useByDate;
+
+    @AnyElement
+    @Order(value = 8)
+    public List<Object> any;
+
+
 }

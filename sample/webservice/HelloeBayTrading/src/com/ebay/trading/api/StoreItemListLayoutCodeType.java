@@ -3,49 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Set of available layouts for items listed in an eBay Store.
- * 
  */
 public enum StoreItemListLayoutCodeType {
 
     /**
-     * 
-   * Displays item list as a single column, with smaller item pictures.
-   * 
+     * Displays item list as a single column, with smaller item pictures.
      */
     LIST_VIEW("ListView"),
-  
+
 
     /**
-     * 
-   * Displays item list in two columns, with larger item pictures.
-   * 
+     * Displays item list in two columns, with larger item pictures.
      */
     GALLERY_VIEW("GalleryView"),
-  
+
 
     /**
-     * 
-   *    (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     StoreItemListLayoutCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static StoreItemListLayoutCodeType fromValue(String v) {
         if (v != null) {
-            for (StoreItemListLayoutCodeType c: StoreItemListLayoutCodeType.values()) {
+            for (StoreItemListLayoutCodeType c : StoreItemListLayoutCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

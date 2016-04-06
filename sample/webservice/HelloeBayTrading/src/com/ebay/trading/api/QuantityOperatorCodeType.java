@@ -5,66 +5,54 @@ package com.ebay.trading.api;
 public enum QuantityOperatorCodeType {
 
     /**
-     * 
-   * Used by QuantityOperator to specify that you are seeking quantities less than Quantity.
-   * 
+     * Used by QuantityOperator to specify that you are seeking quantities less than Quantity.
      */
     LESS_THAN("LessThan"),
-  
+
 
     /**
-     * 
-   * Used by QuantityOperator to specify that you are seeking quantities less than or equal to Quantity.
-   * 
+     * Used by QuantityOperator to specify that you are seeking quantities less than or equal to Quantity.
      */
     LESS_THAN_OR_EQUAL("LessThanOrEqual"),
-  
+
 
     /**
-     * 
-   * Used by QuantityOperator to specify that you are seeking quantities equal to Quantity.
-   * 
+     * Used by QuantityOperator to specify that you are seeking quantities equal to Quantity.
      */
     EQUAL("Equal"),
-  
+
 
     /**
-     * 
-   * Used by QuantityOperator to specify that you are seeking quantities greater than Quantity.
-   * 
+     * Used by QuantityOperator to specify that you are seeking quantities greater than Quantity.
      */
     GREATER_THAN("GreaterThan"),
-  
+
 
     /**
-     * 
-   * Used by QuantityOperator to specify that you are seeking quantities greater than or equal to Quantity.
-   * 
+     * Used by QuantityOperator to specify that you are seeking quantities greater than or equal to Quantity.
      */
     GREATER_THAN_OR_EQUAL("GreaterThanOrEqual"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     QuantityOperatorCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static QuantityOperatorCodeType fromValue(String v) {
         if (v != null) {
-            for (QuantityOperatorCodeType c: QuantityOperatorCodeType.values()) {
+            for (QuantityOperatorCodeType c : QuantityOperatorCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

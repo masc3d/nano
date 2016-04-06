@@ -2,18 +2,17 @@ package com.leansoft.nano.transform;
 
 /**
  * Transformer between a string and a Java Short object
- * 
- * @author bulldog
  *
+ * @author bulldog
  */
 public class ShortTransform implements Transformable<Short> {
 
-	public Short read(String value) throws Exception {
-		return Short.valueOf(value);
-	}
+    public Short read(String value) throws Exception {
+        return Short.valueOf(value);
+    }
 
-	public String write(Short value) throws Exception {
-		return value.toString();
-	}
+    public String write(Short value) throws Exception {
+        return value.toString();
+    }
 
 }

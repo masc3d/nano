@@ -3,7 +3,6 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
@@ -13,17 +12,17 @@ public class MaximumBuyerPolicyViolationsDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "NumberOfPolicyViolations")
-	@Order(value=0)
-	public NumberOfPolicyViolationsDetailsType numberOfPolicyViolations;	
-	
-	@Element(name = "PolicyViolationDuration")
-	@Order(value=1)
-	public List<PolicyViolationDurationDetailsType> policyViolationDuration;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "NumberOfPolicyViolations")
+    @Order(value = 0)
+    public NumberOfPolicyViolationsDetailsType numberOfPolicyViolations;
+
+    @Element(name = "PolicyViolationDuration")
+    @Order(value = 1)
+    public List<PolicyViolationDurationDetailsType> policyViolationDuration;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

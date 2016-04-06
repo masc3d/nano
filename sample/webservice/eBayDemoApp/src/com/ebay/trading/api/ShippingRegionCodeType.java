@@ -3,137 +3,109 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Regions to which the seller is willing to ship the item.
  * These values are applicable to ShipToLocation.
- * 
  */
 public enum ShippingRegionCodeType {
 
     /**
-     * 
-   * Africa
-   * 
+     * Africa
      */
     AFRICA("Africa"),
-  
+
 
     /**
-     * 
-   * Asia
-   * 
+     * Asia
      */
     ASIA("Asia"),
-  
+
 
     /**
-     * 
-   * Caribbean
-   * 
+     * Caribbean
      */
     CARIBBEAN("Caribbean"),
-  
+
 
     /**
-     * 
-   * Europe
-   * 
+     * Europe
      */
     EUROPE("Europe"),
-  
+
 
     /**
-     * 
-   * Latin America
-   * 
+     * Latin America
      */
     LATIN_AMERICA("LatinAmerica"),
-  
+
 
     /**
-     * 
-   * Middle East
-   * 
+     * Middle East
      */
     MIDDLE_EAST("MiddleEast"),
-  
+
 
     /**
-     * 
-   * North America
-   * 
+     * North America
      */
     NORTH_AMERICA("NorthAmerica"),
-  
+
 
     /**
-     * 
-   * Oceania (Pacific region other than Asia)
-   * 
+     * Oceania (Pacific region other than Asia)
      */
     OCEANIA("Oceania"),
-  
+
 
     /**
-     * 
-   * South America
-   * 
+     * South America
      */
     SOUTH_AMERICA("SouthAmerica"),
-  
+
 
     /**
-     * 
-   * European Union
-   * 
+     * European Union
      */
     EUROPEAN_UNION("EuropeanUnion"),
-  
+
 
     /**
-     * 
-   * Seller will not ship the item.
-   * 
+     * Seller will not ship the item.
      */
     WILL_NOT_SHIP("WillNotShip"),
-  
+
 
     /**
-     * 
-   * Seller has specified Worldwide or eBay has
-   * determined that the specified regions add up to Worldwide.
-   * 
+     * Seller has specified Worldwide or eBay has
+     * determined that the specified regions add up to Worldwide.
      */
     WORLDWIDE("Worldwide"),
-  
+
 
     AMERICAS("Americas"),
-  
+
 
     NONE("None"),
-  
+
 
     /**
-     * 
-   *   Reserved for internal or future use
-   * 
+     * Reserved for internal or future use
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     ShippingRegionCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static ShippingRegionCodeType fromValue(String v) {
         if (v != null) {
-            for (ShippingRegionCodeType c: ShippingRegionCodeType.values()) {
+            for (ShippingRegionCodeType c : ShippingRegionCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

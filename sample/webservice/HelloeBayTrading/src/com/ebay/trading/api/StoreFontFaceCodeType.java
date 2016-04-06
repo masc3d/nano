@@ -3,65 +3,53 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Font selection for Store configuration.
- * 
  */
 public enum StoreFontFaceCodeType {
 
     /**
-     * 
-   * Arial font.
-   * 
+     * Arial font.
      */
     ARIAL("Arial"),
-  
+
 
     /**
-     * 
-   * Courier font.
-   * 
+     * Courier font.
      */
     COURIER("Courier"),
-  
+
 
     /**
-     * 
-   * Times New Roman font.
-   * 
+     * Times New Roman font.
      */
     TIMES("Times"),
-  
+
 
     /**
-     * 
-   * Verdana font.
-   * 
+     * Verdana font.
      */
     VERDANA("Verdana"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     StoreFontFaceCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static StoreFontFaceCodeType fromValue(String v) {
         if (v != null) {
-            for (StoreFontFaceCodeType c: StoreFontFaceCodeType.values()) {
+            for (StoreFontFaceCodeType c : StoreFontFaceCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

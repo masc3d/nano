@@ -3,23 +3,20 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Type defining the response of the <b>AddDispute</b> call. Upon a successful
  * call, the response contains a newly created DisputeID value, which confirms that the
  * the Unpaid Item or Mutually Canceled Transaction case was successfully created.
- * 
  */
 @RootElement(name = "AddDisputeResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class AddDisputeResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "DisputeID")
-	@Order(value=0)
-	public String disputeID;	
-	
-    
+    @Element(name = "DisputeID")
+    @Order(value = 0)
+    public String disputeID;
+
+
 }

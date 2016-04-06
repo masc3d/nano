@@ -3,74 +3,60 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Specifies the site on which the purchase was made.
- * 
  */
 public enum TransactionPlatformCodeType {
 
     /**
-     * 
-   * The order line item was created
-   * on the main eBay site.
-   * 
+     * The order line item was created
+     * on the main eBay site.
      */
     E_BAY("eBay"),
-  
+
 
     /**
-     * 
-   * The order line item was created on the eBay Express site.
-   * 
+     * The order line item was created on the eBay Express site.
      */
     EXPRESS("Express"),
-  
+
 
     /**
-     * 
-   * The order line item was created on Half.com site.
-   * 
+     * The order line item was created on Half.com site.
      */
     HALF("Half"),
-  
+
 
     /**
-     * 
-   * The order line item was created on the Shopping.com site.
-   * 
+     * The order line item was created on the Shopping.com site.
      */
     SHOPPING("Shopping"),
-  
+
 
     /**
-     * 
-   * The order line item was created on the WorldOfGood site.
-   * 
+     * The order line item was created on the WorldOfGood site.
      */
     WORLD_OF_GOOD("WorldOfGood"),
-  
+
 
     /**
-     * 
-   *  Reserved for future use.
-   * 
+     * Reserved for future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     TransactionPlatformCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static TransactionPlatformCodeType fromValue(String v) {
         if (v != null) {
-            for (TransactionPlatformCodeType c: TransactionPlatformCodeType.values()) {
+            for (TransactionPlatformCodeType c : TransactionPlatformCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

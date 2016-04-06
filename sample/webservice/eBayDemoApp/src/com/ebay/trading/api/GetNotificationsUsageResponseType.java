@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.Date;
 
 /**
- * 
  * Returns an array of notifications sent to a given application identified by the appID
  * (comes in the credentials). The result can be used by third-party developers troubleshoot
  * issues with notifications.
@@ -17,35 +15,34 @@ import java.util.Date;
  * the response will contain the data for only one day (Now-1day). By default, maximum
  * duration is limited to 3 days (Now-3days). These min (1day) and max(3days) applies
  * to Notifications,MarkDownMarkUpHistory and NotificationStatistics.
- * 
+ * <p>
  * Notifications are sent only if the ItemID is included in the request. If there is no
  * ItemID, then only Statistics and MarkDownMarkUpHistory information is included.
- * 
  */
 @RootElement(name = "GetNotificationsUsageResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetNotificationsUsageResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "StartTime")
-	@Order(value=0)
-	public Date startTime;	
-	
-	@Element(name = "EndTime")
-	@Order(value=1)
-	public Date endTime;	
-	
-	@Element(name = "NotificationDetailsArray")
-	@Order(value=2)
-	public NotificationDetailsArrayType notificationDetailsArray;	
-	
-	@Element(name = "MarkUpMarkDownHistory")
-	@Order(value=3)
-	public MarkUpMarkDownHistoryType markUpMarkDownHistory;	
-	
-	@Element(name = "NotificationStatistics")
-	@Order(value=4)
-	public NotificationStatisticsType notificationStatistics;	
-	
-    
+    @Element(name = "StartTime")
+    @Order(value = 0)
+    public Date startTime;
+
+    @Element(name = "EndTime")
+    @Order(value = 1)
+    public Date endTime;
+
+    @Element(name = "NotificationDetailsArray")
+    @Order(value = 2)
+    public NotificationDetailsArrayType notificationDetailsArray;
+
+    @Element(name = "MarkUpMarkDownHistory")
+    @Order(value = 3)
+    public MarkUpMarkDownHistoryType markUpMarkDownHistory;
+
+    @Element(name = "NotificationStatistics")
+    @Order(value = 4)
+    public NotificationStatisticsType notificationStatistics;
+
+
 }

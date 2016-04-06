@@ -3,57 +3,47 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Specifies the Selling Manager email status
- * 
  */
 public enum SellingManagerEmailSentStatusCodeType {
 
     /**
-     * 
-   * Email sent successfully.
-   * 
+     * Email sent successfully.
      */
     SUCCESSFUL("Successful"),
-  
+
 
     /**
-     * 
-   * Sending of email failed.
-   * 
+     * Sending of email failed.
      */
     FAILED("Failed"),
-  
+
 
     /**
-     * 
-   * Email is not yet sent and is in Queue.
-   * 
+     * Email is not yet sent and is in Queue.
      */
     PENDING("Pending"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     SellingManagerEmailSentStatusCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static SellingManagerEmailSentStatusCodeType fromValue(String v) {
         if (v != null) {
-            for (SellingManagerEmailSentStatusCodeType c: SellingManagerEmailSentStatusCodeType.values()) {
+            for (SellingManagerEmailSentStatusCodeType c : SellingManagerEmailSentStatusCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

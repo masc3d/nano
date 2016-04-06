@@ -5,36 +5,36 @@ package net.webservicex;
 public enum ShowTextPosition {
 
     TOP_LEFT("TopLeft"),
-  
+
 
     TOP_RIGHT("TopRight"),
-  
+
 
     TOP_CENTER("TopCenter"),
-  
+
 
     BOTTOM_LEFT("BottomLeft"),
-  
+
 
     BOTTOM_RIGHT("BottomRight"),
-  
+
 
     BOTTOM_CENTER("BottomCenter");
-  
-  
+
+
     private final String value;
-  
+
     ShowTextPosition(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static ShowTextPosition fromValue(String v) {
         if (v != null) {
-            for (ShowTextPosition c: ShowTextPosition.values()) {
+            for (ShowTextPosition c : ShowTextPosition.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

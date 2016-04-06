@@ -3,65 +3,53 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * The current state of user SMS subscription.
- * 
  */
 public enum SMSSubscriptionUserStatusCodeType {
 
     /**
-     * 
-   * (out) Registered.
-   * 
+     * (out) Registered.
      */
     REGISTERED("Registered"),
-  
+
 
     /**
-     * 
-   * (out) Unregistered.
-   * 
+     * (out) Unregistered.
      */
     UNREGISTERED("Unregistered"),
-  
+
 
     /**
-     * 
-   * (out) Pending subscription.
-   * 
+     * (out) Pending subscription.
      */
     PENDING("Pending"),
-  
+
 
     /**
-     * 
-   * (out) Subscription failed.
-   * 
+     * (out) Subscription failed.
      */
     FAILED("Failed"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     SMSSubscriptionUserStatusCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static SMSSubscriptionUserStatusCodeType fromValue(String v) {
         if (v != null) {
-            for (SMSSubscriptionUserStatusCodeType c: SMSSubscriptionUserStatusCodeType.values()) {
+            for (SMSSubscriptionUserStatusCodeType c : SMSSubscriptionUserStatusCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

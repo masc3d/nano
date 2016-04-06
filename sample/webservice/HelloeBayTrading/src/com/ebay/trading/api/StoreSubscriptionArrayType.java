@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Set of eBay Store subscription levels.
- * 
  */
 public class StoreSubscriptionArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Subscription")
-	@Order(value=0)
-	public List<StoreSubscriptionType> subscription;	
-	
-    
+    @Element(name = "Subscription")
+    @Order(value = 0)
+    public List<StoreSubscriptionType> subscription;
+
+
 }

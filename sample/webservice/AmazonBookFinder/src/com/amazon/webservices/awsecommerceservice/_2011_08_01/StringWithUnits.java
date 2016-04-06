@@ -3,19 +3,18 @@
 package com.amazon.webservices.awsecommerceservice._2011_08_01;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 public class StringWithUnits implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Value
-	@Order(value=0)
-	public String value;	
-	
-	@Attribute(name = "Units")
-	@Order(value=1)
-	public String units;	
-	
-    
+    @Value
+    @Order(value = 0)
+    public String value;
+
+    @Attribute(name = "Units")
+    @Order(value = 1)
+    public String units;
+
+
 }

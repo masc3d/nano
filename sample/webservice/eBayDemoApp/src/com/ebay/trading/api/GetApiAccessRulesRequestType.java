@@ -3,17 +3,14 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Reports how many calls your application has made and is allowed to make per hour or day.&nbsp;<b>Also for Half.com</b>.
- * 
  */
 @RootElement(name = "GetApiAccessRulesRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetApiAccessRulesRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-    
+
 }

@@ -3,49 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Ways to Display PayNow Button
- * 
  */
 public enum DisplayPayNowButtonCodeType {
 
     /**
-     * 
-   *  Show PayNow Button For All Payment Methods
-   * 
+     * Show PayNow Button For All Payment Methods
      */
     SHOW_PAY_NOW_BUTTON_FOR_ALL_PAYMENT_METHODS("ShowPayNowButtonForAllPaymentMethods"),
-  
+
 
     /**
-     * 
-   *  Show PayNow Button For PayPal Only
-   * 
+     * Show PayNow Button For PayPal Only
      */
     SHOW_PAY_NOW_BUTTON_FOR_PAY_PAL_ONLY("ShowPayNowButtonForPayPalOnly"),
-  
+
 
     /**
-     * 
-   *  Reserved for internal or future use
-   * 
+     * Reserved for internal or future use
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     DisplayPayNowButtonCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static DisplayPayNowButtonCodeType fromValue(String v) {
         if (v != null) {
-            for (DisplayPayNowButtonCodeType c: DisplayPayNowButtonCodeType.values()) {
+            for (DisplayPayNowButtonCodeType c : DisplayPayNowButtonCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

@@ -2,18 +2,17 @@ package com.leansoft.nano.transform;
 
 /**
  * Transformer between a string and a Java Double object
- * 
- * @author bulldog
  *
+ * @author bulldog
  */
 public class DoubleTransform implements Transformable<Double> {
 
-	public Double read(String value) throws Exception {
-		return Double.valueOf(value);
-	}
+    public Double read(String value) throws Exception {
+        return Double.valueOf(value);
+    }
 
-	public String write(Double value) throws Exception {
-		return value.toString();
-	}
+    public String write(Double value) throws Exception {
+        return value.toString();
+    }
 
 }

@@ -3,35 +3,35 @@
 package com.dataaccess.webservicesserver.client;
 
 
-import com.leansoft.nano.ws.SOAPServiceCallback;
-import com.leansoft.nano.ws.NanoSOAPClient;
 import com.dataaccess.webservicesserver.NumberToDollars;
+import com.dataaccess.webservicesserver.NumberToDollarsResponse;
 import com.dataaccess.webservicesserver.NumberToWords;
 import com.dataaccess.webservicesserver.NumberToWordsResponse;
-import com.dataaccess.webservicesserver.NumberToDollarsResponse;
+import com.leansoft.nano.ws.NanoSOAPClient;
+import com.leansoft.nano.ws.SOAPServiceCallback;
 
 
 /**
- This class is the SOAP client to the NumberConversionSoapType Web Service.
-*/ 
+ * This class is the SOAP client to the NumberConversionSoapType Web Service.
+ */
 public class NumberConversionSoapType_SOAPClient extends NanoSOAPClient {
 
 
     /**
-     Returns the word corresponding to the positive number passed as parameter. Limited to quadrillions.
-    */
+     * Returns the word corresponding to the positive number passed as parameter. Limited to quadrillions.
+     */
     public void numberToWords(NumberToWords requestObject, SOAPServiceCallback<NumberToWordsResponse> serviceCallback) {
-       
-        
+
+
         super.invoke(requestObject, serviceCallback, NumberToWordsResponse.class);
     }
 
     /**
-     Returns the non-zero dollar amount of the passed number.
-    */
+     * Returns the non-zero dollar amount of the passed number.
+     */
     public void numberToDollars(NumberToDollars requestObject, SOAPServiceCallback<NumberToDollarsResponse> serviceCallback) {
-       
-        
+
+
         super.invoke(requestObject, serviceCallback, NumberToDollarsResponse.class);
     }
 

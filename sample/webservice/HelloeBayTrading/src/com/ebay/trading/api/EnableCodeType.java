@@ -3,49 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * The status of a particular entry.
- * 
  */
 public enum EnableCodeType {
 
     /**
-     * 
-   * The entry is enabled.
-   * 
+     * The entry is enabled.
      */
     ENABLE("Enable"),
-  
+
 
     /**
-     * 
-   * The entry is disabled.
-   * 
+     * The entry is disabled.
      */
     DISABLE("Disable"),
-  
+
 
     /**
-     * 
-   * Reserved for future use.
-   * 
+     * Reserved for future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     EnableCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static EnableCodeType fromValue(String v) {
         if (v != null) {
-            for (EnableCodeType c: EnableCodeType.values()) {
+            for (EnableCodeType c : EnableCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

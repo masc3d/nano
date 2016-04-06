@@ -2,18 +2,18 @@
 // DO NOT CHANGE!
 package com.amazon.webservices.awsecommerceservice._2011_08_01.browsenode;
 
-import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
-import java.util.List;
 import com.amazon.webservices.awsecommerceservice._2011_08_01.BrowseNode;
+
+import java.io.Serializable;
+import java.util.List;
 
 public class Children implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "BrowseNode")
-	@Order(value=0)
-	public List<BrowseNode> browseNode;	
-	
-    
+    @Element(name = "BrowseNode")
+    @Order(value = 0)
+    public List<BrowseNode> browseNode;
+
+
 }

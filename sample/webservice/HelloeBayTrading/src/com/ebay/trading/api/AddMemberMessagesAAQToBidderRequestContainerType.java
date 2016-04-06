@@ -3,28 +3,25 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Holds the content of the request.
- * 
  */
 public class AddMemberMessagesAAQToBidderRequestContainerType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "CorrelationID")
-	@Order(value=0)
-	public String correlationID;	
-	
-	@Element(name = "ItemID")
-	@Order(value=1)
-	public String itemID;	
-	
-	@Element(name = "MemberMessage")
-	@Order(value=2)
-	public MemberMessageType memberMessage;	
-	
-    
+    @Element(name = "CorrelationID")
+    @Order(value = 0)
+    public String correlationID;
+
+    @Element(name = "ItemID")
+    @Order(value = 1)
+    public String itemID;
+
+    @Element(name = "MemberMessage")
+    @Order(value = 2)
+    public MemberMessageType memberMessage;
+
+
 }

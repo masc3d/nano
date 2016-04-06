@@ -6,28 +6,27 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * This annotation, if presents on a POJO, 
+ * This annotation, if presents on a POJO,
  * indicates a root XML element
- * 
- * @author bulldog
  *
+ * @author bulldog
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface RootElement {
 
-	/**
-	 * The name of the root XML element
-	 * 
-	 * @return name
-	 */
+    /**
+     * The name of the root XML element
+     *
+     * @return name
+     */
     public String name() default "";
-    
+
     /**
      * The namespace of the root XML element
-     * 
+     *
      * @return namespace
      */
     public String namespace() default "";
-	
+
 }

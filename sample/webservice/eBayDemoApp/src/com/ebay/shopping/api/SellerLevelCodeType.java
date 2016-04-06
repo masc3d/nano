@@ -3,90 +3,72 @@
 package com.ebay.shopping.api;
 
 /**
- * 
  * SellerLevelCodeType - Type declaration to be used by other schema.
  * Indicates the user's eBay PowerSeller tier.
- * 
  */
 public enum SellerLevelCodeType {
 
     /**
-     * 
-   * (out) Bronze
-   * 
+     * (out) Bronze
      */
     BRONZE("Bronze"),
-  
+
 
     /**
-     * 
-   * (out) Silver
-   * 
+     * (out) Silver
      */
     SILVER("Silver"),
-  
+
 
     /**
-     * 
-   * (out) Gold
-   * 
+     * (out) Gold
      */
     GOLD("Gold"),
-  
+
 
     /**
-     * 
-   * (out) Platinum
-   * 
+     * (out) Platinum
      */
     PLATINUM("Platinum"),
-  
+
 
     /**
-     * 
-   * (out) Titanium
-   * 
+     * (out) Titanium
      */
     TITANIUM("Titanium"),
-  
+
 
     /**
-     * 
-   * (out) Diamond
-   * 
+     * (out) Diamond
      */
     DIAMOND("Diamond"),
-  
+
 
     /**
-     * 
-   * (out) None
-   * 
+     * (out) None
      */
     NONE("None"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use
-   * 
+     * (out) Reserved for internal or future use
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     SellerLevelCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static SellerLevelCodeType fromValue(String v) {
         if (v != null) {
-            for (SellerLevelCodeType c: SellerLevelCodeType.values()) {
+            for (SellerLevelCodeType c : SellerLevelCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

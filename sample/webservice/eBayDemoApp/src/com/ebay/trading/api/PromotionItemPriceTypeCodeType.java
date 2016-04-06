@@ -3,71 +3,53 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * This type is deprecated as Cross Promotions are no longer supported in the APIs.
- * 
- * 
  */
 public enum PromotionItemPriceTypeCodeType {
 
     /**
-     * 
-   * 
-   * (out) Bid offer in a competitive-bidding listing.
-   * 
+     * (out) Bid offer in a competitive-bidding listing.
      */
     AUCTION_PRICE("AuctionPrice"),
-  
+
 
     /**
-     * 
-   * 
-   * (out) Buy It Now offer in a fixed-price or Buy It Now listing.
-   * 
+     * (out) Buy It Now offer in a fixed-price or Buy It Now listing.
      */
     BUY_IT_NOW_PRICE("BuyItNowPrice"),
-  
+
 
     /**
-     * 
-   * 
-   * (out) Best Offer in Best Offer Only listing.
-   * 
+     * (out) Best Offer in Best Offer Only listing.
      */
     BEST_OFFER_ONLY_PRICE("BestOfferOnlyPrice"),
-  
+
 
     /**
-     * 
-   * 
-   * (out) Advertised price for a Classified Ad format listing.
-   * 
+     * (out) Advertised price for a Classified Ad format listing.
      */
     CLASSIFIED_AD_PRICE("ClassifiedAdPrice"),
-  
+
 
     /**
-     * 
-   * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     PromotionItemPriceTypeCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static PromotionItemPriceTypeCodeType fromValue(String v) {
         if (v != null) {
-            for (PromotionItemPriceTypeCodeType c: PromotionItemPriceTypeCodeType.values()) {
+            for (PromotionItemPriceTypeCodeType c : PromotionItemPriceTypeCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

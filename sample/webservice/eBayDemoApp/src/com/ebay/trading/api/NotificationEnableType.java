@@ -3,30 +3,27 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Specifies a notification event and whether the
  * notification is enabled or disabled.
- * 
  */
 public class NotificationEnableType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "EventType")
-	@Order(value=0)
-	public NotificationEventTypeCodeType eventType;	
-	
-	@Element(name = "EventEnable")
-	@Order(value=1)
-	public EnableCodeType eventEnable;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "EventType")
+    @Order(value = 0)
+    public NotificationEventTypeCodeType eventType;
+
+    @Element(name = "EventEnable")
+    @Order(value = 1)
+    public EnableCodeType eventEnable;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

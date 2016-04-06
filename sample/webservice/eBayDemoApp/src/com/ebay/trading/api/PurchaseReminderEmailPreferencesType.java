@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
- *   Contains a seller's preference for sending a "Payment Reminder Email" to buyers.
- * 
+ * Contains a seller's preference for sending a "Payment Reminder Email" to buyers.
  */
 public class PurchaseReminderEmailPreferencesType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "PurchaseReminderEmailPreferences")
-	@Order(value=0)
-	public Boolean purchaseReminderEmailPreferences;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "PurchaseReminderEmailPreferences")
+    @Order(value = 0)
+    public Boolean purchaseReminderEmailPreferences;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

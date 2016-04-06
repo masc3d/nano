@@ -1,21 +1,22 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.leansoft</groupId>
-  <artifactId>nano</artifactId>
-  <version>0.7.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <groupId>com.leansoft</groupId>
+    <artifactId>nano</artifactId>
+    <version>0.7.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-  <name>nano</name>
-  <url>https://github.com/bulldog2011/nano</url>
-  
-  <description>A light web service client framework targeting Android platform.</description>
-  <scm>
+    <name>nano</name>
+    <url>https://github.com/bulldog2011/nano</url>
+
+    <description>A light web service client framework targeting Android platform.</description>
+    <scm>
         <connection>scm:git:git@github.com:bulldog2011/nano.git</connection>
         <developerConnection>scm:git:git@github.com:bulldog2011/nano.git</developerConnection>
         <url>https://github.com/bulldog2011/nano</url>
-    <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -34,40 +35,40 @@
             </roles>
         </developer>
     </developers>
-   
-  <distributionManagement>
-    <repository>
-      <id>github.release.repo</id>
-      <name>Release Repository</name>
-      <url>file:///dev/bulldog-repo/repo/releases</url>
-    </repository>
-    <snapshotRepository>
-      <id>github.snapshot.repo</id>
-      <name>Snapshot Repository</name>
-      <url>file:///dev/bulldog-repo/repo/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <distributionManagement>
+        <repository>
+            <id>github.release.repo</id>
+            <name>Release Repository</name>
+            <url>file:///dev/bulldog-repo/repo/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>github.snapshot.repo</id>
+            <name>Snapshot Repository</name>
+            <url>file:///dev/bulldog-repo/repo/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.android</groupId>
-      <artifactId>android</artifactId>
-      <version>2.2.1</version>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
-  
-  <build>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>2.2.1</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -99,8 +100,8 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>            
-            
+            </plugin>
+
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.3.2</version>
@@ -110,7 +111,7 @@
                     </archive>
                 </configuration>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -131,39 +132,39 @@
                     </execution>
                 </executions>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.4</version>
-                
-	            <executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-						  <goal>single</goal>
-						</goals>
-						<configuration>
-						<descriptors>
-						  <descriptor>src/main/assembly/assembly.xml</descriptor>
-						</descriptors>
-						</configuration>
-					</execution>
-				</executions>
+
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/main/assembly/assembly.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
-            
-			<plugin>
-			  <groupId>org.apache.maven.plugins</groupId>
-			  <artifactId>maven-release-plugin</artifactId>
-			  <version>2.3.2</version>
-			  <configuration>
-                  <pushChanges>false</pushChanges>
-                  <localCheckout>true</localCheckout>
-              </configuration>
-			</plugin>
- 
-        </plugins> 			
- 
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <pushChanges>false</pushChanges>
+                    <localCheckout>true</localCheckout>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -192,5 +193,5 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-  </build>
+    </build>
 </project>

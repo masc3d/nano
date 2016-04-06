@@ -5,30 +5,30 @@ package com.ebay.trading.api;
 public enum InvocationStatusType {
 
     IN_PROGRESS("InProgress"),
-  
+
 
     SUCCESS("Success"),
-  
+
 
     FAILURE("Failure"),
-  
+
 
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     InvocationStatusType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static InvocationStatusType fromValue(String v) {
         if (v != null) {
-            for (InvocationStatusType c: InvocationStatusType.values()) {
+            for (InvocationStatusType c : InvocationStatusType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

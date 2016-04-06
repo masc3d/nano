@@ -8,23 +8,22 @@ import java.lang.annotation.Target;
 
 /**
  * This annotation maps a POJO field to an XML value
- * 
- * @author bulldog
  *
+ * @author bulldog
  */
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface Value {
-	
-	/**
-	 * Indicates if the string content of the field should
-	 * be put in a CDATA container or not.
-	 * 
-	 * @return true or false
-	 */
-	public boolean data() default false;
-	
-	public boolean encrypted() default false;
+
+    /**
+     * Indicates if the string content of the field should
+     * be put in a CDATA container or not.
+     *
+     * @return true or false
+     */
+    public boolean data() default false;
+
+    public boolean encrypted() default false;
 
 }

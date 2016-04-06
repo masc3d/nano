@@ -18,7 +18,9 @@ public class Duration {
     int minutes;
     double seconds;
 
-    /** Default no-arg constructor */
+    /**
+     * Default no-arg constructor
+     */
     public Duration() {
     }
 
@@ -99,7 +101,7 @@ public class Duration {
         this.hours = calendar.get(Calendar.HOUR);
         this.minutes = calendar.get(Calendar.MINUTE);
         this.seconds = calendar.get(Calendar.SECOND);
-        this.seconds += ((double)calendar.get(Calendar.MILLISECOND)) / 100;
+        this.seconds += ((double) calendar.get(Calendar.MILLISECOND)) / 100;
         if (years == 0 && months == 0 && days == 0 && hours == 0 &&
                 minutes == 0 && seconds == 0) {
             throw new IllegalArgumentException();
@@ -287,32 +289,44 @@ public class Duration {
         return seconds;
     }
 
-    /** @param negative  */
+    /**
+     * @param negative
+     */
     public void setNegative(boolean negative) {
         isNegative = negative;
     }
 
-    /** @param years  */
+    /**
+     * @param years
+     */
     public void setYears(int years) {
         this.years = years;
     }
 
-    /** @param months  */
+    /**
+     * @param months
+     */
     public void setMonths(int months) {
         this.months = months;
     }
 
-    /** @param days  */
+    /**
+     * @param days
+     */
     public void setDays(int days) {
         this.days = days;
     }
 
-    /** @param hours  */
+    /**
+     * @param hours
+     */
     public void setHours(int hours) {
         this.hours = hours;
     }
 
-    /** @param minutes  */
+    /**
+     * @param minutes
+     */
     public void setMinutes(int minutes) {
         this.minutes = minutes;
     }
@@ -331,10 +345,12 @@ public class Duration {
      * @param seconds double
      */
     public void setSeconds(double seconds) {
-        this.seconds = ((double)(Math.round(seconds * 100))) / 100;
+        this.seconds = ((double) (Math.round(seconds * 100))) / 100;
     }
 
-    /** This returns the xml representation of an xsd:duration object. */
+    /**
+     * This returns the xml representation of an xsd:duration object.
+     */
     public String toString() {
         StringBuffer duration = new StringBuffer();
 
@@ -361,8 +377,8 @@ public class Duration {
 
             }
             if (seconds != 0) {
-                if (seconds == (int)seconds) {
-                    duration.append((int)seconds).append("S");
+                if (seconds == (int) seconds) {
+                    duration.append((int) seconds).append("S");
                 } else {
                     duration.append(seconds).append("S");
                 }
@@ -392,7 +408,7 @@ public class Duration {
             return false;
         }
 
-        Duration duration = (Duration)object;
+        Duration duration = (Duration) object;
 
         return this.isNegative == duration.isNegative &&
                 this.getAsCalendar().equals(duration.getAsCalendar());
@@ -442,15 +458,15 @@ public class Duration {
      * @return Calendar
      */
     public Calendar getAsCalendar(Calendar startTime) {
-        Calendar ret = (Calendar)startTime.clone();
+        Calendar ret = (Calendar) startTime.clone();
         ret.set(Calendar.YEAR, years);
         ret.set(Calendar.MONTH, months);
         ret.set(Calendar.DATE, days);
         ret.set(Calendar.HOUR, hours);
         ret.set(Calendar.MINUTE, minutes);
-        ret.set(Calendar.SECOND, (int)seconds);
+        ret.set(Calendar.SECOND, (int) seconds);
         ret.set(Calendar.MILLISECOND,
-                (int)(seconds * 100 - Math.round(seconds) * 100));
+                (int) (seconds * 100 - Math.round(seconds) * 100));
         return ret;
     }
 }

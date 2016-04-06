@@ -3,24 +3,21 @@
 package com.ebay.finding.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Distance, used for local searches.
- * 
  */
 public class Distance implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Value
-	@Order(value=0)
-	public double value;	
-	
-	@Attribute  
-	@Order(value=1)
-	public String unit;	
-	
-    
+    @Value
+    @Order(value = 0)
+    public double value;
+
+    @Attribute
+    @Order(value = 1)
+    public String unit;
+
+
 }

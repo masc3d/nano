@@ -3,65 +3,53 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Valid notification status codes
- * 
  */
 public enum NotificationDeliveryStatusCodeType {
 
     /**
-     * 
-   * Reserved for future internal or external use
-   * 
+     * Reserved for future internal or external use
      */
     CUSTOM_CODE("CustomCode"),
-  
+
 
     /**
-     * 
-   * Status indicating the notification was delivered
-   * 
+     * Status indicating the notification was delivered
      */
     DELIVERED("Delivered"),
-  
+
 
     /**
-     * 
-   * Status indicating the notification was failed
-   * 
+     * Status indicating the notification was failed
      */
     FAILED("Failed"),
-  
+
 
     /**
-     * 
-   * Status indicating the notification was rejected
-   * 
+     * Status indicating the notification was rejected
      */
     REJECTED("Rejected"),
-  
+
 
     /**
-     * 
-   * Status indicating the notification was marked down
-   * 
+     * Status indicating the notification was marked down
      */
     MARKED_DOWN("MarkedDown");
-  
-  
+
+
     private final String value;
-  
+
     NotificationDeliveryStatusCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static NotificationDeliveryStatusCodeType fromValue(String v) {
         if (v != null) {
-            for (NotificationDeliveryStatusCodeType c: NotificationDeliveryStatusCodeType.values()) {
+            for (NotificationDeliveryStatusCodeType c : NotificationDeliveryStatusCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

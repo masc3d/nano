@@ -3,24 +3,21 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * The response of the <b>AddItems<b> call. The response includes the
  * Item IDs of the newly created listings, the eBay category each item is listed under, the
  * start and end time of each listing, and the estimated fees that each listing will incur.
- * 
  */
 @RootElement(name = "AddItemsResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class AddItemsResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "AddItemResponseContainer")
-	@Order(value=0)
-	public List<AddItemResponseContainerType> addItemResponseContainer;	
-	
-    
+    @Element(name = "AddItemResponseContainer")
+    @Order(value = 0)
+    public List<AddItemResponseContainerType> addItemResponseContainer;
+
+
 }

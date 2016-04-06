@@ -3,7 +3,6 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
@@ -13,25 +12,25 @@ public class SellingManagerProductType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "SellingManagerProductDetails")
-	@Order(value=0)
-	public SellingManagerProductDetailsType sellingManagerProductDetails;	
-	
-	@Element(name = "SellingManagerTemplateDetailsArray")
-	@Order(value=1)
-	public SellingManagerTemplateDetailsArrayType sellingManagerTemplateDetailsArray;	
-	
-	@Element(name = "SellingManagerProductInventoryStatus")
-	@Order(value=2)
-	public SellingManagerProductInventoryStatusType sellingManagerProductInventoryStatus;	
-	
-	@Element(name = "SellingManagerProductSpecifics")
-	@Order(value=3)
-	public SellingManagerProductSpecificsType sellingManagerProductSpecifics;	
-	
-	@AnyElement
-	@Order(value=4)
-	public List<Object> any;	
-	
-    
+    @Element(name = "SellingManagerProductDetails")
+    @Order(value = 0)
+    public SellingManagerProductDetailsType sellingManagerProductDetails;
+
+    @Element(name = "SellingManagerTemplateDetailsArray")
+    @Order(value = 1)
+    public SellingManagerTemplateDetailsArrayType sellingManagerTemplateDetailsArray;
+
+    @Element(name = "SellingManagerProductInventoryStatus")
+    @Order(value = 2)
+    public SellingManagerProductInventoryStatusType sellingManagerProductInventoryStatus;
+
+    @Element(name = "SellingManagerProductSpecifics")
+    @Order(value = 3)
+    public SellingManagerProductSpecificsType sellingManagerProductSpecifics;
+
+    @AnyElement
+    @Order(value = 4)
+    public List<Object> any;
+
+
 }

@@ -3,88 +3,72 @@
 package com.ebay.shopping.api;
 
 /**
- * 
  * Controls values for item condition, especially for Books catalog.
- * 
  */
 public enum HalfItemConditionCodeType {
 
     /**
-     * 
-   * New, unread, unused and in perfect condition.
-   * 
+     * New, unread, unused and in perfect condition.
      */
     BRAND_NEW("BrandNew"),
-  
+
 
     /**
-     * 
-   * Item still in original packaging, no wear and tear, all 
-   * facets of the product are intact.  (Could easily be mistaken 
-   * for brand new.)
-   * 
+     * Item still in original packaging, no wear and tear, all
+     * facets of the product are intact.  (Could easily be mistaken
+     * for brand new.)
      */
     LIKE_NEW("LikeNew"),
-  
+
 
     /**
-     * 
-   * Doesn't look brand new but has no easily noticeable damage 
-   * and very minimal wear and tear.  (You would give it to a 
-   * good friend as a gift)
-   * 
+     * Doesn't look brand new but has no easily noticeable damage
+     * and very minimal wear and tear.  (You would give it to a
+     * good friend as a gift)
      */
     VERY_GOOD("VeryGood"),
-  
+
 
     /**
-     * 
-   * Very minimal damage to the item and still includes all accessories 
-   * such as dust jackets, liner notes, and cases.
-   * (You would use it yourself, but wouldn't necessarily give it as a gift)
-   * 
+     * Very minimal damage to the item and still includes all accessories
+     * such as dust jackets, liner notes, and cases.
+     * (You would use it yourself, but wouldn't necessarily give it as a gift)
      */
     GOOD("Good"),
-  
+
 
     /**
-     * 
-   * Some damage to the item but integrity still intact.  May be missing an
-   * accessory. (Item beaten up a bit but it works)
-   * 
+     * Some damage to the item but integrity still intact.  May be missing an
+     * accessory. (Item beaten up a bit but it works)
      */
     ACCEPTABLE("Acceptable"),
-  
+
 
     /**
-     * 
-   * Some damage to the item and visibly used.
-   * 
+     * Some damage to the item and visibly used.
      */
     USED("Used"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use
-   * 
+     * (out) Reserved for internal or future use
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     HalfItemConditionCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static HalfItemConditionCodeType fromValue(String v) {
         if (v != null) {
-            for (HalfItemConditionCodeType c: HalfItemConditionCodeType.values()) {
+            for (HalfItemConditionCodeType c : HalfItemConditionCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

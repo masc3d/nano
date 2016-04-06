@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Indicates if Email can be a contact method for the category
- * 
  */
 public class ClassifiedAdContactByEmailEnabledDefintionType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@AnyElement
-	@Order(value=0)
-	public List<Object> any;	
-	
-    
+    @AnyElement
+    @Order(value = 0)
+    public List<Object> any;
+
+
 }

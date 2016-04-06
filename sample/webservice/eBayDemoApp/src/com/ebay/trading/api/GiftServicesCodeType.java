@@ -3,62 +3,52 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Each code identifies an optional service that the seller is offering if the buyer
  * chooses to purchase the item as a gift. Not applicable for eBay Store Inventory
  * listings.
- * 
  */
 public enum GiftServicesCodeType {
 
     /**
-     * 
-   * The seller is offering to ship the item via
-   * an express shipping method as explained in the item description.
-   * 
+     * The seller is offering to ship the item via
+     * an express shipping method as explained in the item description.
      */
     GIFT_EXPRESS_SHIPPING("GiftExpressShipping"),
-  
+
 
     /**
-     * 
-   * The seller is offering to ship to the gift recipient
-   * (instead of to the buyer) after payment clears.
-   * 
+     * The seller is offering to ship to the gift recipient
+     * (instead of to the buyer) after payment clears.
      */
     GIFT_SHIP_TO_RECIPIENT("GiftShipToRecipient"),
-  
+
 
     /**
-     * 
-   * The seller is offering to wrap the item (and optionally include a
-   * card) as explained in the item description.
-   * 
+     * The seller is offering to wrap the item (and optionally include a
+     * card) as explained in the item description.
      */
     GIFT_WRAP("GiftWrap"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use
-   * 
+     * Reserved for internal or future use
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     GiftServicesCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static GiftServicesCodeType fromValue(String v) {
         if (v != null) {
-            for (GiftServicesCodeType c: GiftServicesCodeType.values()) {
+            for (GiftServicesCodeType c : GiftServicesCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

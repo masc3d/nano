@@ -5,42 +5,36 @@ package com.ebay.trading.api;
 public enum MessageStatusTypeCodeType {
 
     /**
-     * 
-   * The question has been answered at least once.
-   * 
+     * The question has been answered at least once.
      */
     ANSWERED("Answered"),
-  
+
 
     /**
-     * 
-   * The question has not yet been answered.
-   * 
+     * The question has not yet been answered.
      */
     UNANSWERED("Unanswered"),
-  
+
 
     /**
-     * 
-   * Reserved for future or internal use.
-   * 
+     * Reserved for future or internal use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     MessageStatusTypeCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static MessageStatusTypeCodeType fromValue(String v) {
         if (v != null) {
-            for (MessageStatusTypeCodeType c: MessageStatusTypeCodeType.values()) {
+            for (MessageStatusTypeCodeType c : MessageStatusTypeCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

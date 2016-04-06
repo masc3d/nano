@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
- *  Container consisting of one or more RefundFundingSource containers.
- * 
+ * Container consisting of one or more RefundFundingSource containers.
  */
 public class RefundFundingSourceArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "RefundFundingSource")
-	@Order(value=0)
-	public List<RefundFundingSourceType> refundFundingSource;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "RefundFundingSource")
+    @Order(value = 0)
+    public List<RefundFundingSourceType> refundFundingSource;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

@@ -3,57 +3,47 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Enumerated type that lists the possible states for DE and AT categories in regards to the new eBay payment process.
- * 
  */
 public enum PaymentOptionsGroupEnabledCodeType {
 
     /**
-     * 
-   * This value indicates that the new eBay payment process is enabled for this category.
-   * 
+     * This value indicates that the new eBay payment process is enabled for this category.
      */
     E_BAY_PAYMENT_PROCESS_ENABLED("eBayPaymentProcessEnabled"),
-  
+
 
     /**
-     * 
-   * This value indicates that non-standard payments is enabled for this category.
-   * 
+     * This value indicates that non-standard payments is enabled for this category.
      */
     NON_STANDARD_PAYMENTS_ENABLED("NonStandardPaymentsEnabled"),
-  
+
 
     /**
-     * 
-   * This value indicates that the new eBay payment process is excluded for this category.
-   * 
+     * This value indicates that the new eBay payment process is excluded for this category.
      */
     E_BAY_PAYMENT_PROCESS_EXCLUDED("eBayPaymentProcessExcluded"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     PaymentOptionsGroupEnabledCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static PaymentOptionsGroupEnabledCodeType fromValue(String v) {
         if (v != null) {
-            for (PaymentOptionsGroupEnabledCodeType c: PaymentOptionsGroupEnabledCodeType.values()) {
+            for (PaymentOptionsGroupEnabledCodeType c : PaymentOptionsGroupEnabledCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

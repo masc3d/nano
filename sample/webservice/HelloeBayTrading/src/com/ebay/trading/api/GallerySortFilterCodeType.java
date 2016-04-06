@@ -3,59 +3,49 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Specifies how cross-promoted items with gallery images
  * should be displayed.
- * 
  */
 public enum GallerySortFilterCodeType {
 
     /**
-     * 
-   * Show any items, in no particular order.
-   * 
+     * Show any items, in no particular order.
      */
     SHOW_ANY_ITEMS("ShowAnyItems"),
-  
+
 
     /**
-     * 
-   * Show items with gallery images first, before
-   * other items.
-   * 
+     * Show items with gallery images first, before
+     * other items.
      */
     SHOW_ITEMS_WITH_GALLERY_IMAGES_FIRST("ShowItemsWithGalleryImagesFirst"),
-  
+
 
     /**
-     * 
-   * Show only items with gallery images.
-   * 
+     * Show only items with gallery images.
      */
     SHOW_ONLY_ITEMS_WITH_GALLERY_IMAGES("ShowOnlyItemsWithGalleryImages"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     GallerySortFilterCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static GallerySortFilterCodeType fromValue(String v) {
         if (v != null) {
-            for (GallerySortFilterCodeType c: GallerySortFilterCodeType.values()) {
+            for (GallerySortFilterCodeType c : GallerySortFilterCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

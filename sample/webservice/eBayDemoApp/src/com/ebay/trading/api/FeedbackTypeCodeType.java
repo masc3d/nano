@@ -3,66 +3,54 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * These are the codes used to specify the type of feedback/feedbacktype in a single feedback record. Additional information about feedback is available in the
  * online Help of the eBay website.
- * 
  */
 public enum FeedbackTypeCodeType {
 
     /**
-     * 
-   * Retrieves feedback left by all buyers for this user.
-   * 
+     * Retrieves feedback left by all buyers for this user.
      */
     FEEDBACK_RECEIVED_AS_SELLER("FeedbackReceivedAsSeller"),
-  
+
 
     /**
-     * 
-   * Retrieves feedback left by all sellers for this user.
-   * 
+     * Retrieves feedback left by all sellers for this user.
      */
     FEEDBACK_RECEIVED_AS_BUYER("FeedbackReceivedAsBuyer"),
-  
+
 
     /**
-     * 
-   * Retrieves feedback left by all buyers and all sellers for this user.
-   * 
+     * Retrieves feedback left by all buyers and all sellers for this user.
      */
     FEEDBACK_RECEIVED("FeedbackReceived"),
-  
+
 
     /**
-     * 
-   * Feedback left for others.
-   * 
+     * Feedback left for others.
      */
     FEEDBACK_LEFT("FeedbackLeft"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     FeedbackTypeCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static FeedbackTypeCodeType fromValue(String v) {
         if (v != null) {
-            for (FeedbackTypeCodeType c: FeedbackTypeCodeType.values()) {
+            for (FeedbackTypeCodeType c : FeedbackTypeCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

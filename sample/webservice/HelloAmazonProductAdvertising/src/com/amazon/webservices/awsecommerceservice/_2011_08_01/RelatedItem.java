@@ -3,16 +3,15 @@
 package com.amazon.webservices.awsecommerceservice._2011_08_01;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 @RootElement(name = "RelatedItem", namespace = "http://webservices.amazon.com/AWSECommerceService/2011-08-01")
 public class RelatedItem implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Item")
-	@Order(value=0)
-	public Item item;	
-	
-    
+    @Element(name = "Item")
+    @Order(value = 0)
+    public Item item;
+
+
 }

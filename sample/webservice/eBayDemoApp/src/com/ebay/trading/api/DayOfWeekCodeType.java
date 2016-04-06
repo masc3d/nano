@@ -3,89 +3,71 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * DayOfWeekCodeType - Specifies the day of week.
- * 
  */
 public enum DayOfWeekCodeType {
 
     /**
-     * 
-   * Sunday
-   * 
+     * Sunday
      */
     SUNDAY("Sunday"),
-  
+
 
     /**
-     * 
-   * Monday
-   * 
+     * Monday
      */
     MONDAY("Monday"),
-  
+
 
     /**
-     * 
-   * Tuesday
-   * 
+     * Tuesday
      */
     TUESDAY("Tuesday"),
-  
+
 
     /**
-     * 
-   * Wednesday
-   * 
+     * Wednesday
      */
     WEDNESDAY("Wednesday"),
-  
+
 
     /**
-     * 
-   * Thursday
-   * 
+     * Thursday
      */
     THURSDAY("Thursday"),
-  
+
 
     /**
-     * 
-   * Friday
-   * 
+     * Friday
      */
     FRIDAY("Friday"),
-  
+
 
     /**
-     * 
-   * Saturday
-   * 
+     * Saturday
      */
     SATURDAY("Saturday"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     DayOfWeekCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static DayOfWeekCodeType fromValue(String v) {
         if (v != null) {
-            for (DayOfWeekCodeType c: DayOfWeekCodeType.values()) {
+            for (DayOfWeekCodeType c : DayOfWeekCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

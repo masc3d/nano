@@ -3,50 +3,42 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Specifies which discount type to use.
- * 
  */
 public enum DiscountCodeType {
 
     /**
-     * 
-   * Specifies discount type as percentage.
-   * 
+     * Specifies discount type as percentage.
      */
     PERCENTAGE("Percentage"),
-  
+
 
     /**
-     * 
-   * Specifies discount type as a fixed amount. Discount will be in the
-   * currency of the original listing.
-   * 
+     * Specifies discount type as a fixed amount. Discount will be in the
+     * currency of the original listing.
      */
     PRICE("Price"),
-  
+
 
     /**
-     * 
-   * Future use
-   * 
+     * Future use
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     DiscountCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static DiscountCodeType fromValue(String v) {
         if (v != null) {
-            for (DiscountCodeType c: DiscountCodeType.values()) {
+            for (DiscountCodeType c : DiscountCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

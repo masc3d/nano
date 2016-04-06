@@ -3,49 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Indicates who owns the user's address.
- * 
  */
 public enum AddressOwnerCodeType {
 
     /**
-     * 
-   * PayPal owns the address.
-   * 
+     * PayPal owns the address.
      */
     PAY_PAL("PayPal"),
-  
+
 
     /**
-     * 
-   * eBay owns the address.
-   * 
+     * eBay owns the address.
      */
     E_BAY("eBay"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     AddressOwnerCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static AddressOwnerCodeType fromValue(String v) {
         if (v != null) {
-            for (AddressOwnerCodeType c: AddressOwnerCodeType.values()) {
+            for (AddressOwnerCodeType c : AddressOwnerCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

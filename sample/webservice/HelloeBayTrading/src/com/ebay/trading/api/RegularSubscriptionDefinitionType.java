@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Indicates category support for listing of Local Market items by sellers
  * subscribed to Local Market for Regular Vehicles.
  * Each of the subscriptions will have following options, which will define
@@ -16,15 +14,14 @@ import java.util.List;
  * "LocalOnly" : Seller can have Local listings only.
  * "NationalOnly" : Seller can not opt into local only exposure. It has to be
  * national listing.
- * 
  */
 public class RegularSubscriptionDefinitionType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@AnyElement
-	@Order(value=0)
-	public List<Object> any;	
-	
-    
+    @AnyElement
+    @Order(value = 0)
+    public List<Object> any;
+
+
 }

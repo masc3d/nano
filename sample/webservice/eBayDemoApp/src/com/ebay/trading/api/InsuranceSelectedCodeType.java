@@ -3,73 +3,59 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * The insurance selected by the buyer.
- * 
  */
 public enum InsuranceSelectedCodeType {
 
     /**
-     * 
-   * Shipping insurance was not offered.
-   * 
+     * Shipping insurance was not offered.
      */
     NOT_OFFERED("NotOffered"),
-  
+
 
     /**
-     * 
-   * Shipping insurance was offered but not selected.
-   * 
+     * Shipping insurance was offered but not selected.
      */
     OFFERED_NOT_SELECTED("OfferedNotSelected"),
-  
+
 
     /**
-     * 
-   * Shipping insurance was offered and selected.
-   * 
+     * Shipping insurance was offered and selected.
      */
     OFFERED_SELECTED("OfferedSelected"),
-  
+
 
     /**
-     * 
-   * Shipping insurance was required.
-   * 
+     * Shipping insurance was required.
      */
     REQUIRED("Required"),
-  
+
 
     /**
-     * 
-   * Shipping insurance was included in Shipping and Handling fee.
-   * 
+     * Shipping insurance was included in Shipping and Handling fee.
      */
     INCLUDED_IN_SHIPPING_HANDLING("IncludedInShippingHandling"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     InsuranceSelectedCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static InsuranceSelectedCodeType fromValue(String v) {
         if (v != null) {
-            for (InsuranceSelectedCodeType c: InsuranceSelectedCodeType.values()) {
+            for (InsuranceSelectedCodeType c : InsuranceSelectedCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

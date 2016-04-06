@@ -3,26 +3,23 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * A container node for sets of durations, each set describing the durations allowed for
  * one listing type.
- * 
  */
 public class ListingDurationDefinitionsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ListingDuration")
-	@Order(value=0)
-	public List<ListingDurationDefinitionType> listingDuration;	
-	
-	@Attribute(name = "Version")
-	@Order(value=1)
-	public Integer version;	
-	
-    
+    @Element(name = "ListingDuration")
+    @Order(value = 0)
+    public List<ListingDurationDefinitionType> listingDuration;
+
+    @Attribute(name = "Version")
+    @Order(value = 1)
+    public Integer version;
+
+
 }

@@ -3,58 +3,48 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Used to indicate whether the payment method will be displayed for a category
  * belonging to the Lead Generation Format.
- * 
  */
 public enum ClassifiedAdPaymentMethodEnabledCodeType {
 
     /**
-     * 
-   * Display the payment method and permit checkout.
-   * 
+     * Display the payment method and permit checkout.
      */
     ENABLED_WITH_CHECKOUT("EnabledWithCheckout"),
-  
+
 
     /**
-     * 
-   * Display the payment method and suppress checkout.
-   * 
+     * Display the payment method and suppress checkout.
      */
     ENABLED_WITHOUT_CHECKOUT("EnabledWithoutCheckout"),
-  
+
 
     /**
-     * 
-   * Do not display the payment method.
-   * 
+     * Do not display the payment method.
      */
     NOT_SUPPORTED("NotSupported"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     ClassifiedAdPaymentMethodEnabledCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static ClassifiedAdPaymentMethodEnabledCodeType fromValue(String v) {
         if (v != null) {
-            for (ClassifiedAdPaymentMethodEnabledCodeType c: ClassifiedAdPaymentMethodEnabledCodeType.values()) {
+            for (ClassifiedAdPaymentMethodEnabledCodeType c : ClassifiedAdPaymentMethodEnabledCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

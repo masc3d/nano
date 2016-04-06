@@ -3,22 +3,19 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Contains information about promotional sales. This call
  * is part of the Promotional Price Display feature.
- * 
  */
 @RootElement(name = "GetPromotionalSaleDetailsResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetPromotionalSaleDetailsResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "PromotionalSaleDetails")
-	@Order(value=0)
-	public PromotionalSaleArrayType promotionalSaleDetails;	
-	
-    
+    @Element(name = "PromotionalSaleDetails")
+    @Order(value = 0)
+    public PromotionalSaleArrayType promotionalSaleDetails;
+
+
 }

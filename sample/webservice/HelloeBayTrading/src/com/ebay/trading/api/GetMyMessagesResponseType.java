@@ -3,33 +3,30 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Conains information about the messages sent to
  * a user. Depending on the detail level, this
  * information can include message counts,
  * resolution and flagged status, message
  * headers, and message text.
- * 
  */
 @RootElement(name = "GetMyMessagesResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetMyMessagesResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Summary")
-	@Order(value=0)
-	public MyMessagesSummaryType summary;	
-	
-	@Element(name = "Alerts")
-	@Order(value=1)
-	public MyMessagesAlertArrayType alerts;	
-	
-	@Element(name = "Messages")
-	@Order(value=2)
-	public MyMessagesMessageArrayType messages;	
-	
-    
+    @Element(name = "Summary")
+    @Order(value = 0)
+    public MyMessagesSummaryType summary;
+
+    @Element(name = "Alerts")
+    @Order(value = 1)
+    public MyMessagesAlertArrayType alerts;
+
+    @Element(name = "Messages")
+    @Order(value = 2)
+    public MyMessagesMessageArrayType messages;
+
+
 }

@@ -3,23 +3,20 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Returns information about notifications sent to the given application
  * for the given ItemID. It will only be returned if ItemID was specified in the
  * input parameters.
- * 
  */
 public class NotificationDetailsArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "NotificationDetails")
-	@Order(value=0)
-	public List<NotificationDetailsType> notificationDetails;	
-	
-    
+    @Element(name = "NotificationDetails")
+    @Order(value = 0)
+    public List<NotificationDetailsType> notificationDetails;
+
+
 }

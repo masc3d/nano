@@ -3,27 +3,24 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Gives approved sellers the ability to extend the default and
  * ongoing lifetime of pictures uploaded to eBay.
- * 
  */
 @RootElement(name = "ExtendSiteHostedPicturesRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class ExtendSiteHostedPicturesRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "PictureURL")
-	@Order(value=0)
-	public List<String> pictureURL;	
-	
-	@Element(name = "ExtensionInDays")
-	@Order(value=1)
-	public Integer extensionInDays;	
-	
-    
+    @Element(name = "PictureURL")
+    @Order(value = 0)
+    public List<String> pictureURL;
+
+    @Element(name = "ExtensionInDays")
+    @Order(value = 1)
+    public Integer extensionInDays;
+
+
 }

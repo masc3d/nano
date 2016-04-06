@@ -3,27 +3,24 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Enables a seller to change the properties of a currently active
  * fixed-price listing (including multi-variation listings).
- * 
  */
 @RootElement(name = "ReviseFixedPriceItemRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class ReviseFixedPriceItemRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Item")
-	@Order(value=0)
-	public ItemType item;	
-	
-	@Element(name = "DeletedField")
-	@Order(value=1)
-	public List<String> deletedField;	
-	
-    
+    @Element(name = "Item")
+    @Order(value = 0)
+    public ItemType item;
+
+    @Element(name = "DeletedField")
+    @Order(value = 1)
+    public List<String> deletedField;
+
+
 }

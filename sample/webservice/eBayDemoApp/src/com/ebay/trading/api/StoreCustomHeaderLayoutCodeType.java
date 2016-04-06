@@ -3,49 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Specifies whether the Store has a custom header.
- * 
  */
 public enum StoreCustomHeaderLayoutCodeType {
 
     /**
-     * 
-   * Specifies that the Store does not have a custom header.
-   * 
+     * Specifies that the Store does not have a custom header.
      */
     NO_HEADER("NoHeader"),
-  
+
 
     /**
-     * 
-   * Specifies that the Store does have a custom header.
-   * 
+     * Specifies that the Store does have a custom header.
      */
     CUSTOM_HEADER_SHOWN("CustomHeaderShown"),
-  
+
 
     /**
-     * 
-   *    (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     StoreCustomHeaderLayoutCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static StoreCustomHeaderLayoutCodeType fromValue(String v) {
         if (v != null) {
-            for (StoreCustomHeaderLayoutCodeType c: StoreCustomHeaderLayoutCodeType.values()) {
+            for (StoreCustomHeaderLayoutCodeType c : StoreCustomHeaderLayoutCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

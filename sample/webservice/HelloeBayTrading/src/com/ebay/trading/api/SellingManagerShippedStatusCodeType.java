@@ -3,49 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Contains values for shipped status.
- * 
  */
 public enum SellingManagerShippedStatusCodeType {
 
     /**
-     * 
-   * The shipped status is "shipped."
-   * 
+     * The shipped status is "shipped."
      */
     SHIPPED("Shipped"),
-  
+
 
     /**
-     * 
-   * The shipped status is "unshipped."
-   * 
+     * The shipped status is "unshipped."
      */
     UNSHIPPED("Unshipped"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     SellingManagerShippedStatusCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static SellingManagerShippedStatusCodeType fromValue(String v) {
         if (v != null) {
-            for (SellingManagerShippedStatusCodeType c: SellingManagerShippedStatusCodeType.values()) {
+            for (SellingManagerShippedStatusCodeType c : SellingManagerShippedStatusCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

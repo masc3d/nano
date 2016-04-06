@@ -3,25 +3,22 @@
 package com.ebay.shopping.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
- * Retrieves user information based on the user ID you specify. The response contains detailed information about a user. You can specify the types of user information you want in the response. 
- * 
+ * Retrieves user information based on the user ID you specify. The response contains detailed information about a user. You can specify the types of user information you want in the response.
  */
 @RootElement(name = "GetUserProfileRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetUserProfileRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "UserID")
-	@Order(value=0)
-	public String userID;	
-	
-	@Element(name = "IncludeSelector")
-	@Order(value=1)
-	public String includeSelector;	
-	
-    
+    @Element(name = "UserID")
+    @Order(value = 0)
+    public String userID;
+
+    @Element(name = "IncludeSelector")
+    @Order(value = 1)
+    public String includeSelector;
+
+
 }

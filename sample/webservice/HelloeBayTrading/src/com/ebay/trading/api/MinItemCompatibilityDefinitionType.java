@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Defines the minimum requirement for compatible applications as part of the parts
  * compatibility feature. If the field is present, the corresponding feature applies
  * to the site. The field is returned as an empty element (e.g., a boolean value is
@@ -33,15 +31,14 @@ import java.util.List;
  * Rim Diammeter, Load Index, and Speed Rating values for a tire) using
  * attributes.</li>
  * </ul>
- * 
  */
 public class MinItemCompatibilityDefinitionType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@AnyElement
-	@Order(value=0)
-	public List<Object> any;	
-	
-    
+    @AnyElement
+    @Order(value = 0)
+    public List<Object> any;
+
+
 }

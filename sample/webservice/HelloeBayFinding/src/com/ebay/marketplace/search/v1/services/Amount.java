@@ -3,24 +3,21 @@
 package com.ebay.marketplace.search.v1.services;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Monetary amount.
- * 
  */
 public class Amount implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Value
-	@Order(value=0)
-	public double value;	
-	
-	@Attribute  
-	@Order(value=1)
-	public String currencyId;	
-	
-    
+    @Value
+    @Order(value = 0)
+    public double value;
+
+    @Attribute
+    @Order(value = 1)
+    public String currencyId;
+
+
 }

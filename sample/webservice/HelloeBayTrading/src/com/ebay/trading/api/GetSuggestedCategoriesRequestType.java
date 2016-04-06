@@ -3,22 +3,19 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Returns a list of up to 10 categories that have the highest percentage of listings
  * whose titles or descriptions contain the keywords you specify.
- * 
  */
 @RootElement(name = "GetSuggestedCategoriesRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetSuggestedCategoriesRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Query")
-	@Order(value=0)
-	public String query;	
-	
-    
+    @Element(name = "Query")
+    @Order(value = 0)
+    public String query;
+
+
 }

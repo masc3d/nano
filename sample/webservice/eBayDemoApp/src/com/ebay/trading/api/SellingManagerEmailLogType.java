@@ -3,38 +3,35 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
- * 
  * Contains list of Email log.
- * 
  */
 public class SellingManagerEmailLogType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "EmailType")
-	@Order(value=0)
-	public SellingManagerEmailTypeCodeType emailType;	
-	
-	@Element(name = "CustomEmailName")
-	@Order(value=1)
-	public String customEmailName;	
-	
-	@Element(name = "EmailState")
-	@Order(value=2)
-	public SellingManagerEmailSentStatusCodeType emailState;	
-	
-	@Element(name = "EventTime")
-	@Order(value=3)
-	public Date eventTime;	
-	
-	@AnyElement
-	@Order(value=4)
-	public List<Object> any;	
-	
-    
+    @Element(name = "EmailType")
+    @Order(value = 0)
+    public SellingManagerEmailTypeCodeType emailType;
+
+    @Element(name = "CustomEmailName")
+    @Order(value = 1)
+    public String customEmailName;
+
+    @Element(name = "EmailState")
+    @Order(value = 2)
+    public SellingManagerEmailSentStatusCodeType emailState;
+
+    @Element(name = "EventTime")
+    @Order(value = 3)
+    public Date eventTime;
+
+    @AnyElement
+    @Order(value = 4)
+    public List<Object> any;
+
+
 }

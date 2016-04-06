@@ -7,12 +7,11 @@ import java.lang.annotation.Target;
 
 /**
  * This annotation specifies the order of pojo fields during mapping
- * 
- * @author bulldog
  *
+ * @author bulldog
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface Order {
-	public int value() default 0;
+    public int value() default 0;
 }

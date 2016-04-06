@@ -3,10 +3,8 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Enables a seller to "reverse" an Unpaid Item dispute that has been closed, for
  * example, if buyer and seller reach an agreement. The seller's Final Value Fee
  * credit and the buyer's strike are both reversed, if applicable.
@@ -19,20 +17,19 @@ import com.leansoft.nano.annotation.*;
  * A dispute can only be reversed if it was closed with DisputeActivity set to
  * SellerEndCommunication, CameToAgreementNeedFVFCredit, or
  * MutualAgreementOrNoBuyerResponse.
- * 
  */
 @RootElement(name = "SellerReverseDisputeRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class SellerReverseDisputeRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "DisputeID")
-	@Order(value=0)
-	public String disputeID;	
-	
-	@Element(name = "DisputeResolutionReason")
-	@Order(value=1)
-	public DisputeResolutionReasonCodeType disputeResolutionReason;	
-	
-    
+    @Element(name = "DisputeID")
+    @Order(value = 0)
+    public String disputeID;
+
+    @Element(name = "DisputeResolutionReason")
+    @Order(value = 1)
+    public DisputeResolutionReasonCodeType disputeResolutionReason;
+
+
 }

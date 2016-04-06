@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
- *          Reserved for future use..
- * 
+ * Reserved for future use..
  */
 public class SIFFTASRecommendationsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "AttributeSetArray")
-	@Order(value=0)
-	public AttributeSetArrayType attributeSetArray;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "AttributeSetArray")
+    @Order(value = 0)
+    public AttributeSetArrayType attributeSetArray;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

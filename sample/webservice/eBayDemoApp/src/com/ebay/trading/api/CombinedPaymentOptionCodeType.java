@@ -3,57 +3,47 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Combined Purchase Options
- * 
  */
 public enum CombinedPaymentOptionCodeType {
 
     /**
-     * 
-   * Combined payments are not allowed by seller.
-   * 
+     * Combined payments are not allowed by seller.
      */
     NO_COMBINED_PAYMENT("NoCombinedPayment"),
-  
+
 
     /**
-     * 
-   * Yes. Specify discount now.
-   * 
+     * Yes. Specify discount now.
      */
     DISCOUNT_SPECIFIED("DiscountSpecified"),
-  
+
 
     /**
-     * 
-   * Yes. Specify discount later.
-   * 
+     * Yes. Specify discount later.
      */
     SPECIFY_DISCOUNT_LATER("SpecifyDiscountLater"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     CombinedPaymentOptionCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static CombinedPaymentOptionCodeType fromValue(String v) {
         if (v != null) {
-            for (CombinedPaymentOptionCodeType c: CombinedPaymentOptionCodeType.values()) {
+            for (CombinedPaymentOptionCodeType c : CombinedPaymentOptionCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

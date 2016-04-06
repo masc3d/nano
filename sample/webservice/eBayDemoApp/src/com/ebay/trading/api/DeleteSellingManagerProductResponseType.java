@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Response for deleting a Selling Manager product.
- * 
  */
 @RootElement(name = "DeleteSellingManagerProductResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class DeleteSellingManagerProductResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "DeletedSellingManagerProductDetails")
-	@Order(value=0)
-	public SellingManagerProductDetailsType deletedSellingManagerProductDetails;	
-	
-    
+    @Element(name = "DeletedSellingManagerProductDetails")
+    @Order(value = 0)
+    public SellingManagerProductDetailsType deletedSellingManagerProductDetails;
+
+
 }

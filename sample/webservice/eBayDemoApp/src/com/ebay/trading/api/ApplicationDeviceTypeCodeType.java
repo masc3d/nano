@@ -3,65 +3,53 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Device used.
- * 
  */
 public enum ApplicationDeviceTypeCodeType {
 
     /**
-     * 
-   * Browser device.
-   * 
+     * Browser device.
      */
     BROWSER("Browser"),
-  
+
 
     /**
-     * 
-   * Wireless device.
-   * 
+     * Wireless device.
      */
     WIRELESS("Wireless"),
-  
+
 
     /**
-     * 
-   * Desktop device.
-   * 
+     * Desktop device.
      */
     DESKTOP("Desktop"),
-  
+
 
     /**
-     * 
-   * SetTopTVBox device.
-   * 
+     * SetTopTVBox device.
      */
     SET_TOP_TV_BOX("SetTopTVBox"),
-  
+
 
     /**
-     * 
-   * Reserved for future use.
-   * 
+     * Reserved for future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     ApplicationDeviceTypeCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static ApplicationDeviceTypeCodeType fromValue(String v) {
         if (v != null) {
-            for (ApplicationDeviceTypeCodeType c: ApplicationDeviceTypeCodeType.values()) {
+            for (ApplicationDeviceTypeCodeType c : ApplicationDeviceTypeCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

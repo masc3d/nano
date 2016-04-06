@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Returns the status of an add folder operation.
- * 
  */
 @RootElement(name = "AddSellingManagerInventoryFolderResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class AddSellingManagerInventoryFolderResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "FolderID")
-	@Order(value=0)
-	public Long folderID;	
-	
-    
+    @Element(name = "FolderID")
+    @Order(value = 0)
+    public Long folderID;
+
+
 }

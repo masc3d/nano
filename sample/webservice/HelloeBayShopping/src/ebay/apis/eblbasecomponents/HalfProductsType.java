@@ -3,25 +3,22 @@
 package ebay.apis.eblbasecomponents;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Information about an eBay catalog product.
- * 
  */
 public class HalfProductsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Product")
-	@Order(value=0)
-	public List<HalfCatalogProductType> product;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "Product")
+    @Order(value = 0)
+    public List<HalfCatalogProductType> product;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

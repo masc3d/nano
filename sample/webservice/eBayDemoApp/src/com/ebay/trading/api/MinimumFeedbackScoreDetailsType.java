@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Type defining the <b>MinimumFeedbackScore</b> container that is returned in
  * <b>GeteBayDetails</b>. The <b>MinimumFeedbackScore</b> container
  * consists of the values that can be used in the
@@ -21,19 +19,18 @@ import java.util.List;
  * <b>BuyerRequirementDetails</b> must be one of the values passed into the
  * <b>DetailName</b> field in the <b>GeteBayDetails</b> request
  * (or, no  <b>DetailName</b> filters should be used).
- * 
  */
 public class MinimumFeedbackScoreDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "FeedbackScore")
-	@Order(value=0)
-	public List<Integer> feedbackScore;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "FeedbackScore")
+    @Order(value = 0)
+    public List<Integer> feedbackScore;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

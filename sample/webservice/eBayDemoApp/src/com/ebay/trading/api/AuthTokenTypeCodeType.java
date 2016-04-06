@@ -3,42 +3,36 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Indicates the source of the item's eligibility for the Buyer
  * Protection Program.
- * 
  */
 public enum AuthTokenTypeCodeType {
 
     /**
-     * 
-   * Buyer protection is covered by the PayPal Protection Program.
-   * 
+     * Buyer protection is covered by the PayPal Protection Program.
      */
     CLIENT_ALERTS_TOKEN("ClientAlertsToken"),
-  
+
 
     /**
-     * 
-   *  Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     AuthTokenTypeCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static AuthTokenTypeCodeType fromValue(String v) {
         if (v != null) {
-            for (AuthTokenTypeCodeType c: AuthTokenTypeCodeType.values()) {
+            for (AuthTokenTypeCodeType c : AuthTokenTypeCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

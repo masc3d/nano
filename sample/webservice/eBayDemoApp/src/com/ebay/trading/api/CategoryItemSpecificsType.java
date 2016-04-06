@@ -3,29 +3,26 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Defines details about recommended names and values for custom Item Specifics.
- * 
  */
 public class CategoryItemSpecificsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "CategoryID")
-	@Order(value=0)
-	public String categoryID;	
-	
-	@Element(name = "ItemSpecifics")
-	@Order(value=1)
-	public NameValueListArrayType itemSpecifics;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "CategoryID")
+    @Order(value = 0)
+    public String categoryID;
+
+    @Element(name = "ItemSpecifics")
+    @Order(value = 1)
+    public NameValueListArrayType itemSpecifics;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

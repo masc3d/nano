@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * If present, the site defines category settings for when the seller
  * can provide a Vehicle Identification Number (VIN) for
  * US, CA, and CAFR eBay Motors sites. VIN is required for cars and trucks
  * from model year 1981 and later. (The US developed national standards for VIN
  * values as of 1981.)
- * 
  */
 public class VINSupportedDefinitionType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@AnyElement
-	@Order(value=0)
-	public List<Object> any;	
-	
-    
+    @AnyElement
+    @Order(value = 0)
+    public List<Object> any;
+
+
 }

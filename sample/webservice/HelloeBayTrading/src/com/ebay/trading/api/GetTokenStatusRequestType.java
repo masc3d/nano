@@ -3,17 +3,14 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Requests current status of user token.
- * 
  */
 @RootElement(name = "GetTokenStatusRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetTokenStatusRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-    
+
 }

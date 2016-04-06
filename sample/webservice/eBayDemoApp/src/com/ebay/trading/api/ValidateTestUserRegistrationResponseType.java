@@ -3,18 +3,15 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
- *       Returned after calling ValidateTestUserRegistrationRequest; confirms a successful
- *       call.
- *     
+ * Returned after calling ValidateTestUserRegistrationRequest; confirms a successful
+ * call.
  */
 @RootElement(name = "ValidateTestUserRegistrationResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class ValidateTestUserRegistrationResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-    
+
 }

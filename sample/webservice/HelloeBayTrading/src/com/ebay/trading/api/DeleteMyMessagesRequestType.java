@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Removes selected messages for a given user.
- * 
  */
 @RootElement(name = "DeleteMyMessagesRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class DeleteMyMessagesRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "AlertIDs")
-	@Order(value=0)
-	public MyMessagesAlertIDArrayType alertIDs;	
-	
-	@Element(name = "MessageIDs")
-	@Order(value=1)
-	public MyMessagesMessageIDArrayType messageIDs;	
-	
-    
+    @Element(name = "AlertIDs")
+    @Order(value = 0)
+    public MyMessagesAlertIDArrayType alertIDs;
+
+    @Element(name = "MessageIDs")
+    @Order(value = 1)
+    public MyMessagesMessageIDArrayType messageIDs;
+
+
 }

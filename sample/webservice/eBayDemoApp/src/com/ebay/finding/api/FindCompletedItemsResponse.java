@@ -3,29 +3,26 @@
 package com.ebay.finding.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Response container for the findCompletedItems call.
- * 
  */
 @RootElement(name = "findCompletedItemsResponse", namespace = "http://www.ebay.com/marketplace/search/v1/services")
 public class FindCompletedItemsResponse extends BaseFindingServiceResponse implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element
-	@Order(value=0)
-	public CategoryHistogramContainer categoryHistogramContainer;	
-	
-	@Element
-	@Order(value=1)
-	public AspectHistogramContainer aspectHistogramContainer;	
-	
-	@Element
-	@Order(value=2)
-	public ConditionHistogramContainer conditionHistogramContainer;	
-	
-    
+    @Element
+    @Order(value = 0)
+    public CategoryHistogramContainer categoryHistogramContainer;
+
+    @Element
+    @Order(value = 1)
+    public AspectHistogramContainer aspectHistogramContainer;
+
+    @Element
+    @Order(value = 2)
+    public ConditionHistogramContainer conditionHistogramContainer;
+
+
 }

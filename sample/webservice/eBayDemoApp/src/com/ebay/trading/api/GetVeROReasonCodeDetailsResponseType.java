@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Contains the reason codes for all sites.
- * 
  */
 @RootElement(name = "GetVeROReasonCodeDetailsResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetVeROReasonCodeDetailsResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "VeROReasonCodeDetails")
-	@Order(value=0)
-	public VeROReasonCodeDetailsType veROReasonCodeDetails;	
-	
-    
+    @Element(name = "VeROReasonCodeDetails")
+    @Order(value = 0)
+    public VeROReasonCodeDetailsType veROReasonCodeDetails;
+
+
 }

@@ -3,29 +3,26 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * A list of favorite sellers the user has saved on the My eBay page.
- * 
  */
 public class MyeBayFavoriteSellerListType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "TotalAvailable")
-	@Order(value=0)
-	public Integer totalAvailable;	
-	
-	@Element(name = "FavoriteSeller")
-	@Order(value=1)
-	public List<MyeBayFavoriteSellerType> favoriteSeller;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "TotalAvailable")
+    @Order(value = 0)
+    public Integer totalAvailable;
+
+    @Element(name = "FavoriteSeller")
+    @Order(value = 1)
+    public List<MyeBayFavoriteSellerType> favoriteSeller;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

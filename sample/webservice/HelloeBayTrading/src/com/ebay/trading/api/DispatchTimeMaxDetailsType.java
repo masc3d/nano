@@ -3,44 +3,41 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
- * 
  * Details about a specific maximum dispatch time, the maximum number of business
  * days required to ship an item to domestic buyers after receiving a cleared
  * payment.
- * 
  */
 public class DispatchTimeMaxDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "DispatchTimeMax")
-	@Order(value=0)
-	public Integer dispatchTimeMax;	
-	
-	@Element(name = "Description")
-	@Order(value=1)
-	public String description;	
-	
-	@Element(name = "DetailVersion")
-	@Order(value=2)
-	public String detailVersion;	
-	
-	@Element(name = "UpdateTime")
-	@Order(value=3)
-	public Date updateTime;	
-	
-	@Element(name = "ExtendedHandling")
-	@Order(value=4)
-	public Boolean extendedHandling;	
-	
-	@AnyElement
-	@Order(value=5)
-	public List<Object> any;	
-	
-    
+    @Element(name = "DispatchTimeMax")
+    @Order(value = 0)
+    public Integer dispatchTimeMax;
+
+    @Element(name = "Description")
+    @Order(value = 1)
+    public String description;
+
+    @Element(name = "DetailVersion")
+    @Order(value = 2)
+    public String detailVersion;
+
+    @Element(name = "UpdateTime")
+    @Order(value = 3)
+    public Date updateTime;
+
+    @Element(name = "ExtendedHandling")
+    @Order(value = 4)
+    public Boolean extendedHandling;
+
+    @AnyElement
+    @Order(value = 5)
+    public List<Object> any;
+
+
 }

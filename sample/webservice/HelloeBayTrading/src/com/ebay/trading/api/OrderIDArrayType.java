@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * A list of unique identifiers for orders.
- * 
  */
 public class OrderIDArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "OrderID")
-	@Order(value=0)
-	public List<String> orderID;	
-	
-    
+    @Element(name = "OrderID")
+    @Order(value = 0)
+    public List<String> orderID;
+
+
 }

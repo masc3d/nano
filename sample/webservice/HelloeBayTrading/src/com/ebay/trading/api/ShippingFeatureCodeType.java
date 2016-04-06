@@ -3,81 +3,65 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Miscellaneous details of the shipment.
- * 
  */
 public enum ShippingFeatureCodeType {
 
     /**
-     * 
-   * Confirmation requested.
-   * 
+     * Confirmation requested.
      */
     DELIVERY_CONFIRMATION("DeliveryConfirmation"),
-  
+
 
     /**
-     * 
-   * Signature requested upon receipt.
-   * 
+     * Signature requested upon receipt.
      */
     SIGNATURE_CONFIRMATION("SignatureConfirmation"),
-  
+
 
     /**
-     * 
-   * Stealth postage.
-   * 
+     * Stealth postage.
      */
     STEALTH_POSTAGE("StealthPostage"),
-  
+
 
     /**
-     * 
-   * Saturday delivery.
-   * 
+     * Saturday delivery.
      */
     SATURDAY_DELIVERY("SaturdayDelivery"),
-  
+
 
     /**
-     * 
-   * Other.
-   * 
+     * Other.
      */
     OTHER("Other"),
-  
+
 
     /**
-     * 
-   * Not defined.
-   * 
+     * Not defined.
      */
     NOT_DEFINED("NotDefined"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     ShippingFeatureCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static ShippingFeatureCodeType fromValue(String v) {
         if (v != null) {
-            for (ShippingFeatureCodeType c: ShippingFeatureCodeType.values()) {
+            for (ShippingFeatureCodeType c : ShippingFeatureCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

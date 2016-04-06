@@ -3,38 +3,35 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
- * 
  * Details about a currency.
- * 
  */
 public class CurrencyDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Currency")
-	@Order(value=0)
-	public CurrencyCodeType currency;	
-	
-	@Element(name = "Description")
-	@Order(value=1)
-	public String description;	
-	
-	@Element(name = "DetailVersion")
-	@Order(value=2)
-	public String detailVersion;	
-	
-	@Element(name = "UpdateTime")
-	@Order(value=3)
-	public Date updateTime;	
-	
-	@AnyElement
-	@Order(value=4)
-	public List<Object> any;	
-	
-    
+    @Element(name = "Currency")
+    @Order(value = 0)
+    public CurrencyCodeType currency;
+
+    @Element(name = "Description")
+    @Order(value = 1)
+    public String description;
+
+    @Element(name = "DetailVersion")
+    @Order(value = 2)
+    public String detailVersion;
+
+    @Element(name = "UpdateTime")
+    @Order(value = 3)
+    public Date updateTime;
+
+    @AnyElement
+    @Order(value = 4)
+    public List<Object> any;
+
+
 }

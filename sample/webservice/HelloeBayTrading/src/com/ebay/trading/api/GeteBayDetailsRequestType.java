@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Retrieves eBay IDs and codes (e.g., site IDs and shipping service
  * codes), enumerated data (e.g., payment methods), and other common eBay
  * meta-data. This call enables you to keep certain data up to date in your
@@ -26,17 +24,16 @@ import java.util.List;
  * Sellers who engage in cross-border trade on sites that require a recoupment agreement, must agree to the
  * recoupment terms before adding items to the site. This agreement allows eBay to reimburse
  * a buyer during a dispute and then recoup the cost from the seller. Information about whether a site
- *         is a recoupment site is returned in the GeteBayDetailsResponse.RecoupmentPolicyDetails container.
- * 
+ * is a recoupment site is returned in the GeteBayDetailsResponse.RecoupmentPolicyDetails container.
  */
 @RootElement(name = "GeteBayDetailsRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GeteBayDetailsRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "DetailName")
-	@Order(value=0)
-	public List<DetailNameCodeType> detailName;	
-	
-    
+    @Element(name = "DetailName")
+    @Order(value = 0)
+    public List<DetailNameCodeType> detailName;
+
+
 }

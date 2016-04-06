@@ -3,22 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * This type is deprecated because <b>MyMessagesAlert*</b> are deprecated.
- * 
- * 
  */
 public class MyMessagesAlertArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Alert")
-	@Order(value=0)
-	public List<MyMessagesAlertType> alert;	
-	
-    
+    @Element(name = "Alert")
+    @Order(value = 0)
+    public List<MyMessagesAlertType> alert;
+
+
 }

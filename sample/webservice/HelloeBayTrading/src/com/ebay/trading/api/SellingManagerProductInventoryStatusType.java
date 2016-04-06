@@ -3,7 +3,6 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
@@ -13,33 +12,33 @@ public class SellingManagerProductInventoryStatusType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "QuantityScheduled")
-	@Order(value=0)
-	public Integer quantityScheduled;	
-	
-	@Element(name = "QuantityActive")
-	@Order(value=1)
-	public Integer quantityActive;	
-	
-	@Element(name = "QuantitySold")
-	@Order(value=2)
-	public Integer quantitySold;	
-	
-	@Element(name = "QuantityUnsold")
-	@Order(value=3)
-	public Integer quantityUnsold;	
-	
-	@Element(name = "SuccessPercent")
-	@Order(value=4)
-	public Float successPercent;	
-	
-	@Element(name = "AverageSellingPrice")
-	@Order(value=5)
-	public AmountType averageSellingPrice;	
-	
-	@AnyElement
-	@Order(value=6)
-	public List<Object> any;	
-	
-    
+    @Element(name = "QuantityScheduled")
+    @Order(value = 0)
+    public Integer quantityScheduled;
+
+    @Element(name = "QuantityActive")
+    @Order(value = 1)
+    public Integer quantityActive;
+
+    @Element(name = "QuantitySold")
+    @Order(value = 2)
+    public Integer quantitySold;
+
+    @Element(name = "QuantityUnsold")
+    @Order(value = 3)
+    public Integer quantityUnsold;
+
+    @Element(name = "SuccessPercent")
+    @Order(value = 4)
+    public Float successPercent;
+
+    @Element(name = "AverageSellingPrice")
+    @Order(value = 5)
+    public AmountType averageSellingPrice;
+
+    @AnyElement
+    @Order(value = 6)
+    public List<Object> any;
+
+
 }

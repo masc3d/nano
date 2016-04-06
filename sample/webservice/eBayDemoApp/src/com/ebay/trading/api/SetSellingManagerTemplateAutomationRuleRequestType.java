@@ -3,10 +3,8 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Revises, or adds to, the Selling Manager automation
  * rules associated with a template.
  * <br>
@@ -32,28 +30,27 @@ import com.leansoft.nano.annotation.*;
  * Although this call can revise (overwrite) an existing rule,
  * this call cannot delete an automation rule.
  * (Instead, use DeleteSellingManagerTemplateAutomationRule.)
- * 
  */
 @RootElement(name = "SetSellingManagerTemplateAutomationRuleRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class SetSellingManagerTemplateAutomationRuleRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "SaleTemplateID")
-	@Order(value=0)
-	public Long saleTemplateID;	
-	
-	@Element(name = "AutomatedListingRule")
-	@Order(value=1)
-	public SellingManagerAutoListType automatedListingRule;	
-	
-	@Element(name = "AutomatedRelistingRule")
-	@Order(value=2)
-	public SellingManagerAutoRelistType automatedRelistingRule;	
-	
-	@Element(name = "AutomatedSecondChanceOfferRule")
-	@Order(value=3)
-	public SellingManagerAutoSecondChanceOfferType automatedSecondChanceOfferRule;	
-	
-    
+    @Element(name = "SaleTemplateID")
+    @Order(value = 0)
+    public Long saleTemplateID;
+
+    @Element(name = "AutomatedListingRule")
+    @Order(value = 1)
+    public SellingManagerAutoListType automatedListingRule;
+
+    @Element(name = "AutomatedRelistingRule")
+    @Order(value = 2)
+    public SellingManagerAutoRelistType automatedRelistingRule;
+
+    @Element(name = "AutomatedSecondChanceOfferRule")
+    @Order(value = 3)
+    public SellingManagerAutoSecondChanceOfferType automatedSecondChanceOfferRule;
+
+
 }

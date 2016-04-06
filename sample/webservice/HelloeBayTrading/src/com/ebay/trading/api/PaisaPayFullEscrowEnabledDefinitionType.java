@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * This type defines the PaisaPayEscrow payment feature. If the field is present, the PaisaPayEscrow payment feature applies to the category. The field is returned as an empty element, the boolean value is not returned.
- * 
  */
 public class PaisaPayFullEscrowEnabledDefinitionType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@AnyElement
-	@Order(value=0)
-	public List<Object> any;	
-	
-    
+    @AnyElement
+    @Order(value = 0)
+    public List<Object> any;
+
+
 }

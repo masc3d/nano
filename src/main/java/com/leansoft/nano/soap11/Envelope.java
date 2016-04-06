@@ -2,9 +2,12 @@
 // DO NOT CHANGE!
 package com.leansoft.nano.soap11;
 
-import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
+import com.leansoft.nano.annotation.AnyElement;
+import com.leansoft.nano.annotation.Element;
+import com.leansoft.nano.annotation.Order;
+import com.leansoft.nano.annotation.RootElement;
 
+import java.io.Serializable;
 import java.util.List;
 
 @RootElement(name = "Envelope", namespace = "http://schemas.xmlsoap.org/soap/envelope/")
@@ -12,17 +15,17 @@ public class Envelope implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Header")
-	@Order(value=0)
-	public Header header;	
-	
-	@Element(name = "Body")
-	@Order(value=1)
-	public Body body;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "Header")
+    @Order(value = 0)
+    public Header header;
+
+    @Element(name = "Body")
+    @Order(value = 1)
+    public Body body;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

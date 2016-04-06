@@ -3,18 +3,15 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * The response to ReviseMyMessagesFoldersRequestType. If the request was successful,
  * ReviseMyMessagesFolders returns nothing.
- * 
  */
 @RootElement(name = "ReviseMyMessagesFoldersResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class ReviseMyMessagesFoldersResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-    
+
 }

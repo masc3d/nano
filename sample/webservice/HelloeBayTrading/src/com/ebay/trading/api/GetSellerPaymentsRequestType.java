@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.Date;
 
 /**
- * 
  * <b>Half.com only.</b>&nbsp;Retrieves a summary of pending or paid payments that Half.com created for the
  * seller identified by the authentication token in the request. Only retrieves
  * payments that occurred within a particular pay period. Each payment is for one
@@ -25,28 +23,27 @@ import java.util.Date;
  * the pay period ends, Half.com settles payments for that period and marks each
  * completed payment as Paid. See the Half.com Web site online help for more
  * information about how payments are managed.
- * 
  */
 @RootElement(name = "GetSellerPaymentsRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetSellerPaymentsRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "PaymentStatus")
-	@Order(value=0)
-	public RCSPaymentStatusCodeType paymentStatus;	
-	
-	@Element(name = "PaymentTimeFrom")
-	@Order(value=1)
-	public Date paymentTimeFrom;	
-	
-	@Element(name = "PaymentTimeTo")
-	@Order(value=2)
-	public Date paymentTimeTo;	
-	
-	@Element(name = "Pagination")
-	@Order(value=3)
-	public PaginationType pagination;	
-	
-    
+    @Element(name = "PaymentStatus")
+    @Order(value = 0)
+    public RCSPaymentStatusCodeType paymentStatus;
+
+    @Element(name = "PaymentTimeFrom")
+    @Order(value = 1)
+    public Date paymentTimeFrom;
+
+    @Element(name = "PaymentTimeTo")
+    @Order(value = 2)
+    public Date paymentTimeTo;
+
+    @Element(name = "Pagination")
+    @Order(value = 3)
+    public PaginationType pagination;
+
+
 }

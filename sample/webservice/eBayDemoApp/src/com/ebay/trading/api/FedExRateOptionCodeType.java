@@ -3,49 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * FedEx Rate Options
- * 
  */
 public enum FedExRateOptionCodeType {
 
     /**
-     * 
-   * FedEx Standard List Rates
-   * 
+     * FedEx Standard List Rates
      */
     FED_EX_STANDARD_LIST("FedExStandardList"),
-  
+
 
     /**
-     * 
-   * FedEx Counter Rates
-   * 
+     * FedEx Counter Rates
      */
     FED_EX_COUNTER("FedExCounter"),
-  
+
 
     /**
-     * 
-   *  Reserved for internal or future use
-   * 
+     * Reserved for internal or future use
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     FedExRateOptionCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static FedExRateOptionCodeType fromValue(String v) {
         if (v != null) {
-            for (FedExRateOptionCodeType c: FedExRateOptionCodeType.values()) {
+            for (FedExRateOptionCodeType c : FedExRateOptionCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

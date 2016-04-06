@@ -2,18 +2,19 @@
 // DO NOT CHANGE!
 package com.leansoft.nano.soap11;
 
-import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
+import com.leansoft.nano.annotation.AnyElement;
+import com.leansoft.nano.annotation.Order;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class Detail implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@AnyElement
-	@Order(value=0)
-	public List<Object> any;	
-	
-    
+    @AnyElement
+    @Order(value = 0)
+    public List<Object> any;
+
+
 }

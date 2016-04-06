@@ -3,18 +3,15 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
- *       Returned after calling SetStorePreferencesRequest. This serves as confirmation that
- *         the Store preferences were successfully submitted.
- *     
+ * Returned after calling SetStorePreferencesRequest. This serves as confirmation that
+ * the Store preferences were successfully submitted.
  */
 @RootElement(name = "SetStorePreferencesResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class SetStorePreferencesResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-    
+
 }

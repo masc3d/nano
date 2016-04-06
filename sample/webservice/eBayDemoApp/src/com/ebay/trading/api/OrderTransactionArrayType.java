@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Contains a list of orders, transactions, or both, each of OrderTransactionType.
- * 
  */
 public class OrderTransactionArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "OrderTransaction")
-	@Order(value=0)
-	public List<OrderTransactionType> orderTransaction;	
-	
-    
+    @Element(name = "OrderTransaction")
+    @Order(value = 0)
+    public List<OrderTransactionType> orderTransaction;
+
+
 }

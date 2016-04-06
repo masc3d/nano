@@ -3,22 +3,19 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Returns the log of emails not sent.
- * 
  */
 @RootElement(name = "GetSellingManagerEmailLogResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetSellingManagerEmailLogResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "EmailLog")
-	@Order(value=0)
-	public List<SellingManagerEmailLogType> emailLog;	
-	
-    
+    @Element(name = "EmailLog")
+    @Order(value = 0)
+    public List<SellingManagerEmailLogType> emailLog;
+
+
 }

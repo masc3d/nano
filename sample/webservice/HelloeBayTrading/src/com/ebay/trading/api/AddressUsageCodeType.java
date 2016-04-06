@@ -3,58 +3,48 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * These values indicate type of an address in AddressType.
- * 
  */
 public enum AddressUsageCodeType {
 
     /**
-     * 
-   * This is default shipping address which is rendered to buyer on checkout.
-   * 
+     * This is default shipping address which is rendered to buyer on checkout.
      */
     DEFAULT_SHIPPING("DefaultShipping"),
-  
+
 
     /**
-     * 
-   * This is an address which is in user's address book.
-   * It can be used at the time of checkout.
-   * 
+     * This is an address which is in user's address book.
+     * It can be used at the time of checkout.
      */
     SHIPPING("Shipping"),
-  
+
 
     /**
-     * 
-   * This is not a valid address. Please use another address.
-   * 
+     * This is not a valid address. Please use another address.
      */
     INVALID("Invalid"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     AddressUsageCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static AddressUsageCodeType fromValue(String v) {
         if (v != null) {
-            for (AddressUsageCodeType c: AddressUsageCodeType.values()) {
+            for (AddressUsageCodeType c : AddressUsageCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Container consisting of one or more RefundLine fields.
- * 
  */
 public class RefundLineArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "RefundLine")
-	@Order(value=0)
-	public List<RefundLineType> refundLine;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "RefundLine")
+    @Order(value = 0)
+    public List<RefundLineType> refundLine;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

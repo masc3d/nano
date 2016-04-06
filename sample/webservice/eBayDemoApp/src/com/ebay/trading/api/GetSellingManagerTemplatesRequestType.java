@@ -3,24 +3,21 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
- *  Retrieves Selling Manager templates.
+ * Retrieves Selling Manager templates.
  * This call is subject to change without notice; the
  * deprecation process is inapplicable to this call.
- * 
  */
 @RootElement(name = "GetSellingManagerTemplatesRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetSellingManagerTemplatesRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "SaleTemplateID")
-	@Order(value=0)
-	public List<Long> saleTemplateID;	
-	
-    
+    @Element(name = "SaleTemplateID")
+    @Order(value = 0)
+    public List<Long> saleTemplateID;
+
+
 }

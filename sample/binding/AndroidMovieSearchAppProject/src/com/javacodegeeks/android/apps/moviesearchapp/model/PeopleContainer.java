@@ -1,12 +1,12 @@
 package com.javacodegeeks.android.apps.moviesearchapp.model;
 
-import java.util.List;
-
 import com.leansoft.nano.annotation.Element;
+
+import java.util.List;
 
 public class PeopleContainer {
 
-	@Element(name="person")
-	public List<Person> personList;
-	
+    @Element(name = "person")
+    public List<Person> personList;
+
 }

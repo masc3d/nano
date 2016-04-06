@@ -18,22 +18,21 @@
 
 package com.loopj.android.http;
 
-import java.io.IOException;
-import java.net.SocketException;
-import java.net.SocketTimeoutException;
-import java.net.UnknownHostException;
-
+import com.leansoft.nano.log.ALog;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.AbstractHttpClient;
 import org.apache.http.protocol.HttpContext;
 
-import com.leansoft.nano.log.ALog;
+import java.io.IOException;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
 
 class AsyncHttpRequest implements Runnable {
-	
+
     private static final String TAG = AsyncHttpRequest.class.getSimpleName();
-	
+
     private final AbstractHttpClient client;
     private final HttpContext context;
     private final HttpUriRequest request;
@@ -48,66 +47,66 @@ class AsyncHttpRequest implements Runnable {
 
     @Override
     public void run() {
-    	makeRequestWithExceptionHandling();
+        makeRequestWithExceptionHandling();
     }
 
     private void makeRequest() throws IOException {
-        if(!Thread.currentThread().isInterrupted()) {
-        	try {
-        		HttpResponse response = client.execute(request, context);
-        		if(!Thread.currentThread().isInterrupted()) {
-        			if(responseHandler != null) {
-        				responseHandler.sendResponseMessage(response);
-        			}
-        		} else{
-        			//TODO: should raise InterruptedException? this block is reached whenever the request is cancelled before its response is received
-        		}
-        	} catch (IOException e) {
-        		if(!Thread.currentThread().isInterrupted()) {
-        			throw e;
-        		}
-        	}
+        if (!Thread.currentThread().isInterrupted()) {
+            try {
+                HttpResponse response = client.execute(request, context);
+                if (!Thread.currentThread().isInterrupted()) {
+                    if (responseHandler != null) {
+                        responseHandler.sendResponseMessage(response);
+                    }
+                } else {
+                    //TODO: should raise InterruptedException? this block is reached whenever the request is cancelled before its response is received
+                }
+            } catch (IOException e) {
+                if (!Thread.currentThread().isInterrupted()) {
+                    throw e;
+                }
+            }
         }
     }
 
     private void makeRequestWithExceptionHandling() {
         try {
-        	makeRequest();
+            makeRequest();
         } catch (UnknownHostException e) {
-	        if(responseHandler != null) {
-	            responseHandler.sendFailureMessage(e, "can't resolve host", null);
-	        }
-	        ALog.e(TAG, "can't resolve host", e);
-        } catch (SocketException e){
-            // Added to detect host unreachable
-            if(responseHandler != null) {
+            if (responseHandler != null) {
                 responseHandler.sendFailureMessage(e, "can't resolve host", null);
             }
-	        ALog.e(TAG, "can't resolve host", e);
-        }catch (SocketTimeoutException e){
-            if(responseHandler != null) {
+            ALog.e(TAG, "can't resolve host", e);
+        } catch (SocketException e) {
+            // Added to detect host unreachable
+            if (responseHandler != null) {
+                responseHandler.sendFailureMessage(e, "can't resolve host", null);
+            }
+            ALog.e(TAG, "can't resolve host", e);
+        } catch (SocketTimeoutException e) {
+            if (responseHandler != null) {
                 responseHandler.sendFailureMessage(e, "socket time out", null);
             }
-	        ALog.e(TAG, "socket time out", e);
+            ALog.e(TAG, "socket time out", e);
         } catch (IOException e) {
-            if(responseHandler != null) {
+            if (responseHandler != null) {
                 responseHandler.sendFailureMessage(e, "IO exception - " + e.getMessage(), null);
             }
-	        ALog.e(TAG, "IO exception - " + e.getMessage(), e);
+            ALog.e(TAG, "IO exception - " + e.getMessage(), e);
         } catch (NullPointerException e) {
             // there's a bug in HttpClient 4.0.x that on some occasions causes
             // DefaultRequestExecutor to throw an NPE, see
             // http://code.google.com/p/android/issues/detail?id=5255
-            if(responseHandler != null) {
-            	IOException ioe = new IOException("NPE in HttpClient" + e.getMessage());
+            if (responseHandler != null) {
+                IOException ioe = new IOException("NPE in HttpClient" + e.getMessage());
                 responseHandler.sendFailureMessage(ioe, "NPE in HttpClient" + e.getMessage(), null);
             }
-	        ALog.e(TAG, "NPE in HttpClient" + e.getMessage(), e);
+            ALog.e(TAG, "NPE in HttpClient" + e.getMessage(), e);
         } catch (Throwable t) {
-            if(responseHandler != null) {
+            if (responseHandler != null) {
                 responseHandler.sendFailureMessage(t, "Connect exception - " + t.getMessage(), null);
             }
-	        ALog.e(TAG, "Connect exception - " + t.getMessage(), t);
+            ALog.e(TAG, "Connect exception - " + t.getMessage(), t);
         }
     }
 }

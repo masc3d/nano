@@ -3,49 +3,47 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * This type is deprecated because it is not used by any call.
- * 
  */
 public enum MailOptionsTypeCodeType {
 
     /**
-     * 
+     *
      */
     DO_NOT_SEND_EMAIL("DoNotSendEmail"),
-  
+
 
     /**
-     * 
+     *
      */
     EMAIL_COPY_TO_SENDER("EmailCopyToSender"),
-  
+
 
     /**
-     * 
+     *
      */
     HIDE_SENDER_EMAIL_ADDRESS("HideSenderEmailAddress"),
-  
+
 
     /**
-     * 
+     *
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     MailOptionsTypeCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static MailOptionsTypeCodeType fromValue(String v) {
         if (v != null) {
-            for (MailOptionsTypeCodeType c: MailOptionsTypeCodeType.values()) {
+            for (MailOptionsTypeCodeType c : MailOptionsTypeCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

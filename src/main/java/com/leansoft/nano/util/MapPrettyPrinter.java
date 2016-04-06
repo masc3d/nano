@@ -5,8 +5,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class MapPrettyPrinter {
-	
-	public static String printMap(Map<String, String> map) {
+
+    public static String printMap(Map<String, String> map) {
         StringBuilder sb = new StringBuilder();
         Iterator<Entry<String, String>> iter = map.entrySet().iterator();
         sb.append('{');
@@ -22,6 +22,6 @@ public class MapPrettyPrinter {
         }
         sb.append('}');
         return sb.toString();
-	}
+    }
 
 }

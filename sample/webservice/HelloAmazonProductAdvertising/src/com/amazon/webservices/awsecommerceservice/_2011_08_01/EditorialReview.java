@@ -3,24 +3,23 @@
 package com.amazon.webservices.awsecommerceservice._2011_08_01;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 @RootElement(name = "EditorialReview", namespace = "http://webservices.amazon.com/AWSECommerceService/2011-08-01")
 public class EditorialReview implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Source")
-	@Order(value=0)
-	public String source;	
-	
-	@Element(name = "Content")
-	@Order(value=1)
-	public String content;	
-	
-	@Element(name = "IsLinkSuppressed")
-	@Order(value=2)
-	public Boolean isLinkSuppressed;	
-	
-    
+    @Element(name = "Source")
+    @Order(value = 0)
+    public String source;
+
+    @Element(name = "Content")
+    @Order(value = 1)
+    public String content;
+
+    @Element(name = "IsLinkSuppressed")
+    @Order(value = 2)
+    public Boolean isLinkSuppressed;
+
+
 }

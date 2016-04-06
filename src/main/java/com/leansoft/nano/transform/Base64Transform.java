@@ -4,18 +4,17 @@ import com.leansoft.nano.util.Base64;
 
 /**
  * Transformer between a base64 encoded string and a byte[]
- * 
- * @author bulldog
  *
+ * @author bulldog
  */
 public class Base64Transform implements Transformable<byte[]> {
 
-	public byte[] read(String value) throws Exception {
-		return Base64.decode(value);
-	}
+    public byte[] read(String value) throws Exception {
+        return Base64.decode(value);
+    }
 
-	public String write(byte[] value) throws Exception {
-		return Base64.encode(value);
-	}
+    public String write(byte[] value) throws Exception {
+        return Base64.encode(value);
+    }
 
 }

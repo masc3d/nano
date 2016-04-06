@@ -2,28 +2,28 @@
 // DO NOT CHANGE!
 package com.amazon.webservices.awsecommerceservice._2011_08_01.collections;
 
-import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import com.amazon.webservices.awsecommerceservice._2011_08_01.collections.collection.CollectionItem;
 import com.amazon.webservices.awsecommerceservice._2011_08_01.collections.collection.CollectionParent;
-import java.util.List;
 import com.amazon.webservices.awsecommerceservice._2011_08_01.collections.collection.CollectionSummary;
+
+import java.io.Serializable;
+import java.util.List;
 
 public class Collection implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "CollectionSummary")
-	@Order(value=0)
-	public CollectionSummary collectionSummary;	
-	
-	@Element(name = "CollectionParent")
-	@Order(value=1)
-	public CollectionParent collectionParent;	
-	
-	@Element(name = "CollectionItem")
-	@Order(value=2)
-	public List<CollectionItem> collectionItem;	
-	
-    
+    @Element(name = "CollectionSummary")
+    @Order(value = 0)
+    public CollectionSummary collectionSummary;
+
+    @Element(name = "CollectionParent")
+    @Order(value = 1)
+    public CollectionParent collectionParent;
+
+    @Element(name = "CollectionItem")
+    @Order(value = 2)
+    public List<CollectionItem> collectionItem;
+
+
 }

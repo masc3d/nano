@@ -3,29 +3,26 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.Date;
 
 /**
- * 
  * Contains the items returned by the call. Items for which a seller event has
  * occurred (and that meet any filters specified as input) are returned in an
  * ItemArrayType object, within which are zero, one, or multiple ItemType objects.
  * Each ItemType object contains the detail data for one item listing.
- * 
  */
 @RootElement(name = "GetSellerEventsResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetSellerEventsResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "TimeTo")
-	@Order(value=0)
-	public Date timeTo;	
-	
-	@Element(name = "ItemArray")
-	@Order(value=1)
-	public ItemArrayType itemArray;	
-	
-    
+    @Element(name = "TimeTo")
+    @Order(value = 0)
+    public Date timeTo;
+
+    @Element(name = "ItemArray")
+    @Order(value = 1)
+    public ItemArrayType itemArray;
+
+
 }

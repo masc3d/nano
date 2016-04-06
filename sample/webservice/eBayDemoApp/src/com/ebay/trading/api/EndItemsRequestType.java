@@ -3,22 +3,19 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Ends up to 10 specified item listings before the date and time at which it would normally end per the listing duration.&nbsp;<b>Also for Half.com</b>.
- * 
  */
 @RootElement(name = "EndItemsRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class EndItemsRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "EndItemRequestContainer")
-	@Order(value=0)
-	public List<EndItemRequestContainerType> endItemRequestContainer;	
-	
-    
+    @Element(name = "EndItemRequestContainer")
+    @Order(value = 0)
+    public List<EndItemRequestContainerType> endItemRequestContainer;
+
+
 }

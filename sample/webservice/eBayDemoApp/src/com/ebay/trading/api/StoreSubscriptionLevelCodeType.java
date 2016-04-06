@@ -3,70 +3,58 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * User's eBay Store subscription level.
- * 
  */
 public enum StoreSubscriptionLevelCodeType {
 
     /**
-     * 
-   *    (in) This closes your eBay Store and cancels your eBay Store subscription.
-   *    All of your current Store Inventory items (if any) will end automatically.
-   *    All of your current Online Auction and Fixed Price items will remain active
-   *    until their ending date is reached or they are sold. All your Store pictures
-   *    hosted on eBay will be deleted unless you have a Picture Manager
-   *    subscription.
-   * 
+     * (in) This closes your eBay Store and cancels your eBay Store subscription.
+     * All of your current Store Inventory items (if any) will end automatically.
+     * All of your current Online Auction and Fixed Price items will remain active
+     * until their ending date is reached or they are sold. All your Store pictures
+     * hosted on eBay will be deleted unless you have a Picture Manager
+     * subscription.
      */
     CLOSE("Close"),
-  
+
 
     /**
-     * 
-   *    Basic level subscription.
-   * 
+     * Basic level subscription.
      */
     BASIC("Basic"),
-  
+
 
     /**
-     * 
-   *    Featured level subscription.
-   * 
+     * Featured level subscription.
      */
     FEATURED("Featured"),
-  
+
 
     /**
-     * 
-   *    Anchor level subscription.
-   * 
+     * Anchor level subscription.
      */
     ANCHOR("Anchor"),
-  
+
 
     /**
-     * 
-   *    (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     StoreSubscriptionLevelCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static StoreSubscriptionLevelCodeType fromValue(String v) {
         if (v != null) {
-            for (StoreSubscriptionLevelCodeType c: StoreSubscriptionLevelCodeType.values()) {
+            for (StoreSubscriptionLevelCodeType c : StoreSubscriptionLevelCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

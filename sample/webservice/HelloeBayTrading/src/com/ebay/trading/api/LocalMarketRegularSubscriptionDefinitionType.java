@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Defines the LocalMarketRegularSubscription feature. If this field
  * is present, the corresponding feature applies to the category. The
  * field is returned as an empty element (i.e., a boolean value is not
@@ -18,15 +16,14 @@ import java.util.List;
  * Level S, Vehicles Regular Multistore Level M, or Vehicles Regular
  * Multistore Level L. Each of these sub-types has a separate discount
  * and billing cycle.
- * 
  */
 public class LocalMarketRegularSubscriptionDefinitionType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@AnyElement
-	@Order(value=0)
-	public List<Object> any;	
-	
-    
+    @AnyElement
+    @Order(value = 0)
+    public List<Object> any;
+
+
 }

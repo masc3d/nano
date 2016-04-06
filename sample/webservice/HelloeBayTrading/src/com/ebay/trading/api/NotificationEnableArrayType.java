@@ -3,22 +3,19 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * A list of NotificationEnable entries. Each entry specifies
  * one notification and whether it is enabled.
- * 
  */
 public class NotificationEnableArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "NotificationEnable")
-	@Order(value=0)
-	public List<NotificationEnableType> notificationEnable;	
-	
-    
+    @Element(name = "NotificationEnable")
+    @Order(value = 0)
+    public List<NotificationEnableType> notificationEnable;
+
+
 }

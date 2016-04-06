@@ -3,30 +3,27 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * A message to help the you understand your status as a seller (PowerSeller status,
  * policy compliance status, etc.).
- * 
  */
 public class SellerDashboardAlertType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Severity")
-	@Order(value=0)
-	public SellerDashboardAlertSeverityCodeType severity;	
-	
-	@Element(name = "Text")
-	@Order(value=1)
-	public String text;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "Severity")
+    @Order(value = 0)
+    public SellerDashboardAlertSeverityCodeType severity;
+
+    @Element(name = "Text")
+    @Order(value = 1)
+    public String text;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

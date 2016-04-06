@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Returns information about the user's My eBay watch list.
- * 
  */
 @RootElement(name = "RemoveFromWatchListResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class RemoveFromWatchListResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "WatchListCount")
-	@Order(value=0)
-	public Integer watchListCount;	
-	
-	@Element(name = "WatchListMaximum")
-	@Order(value=1)
-	public Integer watchListMaximum;	
-	
-    
+    @Element(name = "WatchListCount")
+    @Order(value = 0)
+    public Integer watchListCount;
+
+    @Element(name = "WatchListMaximum")
+    @Order(value = 1)
+    public Integer watchListMaximum;
+
+
 }

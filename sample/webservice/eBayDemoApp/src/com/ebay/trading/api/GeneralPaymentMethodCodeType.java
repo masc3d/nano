@@ -3,80 +3,59 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * This type is deprecated because this type is not used by any call.
- * 
- * 
  */
 public enum GeneralPaymentMethodCodeType {
 
     /**
-     * 
-   * 
-   * Custom Code.
-   * 
+     * Custom Code.
      */
     OTHER("Other"),
-  
+
 
     /**
-     * 
-   * 
-   * Electronic check.
-   * 
+     * Electronic check.
      */
     ECHECK("Echeck"),
-  
+
 
     /**
-     * 
-   * 
-   * ACH.
-   * 
+     * ACH.
      */
     ACH("ACH"),
-  
+
 
     /**
-     * 
-   * 
-   * Credit-card.
-   * 
+     * Credit-card.
      */
     CREDITCARD("Creditcard"),
-  
+
 
     /**
-     * 
-   * 
-   * Pay balance.
-   * 
+     * Pay balance.
      */
     PAY_PAL_BALANCE("PayPalBalance"),
-  
+
 
     /**
-     * 
-   * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     GeneralPaymentMethodCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static GeneralPaymentMethodCodeType fromValue(String v) {
         if (v != null) {
-            for (GeneralPaymentMethodCodeType c: GeneralPaymentMethodCodeType.values()) {
+            for (GeneralPaymentMethodCodeType c : GeneralPaymentMethodCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

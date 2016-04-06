@@ -3,42 +3,39 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
- * 
  * Details about type of Carrier used to ship an item.
- * 
  */
 public class ShippingCarrierDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ShippingCarrierID")
-	@Order(value=0)
-	public Integer shippingCarrierID;	
-	
-	@Element(name = "Description")
-	@Order(value=1)
-	public String description;	
-	
-	@Element(name = "ShippingCarrier")
-	@Order(value=2)
-	public ShippingCarrierCodeType shippingCarrier;	
-	
-	@Element(name = "DetailVersion")
-	@Order(value=3)
-	public String detailVersion;	
-	
-	@Element(name = "UpdateTime")
-	@Order(value=4)
-	public Date updateTime;	
-	
-	@AnyElement
-	@Order(value=5)
-	public List<Object> any;	
-	
-    
+    @Element(name = "ShippingCarrierID")
+    @Order(value = 0)
+    public Integer shippingCarrierID;
+
+    @Element(name = "Description")
+    @Order(value = 1)
+    public String description;
+
+    @Element(name = "ShippingCarrier")
+    @Order(value = 2)
+    public ShippingCarrierCodeType shippingCarrier;
+
+    @Element(name = "DetailVersion")
+    @Order(value = 3)
+    public String detailVersion;
+
+    @Element(name = "UpdateTime")
+    @Order(value = 4)
+    public Date updateTime;
+
+    @AnyElement
+    @Order(value = 5)
+    public List<Object> any;
+
+
 }

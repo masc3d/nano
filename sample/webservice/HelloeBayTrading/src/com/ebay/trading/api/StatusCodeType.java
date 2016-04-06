@@ -3,53 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * This type is no longer used; replaced by <b>ShippingLocationDetails</b>.
- * 
- * 
  */
 public enum StatusCodeType {
 
     /**
-     * 
-   * 
-   * (out) Indicates that the region of origin is active.
-   * 
+     * (out) Indicates that the region of origin is active.
      */
     ACTIVE("Active"),
-  
+
 
     /**
-     * 
-   * 
-   * (out) Indicates that the region of origin is inactive.
-   * 
+     * (out) Indicates that the region of origin is inactive.
      */
     INACTIVE("Inactive"),
-  
+
 
     /**
-     * 
-   * 
-   * Reserved for future use.
-   * 
+     * Reserved for future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     StatusCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static StatusCodeType fromValue(String v) {
         if (v != null) {
-            for (StatusCodeType c: StatusCodeType.values()) {
+            for (StatusCodeType c : StatusCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

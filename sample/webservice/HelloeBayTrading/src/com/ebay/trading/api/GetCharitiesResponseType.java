@@ -3,23 +3,20 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Contains information about charity nonprofit organizations that meet the
  * criteria specified in the request.
- * 
  */
 @RootElement(name = "GetCharitiesResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetCharitiesResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Charity")
-	@Order(value=0)
-	public List<CharityInfoType> charity;	
-	
-    
+    @Element(name = "Charity")
+    @Order(value = 0)
+    public List<CharityInfoType> charity;
+
+
 }

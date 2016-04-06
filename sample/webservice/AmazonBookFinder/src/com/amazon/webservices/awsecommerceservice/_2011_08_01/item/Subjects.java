@@ -3,16 +3,15 @@
 package com.amazon.webservices.awsecommerceservice._2011_08_01.item;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 public class Subjects implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Subject")
-	@Order(value=0)
-	public List<String> subject;	
-	
-    
+    @Element(name = "Subject")
+    @Order(value = 0)
+    public List<String> subject;
+
+
 }

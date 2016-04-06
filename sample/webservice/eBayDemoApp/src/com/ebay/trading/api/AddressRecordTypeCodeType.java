@@ -3,39 +3,35 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Codes indicate the address type.
- * 
  */
 public enum AddressRecordTypeCodeType {
 
     RESIDENTIAL("Residential"),
-  
+
 
     BUSINESS("Business"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use
-   * 
+     * (out) Reserved for internal or future use
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     AddressRecordTypeCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static AddressRecordTypeCodeType fromValue(String v) {
         if (v != null) {
-            for (AddressRecordTypeCodeType c: AddressRecordTypeCodeType.values()) {
+            for (AddressRecordTypeCodeType c : AddressRecordTypeCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

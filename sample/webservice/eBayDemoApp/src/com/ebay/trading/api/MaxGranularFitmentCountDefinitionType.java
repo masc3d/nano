@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Defines the total number of fine grained item compatibilities that can be applied
  * to a listing.
  * <br><br>
@@ -25,15 +23,14 @@ import java.util.List;
  * granularity. That is, if you specify your parts compatibilities using all of the
  * supported compatiblity search names (e.g., Year, Make, Model, Trim, and Engine),
  * you can specify up to 1000 compatibilities.
- * 
  */
 public class MaxGranularFitmentCountDefinitionType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@AnyElement
-	@Order(value=0)
-	public List<Object> any;	
-	
-    
+    @AnyElement
+    @Order(value = 0)
+    public List<Object> any;
+
+
 }

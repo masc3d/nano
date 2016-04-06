@@ -2,9 +2,9 @@
 // DO NOT CHANGE!
 package com.amazon.webservices.awsecommerceservice._2011_08_01;
 
-import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import com.amazon.webservices.awsecommerceservice._2011_08_01.similarviewedproducts.SimilarViewedProduct;
+
+import java.io.Serializable;
 import java.util.List;
 
 @RootElement(name = "SimilarViewedProducts", namespace = "http://webservices.amazon.com/AWSECommerceService/2011-08-01")
@@ -12,9 +12,9 @@ public class SimilarViewedProducts implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "SimilarViewedProduct")
-	@Order(value=0)
-	public List<SimilarViewedProduct> similarViewedProduct;	
-	
-    
+    @Element(name = "SimilarViewedProduct")
+    @Order(value = 0)
+    public List<SimilarViewedProduct> similarViewedProduct;
+
+
 }

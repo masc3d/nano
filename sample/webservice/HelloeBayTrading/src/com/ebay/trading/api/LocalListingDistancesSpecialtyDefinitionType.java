@@ -3,22 +3,19 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Defines the LocalListingDistancesSpecialty feature. This feature displays the supported local listing
  * distances for items listed by sellers subscribed to Local Market for Specialty Vehicles.
- * 
  */
 public class LocalListingDistancesSpecialtyDefinitionType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@AnyElement
-	@Order(value=0)
-	public List<Object> any;	
-	
-    
+    @AnyElement
+    @Order(value = 0)
+    public List<Object> any;
+
+
 }

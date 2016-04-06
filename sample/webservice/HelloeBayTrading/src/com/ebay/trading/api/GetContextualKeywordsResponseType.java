@@ -3,22 +3,19 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Response to a GetContextualKeywords request.
- * 
  */
 @RootElement(name = "GetContextualKeywordsResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetContextualKeywordsResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ContextSearchAsset")
-	@Order(value=0)
-	public List<ContextSearchAssetType> contextSearchAsset;	
-	
-    
+    @Element(name = "ContextSearchAsset")
+    @Order(value = 0)
+    public List<ContextSearchAssetType> contextSearchAsset;
+
+
 }

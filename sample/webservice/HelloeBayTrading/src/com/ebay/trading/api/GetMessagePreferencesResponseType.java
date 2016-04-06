@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Contains the ASQ subjects for the user specified in the request.
- * 
  */
 @RootElement(name = "GetMessagePreferencesResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetMessagePreferencesResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ASQPreferences")
-	@Order(value=0)
-	public ASQPreferencesType asqPreferences;	
-	
-    
+    @Element(name = "ASQPreferences")
+    @Order(value = 0)
+    public ASQPreferencesType asqPreferences;
+
+
 }

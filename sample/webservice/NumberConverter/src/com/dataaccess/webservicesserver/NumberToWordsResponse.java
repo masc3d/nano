@@ -3,16 +3,15 @@
 package com.dataaccess.webservicesserver;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 @RootElement(name = "NumberToWordsResponse", namespace = "http://www.dataaccess.com/webservicesserver/")
 public class NumberToWordsResponse implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "NumberToWordsResult")
-	@Order(value=0)
-	public String numberToWordsResult;	
-	
-    
+    @Element(name = "NumberToWordsResult")
+    @Order(value = 0)
+    public String numberToWordsResult;
+
+
 }

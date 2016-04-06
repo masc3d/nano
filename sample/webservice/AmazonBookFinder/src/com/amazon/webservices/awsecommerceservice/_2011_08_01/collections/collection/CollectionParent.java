@@ -3,19 +3,18 @@
 package com.amazon.webservices.awsecommerceservice._2011_08_01.collections.collection;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 public class CollectionParent implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ASIN")
-	@Order(value=0)
-	public String asin;	
-	
-	@Element(name = "Title")
-	@Order(value=1)
-	public String title;	
-	
-    
+    @Element(name = "ASIN")
+    @Order(value = 0)
+    public String asin;
+
+    @Element(name = "Title")
+    @Order(value = 1)
+    public String title;
+
+
 }

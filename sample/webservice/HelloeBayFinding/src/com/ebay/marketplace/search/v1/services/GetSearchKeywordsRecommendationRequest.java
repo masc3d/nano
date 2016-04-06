@@ -3,10 +3,8 @@
 package com.ebay.marketplace.search.v1.services;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Checks specified keywords for spelling errors and returns corrected keywords
  * that will provide better search results. If you make a keyword query search
  * that returns no results, use this call to check the keywords for
@@ -26,16 +24,15 @@ import com.leansoft.nano.annotation.*;
  * (even if the keywords query returns no items).
  * </li>
  * </ul>
- * 
  */
 @RootElement(name = "getSearchKeywordsRecommendationRequest", namespace = "http://www.ebay.com/marketplace/search/v1/services")
 public class GetSearchKeywordsRecommendationRequest extends BaseServiceRequest implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element
-	@Order(value=0)
-	public String keywords;	
-	
-    
+    @Element
+    @Order(value = 0)
+    public String keywords;
+
+
 }

@@ -3,81 +3,65 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Contains the status of the token
- * 
  */
 public enum TokenStatusCodeType {
 
     /**
-     * 
-   * Token is Active
-   * 
+     * Token is Active
      */
     ACTIVE("Active"),
-  
+
 
     /**
-     * 
-   * Token is Expired
-   * 
+     * Token is Expired
      */
     EXPIRED("Expired"),
-  
+
 
     /**
-     * 
-   * Token is revoked by eBay
-   * 
+     * Token is revoked by eBay
      */
     REVOKED_BYE_BAY("RevokedByeBay"),
-  
+
 
     /**
-     * 
-   * Token is revoked by user
-   * 
+     * Token is revoked by user
      */
     REVOKED_BY_USER("RevokedByUser"),
-  
+
 
     /**
-     * 
-   * Token is revoked by Application
-   * 
+     * Token is revoked by Application
      */
     REVOKED_BY_APP("RevokedByApp"),
-  
+
 
     /**
-     * 
-   * Token is Invalid
-   * 
+     * Token is Invalid
      */
     INVALID("Invalid"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use
-   * 
+     * Reserved for internal or future use
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     TokenStatusCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static TokenStatusCodeType fromValue(String v) {
         if (v != null) {
-            for (TokenStatusCodeType c: TokenStatusCodeType.values()) {
+            for (TokenStatusCodeType c : TokenStatusCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

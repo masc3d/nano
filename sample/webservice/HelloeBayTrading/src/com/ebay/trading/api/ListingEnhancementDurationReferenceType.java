@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * A container node for a set of durations that apply to a certain listing enhancements.
- * 
  */
 public class ListingEnhancementDurationReferenceType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Duration")
-	@Order(value=0)
-	public List<String> duration;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "Duration")
+    @Order(value = 0)
+    public List<String> duration;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

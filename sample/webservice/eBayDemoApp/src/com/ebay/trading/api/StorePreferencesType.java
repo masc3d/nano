@@ -3,20 +3,17 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Store Preferences type.
- * 
  */
 public class StorePreferencesType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "VacationPreferences")
-	@Order(value=0)
-	public StoreVacationPreferencesType vacationPreferences;	
-	
-    
+    @Element(name = "VacationPreferences")
+    @Order(value = 0)
+    public StoreVacationPreferencesType vacationPreferences;
+
+
 }

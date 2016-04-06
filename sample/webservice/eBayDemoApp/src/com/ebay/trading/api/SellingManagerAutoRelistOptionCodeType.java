@@ -3,57 +3,47 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * SellingManagerAutoRelistOptionCodeType - Specifies how the auto relist that will be performed.
- * 
  */
 public enum SellingManagerAutoRelistOptionCodeType {
 
     /**
-     * 
-   * Relist the item immediately.
-   * 
+     * Relist the item immediately.
      */
     RELIST_IMMEDIATELY("RelistImmediately"),
-  
+
 
     /**
-     * 
-   * Relist the item after a specified number of days and hours.
-   * 
+     * Relist the item after a specified number of days and hours.
      */
     RELIST_AFTER_DAYS_HOURS("RelistAfterDaysHours"),
-  
+
 
     /**
-     * 
-   * Relist the item at a specified time of day.
-   * 
+     * Relist the item at a specified time of day.
      */
     RELIST_AT_SPECIFIC_TIME_OF_DAY("RelistAtSpecificTimeOfDay"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     SellingManagerAutoRelistOptionCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static SellingManagerAutoRelistOptionCodeType fromValue(String v) {
         if (v != null) {
-            for (SellingManagerAutoRelistOptionCodeType c: SellingManagerAutoRelistOptionCodeType.values()) {
+            for (SellingManagerAutoRelistOptionCodeType c : SellingManagerAutoRelistOptionCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

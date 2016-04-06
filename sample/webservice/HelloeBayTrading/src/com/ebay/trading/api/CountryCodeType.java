@@ -3,7 +3,6 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Defines the 2-letter country code set.
  * <br><br>
  * Use the GeteBayDetails call to see the list of currently supported codes,
@@ -14,2034 +13,1535 @@ package com.ebay.trading.api;
  * codes in the ISO 3166 standard are not used by eBay. Plus, there are some non-ISO
  * codes in the eBay list. (Additional codes appear at the end of this code list and
  * are noted as non-ISO.)
- * 
  */
 public enum CountryCodeType {
 
     /**
-     * 
-   * Afghanistan.
-   * 
+     * Afghanistan.
      */
     AF("AF"),
-  
+
 
     /**
-     * 
-   * Albania.
-   * 
+     * Albania.
      */
     AL("AL"),
-  
+
 
     /**
-     * 
-   * Algeria.
-   * 
+     * Algeria.
      */
     DZ("DZ"),
-  
+
 
     /**
-     * 
-   * American Samoa.
-   * 
+     * American Samoa.
      */
     AS("AS"),
-  
+
 
     /**
-     * 
-   * Andorra.
-   * 
+     * Andorra.
      */
     AD("AD"),
-  
+
 
     /**
-     * 
-   * Angola.
-   * 
+     * Angola.
      */
     AO("AO"),
-  
+
 
     /**
-     * 
-   * Anguilla.
-   * 
+     * Anguilla.
      */
     AI("AI"),
-  
+
 
     /**
-     * 
-   * Antarctica.
-   * 
+     * Antarctica.
      */
     AQ("AQ"),
-  
+
 
     /**
-     * 
-   * Antigua and Barbuda.
-   * 
+     * Antigua and Barbuda.
      */
     AG("AG"),
-  
+
 
     /**
-     * 
-   * Argentina.
-   * 
+     * Argentina.
      */
     AR("AR"),
-  
+
 
     /**
-     * 
-   * Armenia.
-   * 
+     * Armenia.
      */
     AM("AM"),
-  
+
 
     /**
-     * 
-   * Aruba.
-   * 
+     * Aruba.
      */
     AW("AW"),
-  
+
 
     /**
-     * 
-   * Australia.
-   * 
+     * Australia.
      */
     AU("AU"),
-  
+
 
     /**
-     * 
-   * Austria.
-   * 
+     * Austria.
      */
     AT("AT"),
-  
+
 
     /**
-     * 
-   * Azerbaijan.
-   * 
+     * Azerbaijan.
      */
     AZ("AZ"),
-  
+
 
     /**
-     * 
-   * Bahamas.
-   * 
+     * Bahamas.
      */
     BS("BS"),
-  
+
 
     /**
-     * 
-   * Bahrain.
-   * 
+     * Bahrain.
      */
     BH("BH"),
-  
+
 
     /**
-     * 
-   * Bangladesh.
-   * 
+     * Bangladesh.
      */
     BD("BD"),
-  
+
 
     /**
-     * 
-   * Barbados.
-   * 
+     * Barbados.
      */
     BB("BB"),
-  
+
 
     /**
-     * 
-   * Belarus.
-   * 
+     * Belarus.
      */
     BY("BY"),
-  
+
 
     /**
-     * 
-   * Belgium.
-   * 
+     * Belgium.
      */
     BE("BE"),
-  
+
 
     /**
-     * 
-   * Belize .
-   * 
+     * Belize .
      */
     BZ("BZ"),
-  
+
 
     /**
-     * 
-   * Benin.
-   * 
+     * Benin.
      */
     BJ("BJ"),
-  
+
 
     /**
-     * 
-   * Bermuda.
-   * 
+     * Bermuda.
      */
     BM("BM"),
-  
+
 
     /**
-     * 
-   * Bhutan.
-   * 
+     * Bhutan.
      */
     BT("BT"),
-  
+
 
     /**
-     * 
-   * Bolivia.
-   * 
+     * Bolivia.
      */
     BO("BO"),
-  
+
 
     /**
-     * 
-   * Bosnia and Herzegovina.
-   * 
+     * Bosnia and Herzegovina.
      */
     BA("BA"),
-  
+
 
     /**
-     * 
-   * Botswana.
-   * 
+     * Botswana.
      */
     BW("BW"),
-  
+
 
     /**
-     * 
-   * Bouvet Island.
-   * 
+     * Bouvet Island.
      */
     BV("BV"),
-  
+
 
     /**
-     * 
-   * Brazil.
-   * 
+     * Brazil.
      */
     BR("BR"),
-  
+
 
     /**
-     * 
-   * British Indian Ocean Territory.
-   * 
+     * British Indian Ocean Territory.
      */
     IO("IO"),
-  
+
 
     /**
-     * 
-   * Brunei Darussalam.
-   * 
+     * Brunei Darussalam.
      */
     BN("BN"),
-  
+
 
     /**
-     * 
-   * Bulgaria.
-   * 
+     * Bulgaria.
      */
     BG("BG"),
-  
+
 
     /**
-     * 
-   * Burkina Faso.
-   * 
+     * Burkina Faso.
      */
     BF("BF"),
-  
+
 
     /**
-     * 
-   * Burundi.
-   * 
+     * Burundi.
      */
     BI("BI"),
-  
+
 
     /**
-     * 
-   * Cambodia.
-   * 
+     * Cambodia.
      */
     KH("KH"),
-  
+
 
     /**
-     * 
-   * Cameroon.
-   * 
+     * Cameroon.
      */
     CM("CM"),
-  
+
 
     /**
-     * 
-   * Canada.
-   * 
+     * Canada.
      */
     CA("CA"),
-  
+
 
     /**
-     * 
-   * Cape Verde.
-   * 
+     * Cape Verde.
      */
     CV("CV"),
-  
+
 
     /**
-     * 
-   * Cayman Islands.
-   * 
+     * Cayman Islands.
      */
     KY("KY"),
-  
+
 
     /**
-     * 
-   * Central African Republic.
-   * 
+     * Central African Republic.
      */
     CF("CF"),
-  
+
 
     /**
-     * 
-   * Chad.
-   * 
+     * Chad.
      */
     TD("TD"),
-  
+
 
     /**
-     * 
-   * Chile.
-   * 
+     * Chile.
      */
     CL("CL"),
-  
+
 
     /**
-     * 
-   * China.
-   * 
+     * China.
      */
     CN("CN"),
-  
+
 
     /**
-     * 
-   * Christmas Island.
-   * 
+     * Christmas Island.
      */
     CX("CX"),
-  
+
 
     /**
-     * 
-   * Cocos (Keeling) Islands.
-   * 
+     * Cocos (Keeling) Islands.
      */
     CC("CC"),
-  
+
 
     /**
-     * 
-   * Colombia.
-   * 
+     * Colombia.
      */
     CO("CO"),
-  
+
 
     /**
-     * 
-   * Comoros.
-   * 
+     * Comoros.
      */
     KM("KM"),
-  
+
 
     /**
-     * 
-   * Congo.
-   * 
+     * Congo.
      */
     CG("CG"),
-  
+
 
     /**
-     * 
-   * Congo, The Democratic Republic of the.
-   * 
+     * Congo, The Democratic Republic of the.
      */
     CD("CD"),
-  
+
 
     /**
-     * 
-   * Cook Islands.
-   * 
+     * Cook Islands.
      */
     CK("CK"),
-  
+
 
     /**
-     * 
-   * Costa Rica.
-   * 
+     * Costa Rica.
      */
     CR("CR"),
-  
+
 
     /**
-     * 
-   * Cote d'Ivoire.
-   * 
+     * Cote d'Ivoire.
      */
     CI("CI"),
-  
+
 
     /**
-     * 
-   * Croatia.
-   * 
+     * Croatia.
      */
     HR("HR"),
-  
+
 
     /**
-     * 
-   * Cuba.
-   * 
+     * Cuba.
      */
     CU("CU"),
-  
+
 
     /**
-     * 
-   * Cyprus.
-   * 
+     * Cyprus.
      */
     CY("CY"),
-  
+
 
     /**
-     * 
-   * Czech Republic.
-   * 
+     * Czech Republic.
      */
     CZ("CZ"),
-  
+
 
     /**
-     * 
-   * Denmark.
-   * 
+     * Denmark.
      */
     DK("DK"),
-  
+
 
     /**
-     * 
-   * Djibouti.
-   * 
+     * Djibouti.
      */
     DJ("DJ"),
-  
+
 
     /**
-     * 
-   * Dominica.
-   * 
+     * Dominica.
      */
     DM("DM"),
-  
+
 
     /**
-     * 
-   * Dominican Republic.
-   * 
+     * Dominican Republic.
      */
     DO("DO"),
-  
+
 
     /**
-     * 
-   * No longer in use.
-   * 
+     * No longer in use.
      */
     TP("TP"),
-  
+
 
     /**
-     * 
-   * Ecuador.
-   * 
+     * Ecuador.
      */
     EC("EC"),
-  
+
 
     /**
-     * 
-   * Egypt.
-   * 
+     * Egypt.
      */
     EG("EG"),
-  
+
 
     /**
-     * 
-   * El Salvador.
-   * 
+     * El Salvador.
      */
     SV("SV"),
-  
+
 
     /**
-     * 
-   * Equatorial Guinea.
-   * 
+     * Equatorial Guinea.
      */
     GQ("GQ"),
-  
+
 
     /**
-     * 
-   * Eritrea.
-   * 
+     * Eritrea.
      */
     ER("ER"),
-  
+
 
     /**
-     * 
-   * Estonia.
-   * 
+     * Estonia.
      */
     EE("EE"),
-  
+
 
     /**
-     * 
-   * Ethiopia.
-   * 
+     * Ethiopia.
      */
     ET("ET"),
-  
+
 
     /**
-     * 
-   * Falkland Islands (Malvinas).
-   * 
+     * Falkland Islands (Malvinas).
      */
     FK("FK"),
-  
+
 
     /**
-     * 
-   * Faroe Islands.
-   * 
+     * Faroe Islands.
      */
     FO("FO"),
-  
+
 
     /**
-     * 
-   * Fiji.
-   * 
+     * Fiji.
      */
     FJ("FJ"),
-  
+
 
     /**
-     * 
-   * Finland.
-   * 
+     * Finland.
      */
     FI("FI"),
-  
+
 
     /**
-     * 
-   * France.
-   * 
+     * France.
      */
     FR("FR"),
-  
+
 
     /**
-     * 
-   * French Guiana.
-   * 
+     * French Guiana.
      */
     GF("GF"),
-  
+
 
     /**
-     * 
-   * French Polynesia. Includes Tahiti.
-   * 
+     * French Polynesia. Includes Tahiti.
      */
     PF("PF"),
-  
+
 
     /**
-     * 
-   * French Southern Territories.
-   * 
+     * French Southern Territories.
      */
     TF("TF"),
-  
+
 
     /**
-     * 
-   * Gabon.
-   * 
+     * Gabon.
      */
     GA("GA"),
-  
+
 
     /**
-     * 
-   * Gambia.
-   * 
+     * Gambia.
      */
     GM("GM"),
-  
+
 
     /**
-     * 
-   * Georgia.
-   * 
+     * Georgia.
      */
     GE("GE"),
-  
+
 
     /**
-     * 
-   * Germany.
-   * 
+     * Germany.
      */
     DE("DE"),
-  
+
 
     /**
-     * 
-   * Ghana.
-   * 
+     * Ghana.
      */
     GH("GH"),
-  
+
 
     /**
-     * 
-   * Gibraltar.
-   * 
+     * Gibraltar.
      */
     GI("GI"),
-  
+
 
     /**
-     * 
-   * Greece.
-   * 
+     * Greece.
      */
     GR("GR"),
-  
+
 
     /**
-     * 
-   * Greenland.
-   * 
+     * Greenland.
      */
     GL("GL"),
-  
+
 
     /**
-     * 
-   * Grenada.
-   * 
+     * Grenada.
      */
     GD("GD"),
-  
+
 
     /**
-     * 
-   * Guadeloupe.
-   * 
+     * Guadeloupe.
      */
     GP("GP"),
-  
+
 
     /**
-     * 
-   * Guam.
-   * 
+     * Guam.
      */
     GU("GU"),
-  
+
 
     /**
-     * 
-   * Guatemala.
-   * 
+     * Guatemala.
      */
     GT("GT"),
-  
+
 
     /**
-     * 
-   * Guinea.
-   * 
+     * Guinea.
      */
     GN("GN"),
-  
+
 
     /**
-     * 
-   * Guinea-Bissau.
-   * 
+     * Guinea-Bissau.
      */
     GW("GW"),
-  
+
 
     /**
-     * 
-   * Guyana.
-   * 
+     * Guyana.
      */
     GY("GY"),
-  
+
 
     /**
-     * 
-   * Haiti.
-   * 
+     * Haiti.
      */
     HT("HT"),
-  
+
 
     /**
-     * 
-   * Heard Island and Mcdonald Islands.
-   * 
+     * Heard Island and Mcdonald Islands.
      */
     HM("HM"),
-  
+
 
     /**
-     * 
-   * Holy See (Vatican City state).
-   * 
+     * Holy See (Vatican City state).
      */
     VA("VA"),
-  
+
 
     /**
-     * 
-   * Honduras.
-   * 
+     * Honduras.
      */
     HN("HN"),
-  
+
 
     /**
-     * 
-   * Hong Kong.
-   * 
+     * Hong Kong.
      */
     HK("HK"),
-  
+
 
     /**
-     * 
-   * Hungary.
-   * 
+     * Hungary.
      */
     HU("HU"),
-  
+
 
     /**
-     * 
-   * Iceland.
-   * 
+     * Iceland.
      */
     IS("IS"),
-  
+
 
     /**
-     * 
-   * India.
-   * 
+     * India.
      */
     IN("IN"),
-  
+
 
     /**
-     * 
-   * Indonesia.
-   * 
+     * Indonesia.
      */
     ID("ID"),
-  
+
 
     /**
-     * 
-   * Iran, Islamic Republic of.
-   * 
+     * Iran, Islamic Republic of.
      */
     IR("IR"),
-  
+
 
     /**
-     * 
-   * Iraq.
-   * 
+     * Iraq.
      */
     IQ("IQ"),
-  
+
 
     /**
-     * 
-   * Ireland.
-   * 
+     * Ireland.
      */
     IE("IE"),
-  
+
 
     /**
-     * 
-   * Israel.
-   * 
+     * Israel.
      */
     IL("IL"),
-  
+
 
     /**
-     * 
-   * Italy.
-   * 
+     * Italy.
      */
     IT("IT"),
-  
+
 
     /**
-     * 
-   * Jamaica.
-   * 
+     * Jamaica.
      */
     JM("JM"),
-  
+
 
     /**
-     * 
-   * Japan.
-   * 
+     * Japan.
      */
     JP("JP"),
-  
+
 
     /**
-     * 
-   * Jordan.
-   * 
+     * Jordan.
      */
     JO("JO"),
-  
+
 
     /**
-     * 
-   * Kazakhstan.
-   * 
+     * Kazakhstan.
      */
     KZ("KZ"),
-  
+
 
     /**
-     * 
-   * Kenya.
-   * 
+     * Kenya.
      */
     KE("KE"),
-  
+
 
     /**
-     * 
-   * Kiribati.
-   * 
+     * Kiribati.
      */
     KI("KI"),
-  
+
 
     /**
-     * 
-   * Korea, Democratic People's Republic of.
-   * 
+     * Korea, Democratic People's Republic of.
      */
     KP("KP"),
-  
+
 
     /**
-     * 
-   * Korea, Republic of.
-   * 
+     * Korea, Republic of.
      */
     KR("KR"),
-  
+
 
     /**
-     * 
-   * Kuwait.
-   * 
+     * Kuwait.
      */
     KW("KW"),
-  
+
 
     /**
-     * 
-   * Kyrgyzstan.
-   * 
+     * Kyrgyzstan.
      */
     KG("KG"),
-  
+
 
     /**
-     * 
-   * Lao People's Democratic Republic.
-   * 
+     * Lao People's Democratic Republic.
      */
     LA("LA"),
-  
+
 
     /**
-     * 
-   * Latvia.
-   * 
+     * Latvia.
      */
     LV("LV"),
-  
+
 
     /**
-     * 
-   * Lebanon.
-   * 
+     * Lebanon.
      */
     LB("LB"),
-  
+
 
     /**
-     * 
-   * Lesotho.
-   * 
+     * Lesotho.
      */
     LS("LS"),
-  
+
 
     /**
-     * 
-   * Liberia.
-   * 
+     * Liberia.
      */
     LR("LR"),
-  
+
 
     /**
-     * 
-   * Libyan Arab Jamahiriya.
-   * 
+     * Libyan Arab Jamahiriya.
      */
     LY("LY"),
-  
+
 
     /**
-     * 
-   * Liechtenstein.
-   * 
+     * Liechtenstein.
      */
     LI("LI"),
-  
+
 
     /**
-     * 
-   * Lithuania.
-   * 
+     * Lithuania.
      */
     LT("LT"),
-  
+
 
     /**
-     * 
-   * Luxembourg.
-   * 
+     * Luxembourg.
      */
     LU("LU"),
-  
+
 
     /**
-     * 
-   * Macao.
-   * 
+     * Macao.
      */
     MO("MO"),
-  
+
 
     /**
-     * 
-   * Macedonia, the Former Yugoslav Republic of.
-   * 
+     * Macedonia, the Former Yugoslav Republic of.
      */
     MK("MK"),
-  
+
 
     /**
-     * 
-   * Madagascar.
-   * 
+     * Madagascar.
      */
     MG("MG"),
-  
+
 
     /**
-     * 
-   * Malawi.
-   * 
+     * Malawi.
      */
     MW("MW"),
-  
+
 
     /**
-     * 
-   * Malaysia.
-   * 
+     * Malaysia.
      */
     MY("MY"),
-  
+
 
     /**
-     * 
-   * Maldives.
-   * 
+     * Maldives.
      */
     MV("MV"),
-  
+
 
     /**
-     * 
-   * Mali.
-   * 
+     * Mali.
      */
     ML("ML"),
-  
+
 
     /**
-     * 
-   * Malta.
-   * 
+     * Malta.
      */
     MT("MT"),
-  
+
 
     /**
-     * 
-   * Marshall Islands.
-   * 
+     * Marshall Islands.
      */
     MH("MH"),
-  
+
 
     /**
-     * 
-   * Martinique.
-   * 
+     * Martinique.
      */
     MQ("MQ"),
-  
+
 
     /**
-     * 
-   * Mauritania.
-   * 
+     * Mauritania.
      */
     MR("MR"),
-  
+
 
     /**
-     * 
-   * Mauritius.
-   * 
+     * Mauritius.
      */
     MU("MU"),
-  
+
 
     /**
-     * 
-   * Mayotte.
-   * 
+     * Mayotte.
      */
     YT("YT"),
-  
+
 
     /**
-     * 
-   * Mexico.
-   * 
+     * Mexico.
      */
     MX("MX"),
-  
+
 
     /**
-     * 
-   * Micronesia, Federated States of.
-   * 
+     * Micronesia, Federated States of.
      */
     FM("FM"),
-  
+
 
     /**
-     * 
-   * Moldova, Republic of.
-   * 
+     * Moldova, Republic of.
      */
     MD("MD"),
-  
+
 
     /**
-     * 
-   * Monaco.
-   * 
+     * Monaco.
      */
     MC("MC"),
-  
+
 
     /**
-     * 
-   * Mongolia.
-   * 
+     * Mongolia.
      */
     MN("MN"),
-  
+
 
     /**
-     * 
-   * Montserrat.
-   * 
+     * Montserrat.
      */
     MS("MS"),
-  
+
 
     /**
-     * 
-   * Morocco.
-   * 
+     * Morocco.
      */
     MA("MA"),
-  
+
 
     /**
-     * 
-   * Mozambique.
-   * 
+     * Mozambique.
      */
     MZ("MZ"),
-  
+
 
     /**
-     * 
-   * Myanmar.
-   * 
+     * Myanmar.
      */
     MM("MM"),
-  
+
 
     /**
-     * 
-   * Namibia.
-   * 
+     * Namibia.
      */
     NA("NA"),
-  
+
 
     /**
-     * 
-   * Nauru.
-   * 
+     * Nauru.
      */
     NR("NR"),
-  
+
 
     /**
-     * 
-   * Nepal.
-   * 
+     * Nepal.
      */
     NP("NP"),
-  
+
 
     /**
-     * 
-   * Netherlands.
-   * 
+     * Netherlands.
      */
     NL("NL"),
-  
+
 
     /**
-     * 
-   * Netherlands Antilles.
-   * 
+     * Netherlands Antilles.
      */
     AN("AN"),
-  
+
 
     /**
-     * 
-   * New Caledonia.
-   * 
+     * New Caledonia.
      */
     NC("NC"),
-  
+
 
     /**
-     * 
-   * New Zealand.
-   * 
+     * New Zealand.
      */
     NZ("NZ"),
-  
+
 
     /**
-     * 
-   * Nicaragua.
-   * 
+     * Nicaragua.
      */
     NI("NI"),
-  
+
 
     /**
-     * 
-   * Niger.
-   * 
+     * Niger.
      */
     NE("NE"),
-  
+
 
     /**
-     * 
-   * Nigeria.
-   * 
+     * Nigeria.
      */
     NG("NG"),
-  
+
 
     /**
-     * 
-   * Niue.
-   * 
+     * Niue.
      */
     NU("NU"),
-  
+
 
     /**
-     * 
-   * Norfolk Island.
-   * 
+     * Norfolk Island.
      */
     NF("NF"),
-  
+
 
     /**
-     * 
-   * Northern Mariana Islands.
-   * 
+     * Northern Mariana Islands.
      */
     MP("MP"),
-  
+
 
     /**
-     * 
-   * Norway.
-   * 
+     * Norway.
      */
     NO("NO"),
-  
+
 
     /**
-     * 
-   * Oman.
-   * 
+     * Oman.
      */
     OM("OM"),
-  
+
 
     /**
-     * 
-   * Pakistan.
-   * 
+     * Pakistan.
      */
     PK("PK"),
-  
+
 
     /**
-     * 
-   * Palau.
-   * 
+     * Palau.
      */
     PW("PW"),
-  
+
 
     /**
-     * 
-   * Palestinian territory, Occupied.
-   * 
+     * Palestinian territory, Occupied.
      */
     PS("PS"),
-  
+
 
     /**
-     * 
-   * Panama.
-   * 
+     * Panama.
      */
     PA("PA"),
-  
+
 
     /**
-     * 
-   * Papua New Guinea.
-   * 
+     * Papua New Guinea.
      */
     PG("PG"),
-  
+
 
     /**
-     * 
-   * Paraguay.
-   * 
+     * Paraguay.
      */
     PY("PY"),
-  
+
 
     /**
-     * 
-   * Peru.
-   * 
+     * Peru.
      */
     PE("PE"),
-  
+
 
     /**
-     * 
-   * Philippines.
-   * 
+     * Philippines.
      */
     PH("PH"),
-  
+
 
     /**
-     * 
-   * Pitcairn.
-   * 
+     * Pitcairn.
      */
     PN("PN"),
-  
+
 
     /**
-     * 
-   * Poland.
-   * 
+     * Poland.
      */
     PL("PL"),
-  
+
 
     /**
-     * 
-   * Portugal.
-   * 
+     * Portugal.
      */
     PT("PT"),
-  
+
 
     /**
-     * 
-   * Puerto Rico.
-   * 
+     * Puerto Rico.
      */
     PR("PR"),
-  
+
 
     /**
-     * 
-   * Qatar.
-   * 
+     * Qatar.
      */
     QA("QA"),
-  
+
 
     /**
-     * 
-   * Reunion.
-   * 
+     * Reunion.
      */
     RE("RE"),
-  
+
 
     /**
-     * 
-   * Romania.
-   * 
+     * Romania.
      */
     RO("RO"),
-  
+
 
     /**
-     * 
-   * Russian Federation.
-   * 
+     * Russian Federation.
      */
     RU("RU"),
-  
+
 
     /**
-     * 
-   * Rwanda.
-   * 
+     * Rwanda.
      */
     RW("RW"),
-  
+
 
     /**
-     * 
-   * Saint Helena.
-   * 
+     * Saint Helena.
      */
     SH("SH"),
-  
+
 
     /**
-     * 
-   * Saint Kitts and Nevis.
-   * 
+     * Saint Kitts and Nevis.
      */
     KN("KN"),
-  
+
 
     /**
-     * 
-   * Saint Lucia.
-   * 
+     * Saint Lucia.
      */
     LC("LC"),
-  
+
 
     /**
-     * 
-   * Saint Pierre and Miquelon.
-   * 
+     * Saint Pierre and Miquelon.
      */
     PM("PM"),
-  
+
 
     /**
-     * 
-   * Saint Vincent and the Grenadines.
-   * 
+     * Saint Vincent and the Grenadines.
      */
     VC("VC"),
-  
+
 
     /**
-     * 
-   * Samoa.
-   * 
+     * Samoa.
      */
     WS("WS"),
-  
+
 
     /**
-     * 
-   * San Marino.
-   * 
+     * San Marino.
      */
     SM("SM"),
-  
+
 
     /**
-     * 
-   * Sao Tome and Principe.
-   * 
+     * Sao Tome and Principe.
      */
     ST("ST"),
-  
+
 
     /**
-     * 
-   * Saudi Arabia.
-   * 
+     * Saudi Arabia.
      */
     SA("SA"),
-  
+
 
     /**
-     * 
-   * Senegal.
-   * 
+     * Senegal.
      */
     SN("SN"),
-  
+
 
     /**
-     * 
-   * Seychelles.
-   * 
+     * Seychelles.
      */
     SC("SC"),
-  
+
 
     /**
-     * 
-   * Sierra Leone.
-   * 
+     * Sierra Leone.
      */
     SL("SL"),
-  
+
 
     /**
-     * 
-   * Singapore.
-   * 
+     * Singapore.
      */
     SG("SG"),
-  
+
 
     /**
-     * 
-   * Slovakia.
-   * 
+     * Slovakia.
      */
     SK("SK"),
-  
+
 
     /**
-     * 
-   * Slovenia.
-   * 
+     * Slovenia.
      */
     SI("SI"),
-  
+
 
     /**
-     * 
-   * Solomon Islands.
-   * 
+     * Solomon Islands.
      */
     SB("SB"),
-  
+
 
     /**
-     * 
-   * Somalia.
-   * 
+     * Somalia.
      */
     SO("SO"),
-  
+
 
     /**
-     * 
-   * South Africa.
-   * 
+     * South Africa.
      */
     ZA("ZA"),
-  
+
 
     /**
-     * 
-   * South Georgia and the South Sandwich Islands.
-   * 
+     * South Georgia and the South Sandwich Islands.
      */
     GS("GS"),
-  
+
 
     /**
-     * 
-   * Spain.
-   * 
+     * Spain.
      */
     ES("ES"),
-  
+
 
     /**
-     * 
-   * Sri Lanka.
-   * 
+     * Sri Lanka.
      */
     LK("LK"),
-  
+
 
     /**
-     * 
-   * Sudan.
-   * 
+     * Sudan.
      */
     SD("SD"),
-  
+
 
     /**
-     * 
-   * Suriname.
-   * 
+     * Suriname.
      */
     SR("SR"),
-  
+
 
     /**
-     * 
-   * Svalbard and Jan Mayen.
-   * 
+     * Svalbard and Jan Mayen.
      */
     SJ("SJ"),
-  
+
 
     /**
-     * 
-   * Swaziland.
-   * 
+     * Swaziland.
      */
     SZ("SZ"),
-  
+
 
     /**
-     * 
-   * Sweden.
-   * 
+     * Sweden.
      */
     SE("SE"),
-  
+
 
     /**
-     * 
-   * Switzerland.
-   * 
+     * Switzerland.
      */
     CH("CH"),
-  
+
 
     /**
-     * 
-   * Syrian Arab Republic.
-   * 
+     * Syrian Arab Republic.
      */
     SY("SY"),
-  
+
 
     /**
-     * 
-   * Taiwan, Province of China.
-   * 
+     * Taiwan, Province of China.
      */
     TW("TW"),
-  
+
 
     /**
-     * 
-   * Tajikistan.
-   * 
+     * Tajikistan.
      */
     TJ("TJ"),
-  
+
 
     /**
-     * 
-   * Tanzania, United Republic of.
-   * 
+     * Tanzania, United Republic of.
      */
     TZ("TZ"),
-  
+
 
     /**
-     * 
-   * Thailand.
-   * 
+     * Thailand.
      */
     TH("TH"),
-  
+
 
     /**
-     * 
-   * Togo.
-   * 
+     * Togo.
      */
     TG("TG"),
-  
+
 
     /**
-     * 
-   * Tokelau.
-   * 
+     * Tokelau.
      */
     TK("TK"),
-  
+
 
     /**
-     * 
-   * Tonga.
-   * 
+     * Tonga.
      */
     TO("TO"),
-  
+
 
     /**
-     * 
-   * Trinidad and Tobago.
-   * 
+     * Trinidad and Tobago.
      */
     TT("TT"),
-  
+
 
     /**
-     * 
-   * Tunisia.
-   * 
+     * Tunisia.
      */
     TN("TN"),
-  
+
 
     /**
-     * 
-   * Turkey.
-   * 
+     * Turkey.
      */
     TR("TR"),
-  
+
 
     /**
-     * 
-   * Turkmenistan.
-   * 
+     * Turkmenistan.
      */
     TM("TM"),
-  
+
 
     /**
-     * 
-   * Turks and Caicos Islands.
-   * 
+     * Turks and Caicos Islands.
      */
     TC("TC"),
-  
+
 
     /**
-     * 
-   * Tuvalu.
-   * 
+     * Tuvalu.
      */
     TV("TV"),
-  
+
 
     /**
-     * 
-   * Uganda.
-   * 
+     * Uganda.
      */
     UG("UG"),
-  
+
 
     /**
-     * 
-   * Ukraine.
-   * 
+     * Ukraine.
      */
     UA("UA"),
-  
+
 
     /**
-     * 
-   * United Arab Emirates.
-   * 
+     * United Arab Emirates.
      */
     AE("AE"),
-  
+
 
     /**
-     * 
-   * United Kingdom.
-   * 
+     * United Kingdom.
      */
     GB("GB"),
-  
+
 
     /**
-     * 
-   * United States.
-   * 
+     * United States.
      */
     US("US"),
-  
+
 
     /**
-     * 
-   * NOTE: United States Minor Outlying Islands was
-   * defined in the eBay list previously
-   * but is no longer a viable option. This country
-   * will remain on eBay country list for backward
-   * compatibility. Use 'US' instead.
-   * 
+     * NOTE: United States Minor Outlying Islands was
+     * defined in the eBay list previously
+     * but is no longer a viable option. This country
+     * will remain on eBay country list for backward
+     * compatibility. Use 'US' instead.
      */
     UM("UM"),
-  
+
 
     /**
-     * 
-   * Uruguay.
-   * 
+     * Uruguay.
      */
     UY("UY"),
-  
+
 
     /**
-     * 
-   * Uzbekistan.
-   * 
+     * Uzbekistan.
      */
     UZ("UZ"),
-  
+
 
     /**
-     * 
-   * Vanuatu.
-   * 
+     * Vanuatu.
      */
     VU("VU"),
-  
+
 
     /**
-     * 
-   * Venezuela.
-   * 
+     * Venezuela.
      */
     VE("VE"),
-  
+
 
     /**
-     * 
-   * Viet Nam.
-   * 
+     * Viet Nam.
      */
     VN("VN"),
-  
+
 
     /**
-     * 
-   * Virgin Islands, British.
-   * 
+     * Virgin Islands, British.
      */
     VG("VG"),
-  
+
 
     /**
-     * 
-   * Virgin Islands, U.S.
-   * 
+     * Virgin Islands, U.S.
      */
     VI("VI"),
-  
+
 
     /**
-     * 
-   * Wallis and Futuna.
-   * 
+     * Wallis and Futuna.
      */
     WF("WF"),
-  
+
 
     /**
-     * 
-   * Western Sahara.
-   * 
+     * Western Sahara.
      */
     EH("EH"),
-  
+
 
     /**
-     * 
-   * Yemen.
-   * 
+     * Yemen.
      */
     YE("YE"),
-  
+
 
     /**
-     * 
-   * No longer in use. See RS for Serbia and ME for Montenegro.
-   * 
+     * No longer in use. See RS for Serbia and ME for Montenegro.
      */
     YU("YU"),
-  
+
 
     /**
-     * 
-   * Zambia.
-   * 
+     * Zambia.
      */
     ZM("ZM"),
-  
+
 
     /**
-     * 
-   * Zimbabwe.
-   * 
+     * Zimbabwe.
      */
     ZW("ZW"),
-  
+
 
     /**
-     * 
-   * NOTE: APO/FPO was defined in eBay list previously
-   * but they are not defined in ISO 3166. This country
-   * will remain on eBay country code list for backward
-   * compatibility.
-   * 
+     * NOTE: APO/FPO was defined in eBay list previously
+     * but they are not defined in ISO 3166. This country
+     * will remain on eBay country code list for backward
+     * compatibility.
      */
     AA("AA"),
-  
+
 
     /**
-     * 
-   * NOTE: Guernsey was defined in eBay list previously
-   * but they are not defined in ISO 3166. This country
-   * will remain on eBay country list for backward
-   * compatibility.
-   * 
+     * NOTE: Guernsey was defined in eBay list previously
+     * but they are not defined in ISO 3166. This country
+     * will remain on eBay country list for backward
+     * compatibility.
      */
     QM("QM"),
-  
+
 
     /**
-     * 
-   * NOTE: Jan Mayen was defined in eBay list previously
-   * but they are not defined in ISO 3166. This country
-   * will remain on eBay country list for backward
-   * compatibility.
-   * 
+     * NOTE: Jan Mayen was defined in eBay list previously
+     * but they are not defined in ISO 3166. This country
+     * will remain on eBay country list for backward
+     * compatibility.
      */
     QN("QN"),
-  
+
 
     /**
-     * 
-   * NOTE: Jersey was defined in eBay list previously
-   * but they are not defined in ISO 3166. This country
-   * will remain on eBay country list for backward
-   * compatibility.
-   * 
+     * NOTE: Jersey was defined in eBay list previously
+     * but they are not defined in ISO 3166. This country
+     * will remain on eBay country list for backward
+     * compatibility.
      */
     QO("QO"),
-  
+
 
     QP("QP"),
-  
+
 
     /**
-     * 
-   * Jersey
-   * 
+     * Jersey
      */
     JE("JE"),
-  
+
 
     /**
-     * 
-   * Guernsey
-   * 
+     * Guernsey
      */
     GG("GG"),
-  
+
 
     /**
-     * 
-   * Unknown country
-   * 
+     * Unknown country
      */
     ZZ("ZZ"),
-  
+
 
     /**
-     * 
-   * Serbia
-   * 
+     * Serbia
      */
     RS("RS"),
-  
+
 
     /**
-     * 
-   * Montenegro.
-   * 
+     * Montenegro.
      */
     ME("ME"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use
-   * 
+     * (out) Reserved for internal or future use
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     CountryCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static CountryCodeType fromValue(String v) {
         if (v != null) {
-            for (CountryCodeType c: CountryCodeType.values()) {
+            for (CountryCodeType c : CountryCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

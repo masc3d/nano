@@ -3,32 +3,29 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Type defining the Taxes container, which contains detailed sales tax information for an
  * order line item. The Taxes container is only returned if the seller is using the Vertex-
  * based Premium Sales Tax Engine solution. The information in this container
  * supercedes/overrides the sales tax information in the ShippingDetails.SalesTax container.
- * 
  */
 public class TaxesType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "TotalTaxAmount")
-	@Order(value=0)
-	public AmountType totalTaxAmount;	
-	
-	@Element(name = "TaxDetails")
-	@Order(value=1)
-	public List<TaxDetailsType> taxDetails;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "TotalTaxAmount")
+    @Order(value = 0)
+    public AmountType totalTaxAmount;
+
+    @Element(name = "TaxDetails")
+    @Order(value = 1)
+    public List<TaxDetailsType> taxDetails;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

@@ -3,34 +3,30 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * This type is deprecated as Pictures Manager was retired.
- * 
- * 
  */
 public class PictureManagerSubscriptionType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "SubscriptionLevel")
-	@Order(value=0)
-	public PictureManagerSubscriptionLevelCodeType subscriptionLevel;	
-	
-	@Element(name = "Fee")
-	@Order(value=1)
-	public AmountType fee;	
-	
-	@Element(name = "StorageSize")
-	@Order(value=2)
-	public Integer storageSize;	
-	
-	@AnyElement
-	@Order(value=3)
-	public List<Object> any;	
-	
-    
+    @Element(name = "SubscriptionLevel")
+    @Order(value = 0)
+    public PictureManagerSubscriptionLevelCodeType subscriptionLevel;
+
+    @Element(name = "Fee")
+    @Order(value = 1)
+    public AmountType fee;
+
+    @Element(name = "StorageSize")
+    @Order(value = 2)
+    public Integer storageSize;
+
+    @AnyElement
+    @Order(value = 3)
+    public List<Object> any;
+
+
 }

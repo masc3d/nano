@@ -3,92 +3,74 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * The period of time for which to create a summary.
- * 
  */
 public enum SummaryWindowPeriodCodeType {
 
     /**
-     * 
-   * The last 24 hours.
-   * 
+     * The last 24 hours.
      */
     LAST_24_HOURS("Last24Hours"),
-  
+
 
     /**
-     * 
-   * The last 7 days.
-   * 
+     * The last 7 days.
      */
     LAST_7_DAYS("Last7Days"),
-  
+
 
     /**
-     * 
-   * The last 31 days.
-   * 
+     * The last 31 days.
      */
     LAST_31_DAYS("Last31Days"),
-  
+
 
     /**
-     * 
-   * The current week.
-   * 
+     * The current week.
      */
     CURRENT_WEEK("CurrentWeek"),
-  
+
 
     /**
-     * 
-   * The prior week.
-   * 
+     * The prior week.
      */
     LAST_WEEK("LastWeek"),
-  
+
 
     /**
-     * 
-   * The current month.
-   * 
+     * The current month.
      */
     CURRENT_MONTH("CurrentMonth"),
-  
+
 
     /**
-     * 
-   * The prior month.
-   * 
+     * The prior month.
      */
     LAST_MONTH("LastMonth"),
-  
+
 
     /**
-     * 
-   * The last 60 days.
-   * 
+     * The last 60 days.
      */
     LAST_60_DAYS("Last60Days"),
-  
+
 
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     SummaryWindowPeriodCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static SummaryWindowPeriodCodeType fromValue(String v) {
         if (v != null) {
-            for (SummaryWindowPeriodCodeType c: SummaryWindowPeriodCodeType.values()) {
+            for (SummaryWindowPeriodCodeType c : SummaryWindowPeriodCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

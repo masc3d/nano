@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * A list of Selling Manager templates.
- * 
  */
 public class SellingManagerTemplateDetailsArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "SellingManagerTemplateDetails")
-	@Order(value=0)
-	public List<SellingManagerTemplateDetailsType> sellingManagerTemplateDetails;	
-	
-    
+    @Element(name = "SellingManagerTemplateDetails")
+    @Order(value = 0)
+    public List<SellingManagerTemplateDetailsType> sellingManagerTemplateDetails;
+
+
 }

@@ -3,65 +3,53 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Specifies the type of link in the custom listing header.
- * 
  */
 public enum StoreCustomListingHeaderLinkCodeType {
 
     /**
-     * 
-   * No type.
-   * 
+     * No type.
      */
     NONE("None"),
-  
+
 
     /**
-     * 
-   * Link is to an About Me page.
-   * 
+     * Link is to an About Me page.
      */
     ABOUT_ME_PAGE("AboutMePage"),
-  
+
 
     /**
-     * 
-   * Link is to a custom page.
-   * 
+     * Link is to a custom page.
      */
     CUSTOM_PAGE("CustomPage"),
-  
+
 
     /**
-     * 
-   * Link is to a custom category.
-   * 
+     * Link is to a custom category.
      */
     CUSTOM_CATEGORY("CustomCategory"),
-  
+
 
     /**
-     * 
-   *    (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     StoreCustomListingHeaderLinkCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static StoreCustomListingHeaderLinkCodeType fromValue(String v) {
         if (v != null) {
-            for (StoreCustomListingHeaderLinkCodeType c: StoreCustomListingHeaderLinkCodeType.values()) {
+            for (StoreCustomListingHeaderLinkCodeType c : StoreCustomListingHeaderLinkCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

@@ -3,113 +3,89 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Valid notification status codes
- * 
  */
 public enum NotificationEventStateCodeType {
 
     /**
-     * 
-   * Status indicating the notification is newly created
-   * 
+     * Status indicating the notification is newly created
      */
     NEW("New"),
-  
+
 
     /**
-     * 
-   * Status indicating the notification was failed
-   * 
+     * Status indicating the notification was failed
      */
     FAILED("Failed"),
-  
+
 
     /**
-     * 
-   * Status indicating the end user application is marked down
-   * 
+     * Status indicating the end user application is marked down
      */
     MARKED_DOWN("MarkedDown"),
-  
+
 
     /**
-     * 
-   * Status indicating the notification is pending
-   * 
+     * Status indicating the notification is pending
      */
     PENDING("Pending"),
-  
+
 
     /**
-     * 
-   * Status indicating the notification is failed pending
-   * 
+     * Status indicating the notification is failed pending
      */
     FAILED_PENDING("FailedPending"),
-  
+
 
     /**
-     * 
-   * Status indicating the notification is marked down pending
-   * 
+     * Status indicating the notification is marked down pending
      */
     MARKED_DOWN_PENDING("MarkedDownPending"),
-  
+
 
     /**
-     * 
-   * Status indicating the notification was successfully delivered
-   * 
+     * Status indicating the notification was successfully delivered
      */
     DELIVERED("Delivered"),
-  
+
 
     /**
-     * 
-   * Status indicating the notification was unable to deliver
-   * 
+     * Status indicating the notification was unable to deliver
      */
     UNDELIVERABLE("Undeliverable"),
-  
+
 
     /**
-     * 
-   * Status indicating the notification was rejected
-   * 
+     * Status indicating the notification was rejected
      */
     REJECTED("Rejected"),
-  
+
 
     /**
-     * 
-   * Status indicating the notification was cancelled
-   * 
+     * Status indicating the notification was cancelled
      */
     CANCELED("Canceled"),
-  
+
 
     /**
-     * 
-   * Reserved for future internal or external use
-   * 
+     * Reserved for future internal or external use
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     NotificationEventStateCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static NotificationEventStateCodeType fromValue(String v) {
         if (v != null) {
-            for (NotificationEventStateCodeType c: NotificationEventStateCodeType.values()) {
+            for (NotificationEventStateCodeType c : NotificationEventStateCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

@@ -3,53 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * This type is deprecated because this type is not used by any call.
- *   
- * 
  */
 public enum BidderTypeCodeType {
 
     /**
-     * 
-   * 
-   * (in) Retrieve all bidders for ended or open listings.
-   * 
+     * (in) Retrieve all bidders for ended or open listings.
      */
     ALL_BIDDER("AllBidder"),
-  
+
 
     /**
-     * 
-   * 
-   * (in) Retrieve all high bidders.
-   * 
+     * (in) Retrieve all high bidders.
      */
     HIGH_BIDDER("HighBidder"),
-  
+
 
     /**
-     * 
-   * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     BidderTypeCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static BidderTypeCodeType fromValue(String v) {
         if (v != null) {
-            for (BidderTypeCodeType c: BidderTypeCodeType.values()) {
+            for (BidderTypeCodeType c : BidderTypeCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

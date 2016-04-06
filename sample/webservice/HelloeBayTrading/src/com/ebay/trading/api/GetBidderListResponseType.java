@@ -3,30 +3,27 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Response to a GetBidderList call, which retrieves all items the user is currently bidding on, or
  * has won or purchased.
- * 
- * 
- * 
+ * <p>
+ * <p>
+ * <p>
  * Response to GetBidderListRequest.
- * 
  */
 @RootElement(name = "GetBidderListResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetBidderListResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Bidder")
-	@Order(value=0)
-	public UserType bidder;	
-	
-	@Element(name = "BidItemArray")
-	@Order(value=1)
-	public ItemArrayType bidItemArray;	
-	
-    
+    @Element(name = "Bidder")
+    @Order(value = 0)
+    public UserType bidder;
+
+    @Element(name = "BidItemArray")
+    @Order(value = 1)
+    public ItemArrayType bidItemArray;
+
+
 }

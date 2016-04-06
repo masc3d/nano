@@ -3,73 +3,59 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Type of SMS subscription error.
- * 
  */
 public enum SMSSubscriptionErrorCodeCodeType {
 
     /**
-     * 
-   * Aggregator not available.
-   * 
+     * Aggregator not available.
      */
     SMS_AGGREGATOR_NOT_AVAILABLE("SMSAggregatorNotAvailable"),
-  
+
 
     /**
-     * 
-   * Phone number invalid.
-   * 
+     * Phone number invalid.
      */
     PHONE_NUMBER_INVALID("PhoneNumberInvalid"),
-  
+
 
     /**
-     * 
-   * Phone number has changed.
-   * 
+     * Phone number has changed.
      */
     PHONE_NUMBER_CHANGED("PhoneNumberChanged"),
-  
+
 
     /**
-     * 
-   * The carrier has changed.
-   * 
+     * The carrier has changed.
      */
     PHONE_NUMBER_CARRIER_CHANGED("PhoneNumberCarrierChanged"),
-  
+
 
     /**
-     * 
-   * The user has requested to be unregistered.
-   * 
+     * The user has requested to be unregistered.
      */
     USER_REQUESTED_UNREGISTRATION("UserRequestedUnregistration"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     SMSSubscriptionErrorCodeCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static SMSSubscriptionErrorCodeCodeType fromValue(String v) {
         if (v != null) {
-            for (SMSSubscriptionErrorCodeCodeType c: SMSSubscriptionErrorCodeCodeType.values()) {
+            for (SMSSubscriptionErrorCodeCodeType c : SMSSubscriptionErrorCodeCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

@@ -3,24 +3,21 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Type defining the <b>AddMemberMessagesAAQToBidderResponseContainer</b> container, which consists
  * of the <b>Ack</b> field (indicating the result of the send message operation) and the <b>CorrelationID</b>
  * field (used to track multiple send message operations performed in one call).
- * 
  */
 @RootElement(name = "AddMemberMessagesAAQToBidderResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class AddMemberMessagesAAQToBidderResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "AddMemberMessagesAAQToBidderResponseContainer")
-	@Order(value=0)
-	public List<AddMemberMessagesAAQToBidderResponseContainerType> addMemberMessagesAAQToBidderResponseContainer;	
-	
-    
+    @Element(name = "AddMemberMessagesAAQToBidderResponseContainer")
+    @Order(value = 0)
+    public List<AddMemberMessagesAAQToBidderResponseContainerType> addMemberMessagesAAQToBidderResponseContainer;
+
+
 }

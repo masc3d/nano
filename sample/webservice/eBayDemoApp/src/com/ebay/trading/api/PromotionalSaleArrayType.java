@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * An array of promotional sales.
- * 
  */
 public class PromotionalSaleArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "PromotionalSale")
-	@Order(value=0)
-	public List<PromotionalSaleType> promotionalSale;	
-	
-    
+    @Element(name = "PromotionalSale")
+    @Order(value = 0)
+    public List<PromotionalSaleType> promotionalSale;
+
+
 }

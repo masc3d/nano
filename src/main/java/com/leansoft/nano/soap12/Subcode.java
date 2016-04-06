@@ -2,22 +2,23 @@
 // DO NOT CHANGE!
 package com.leansoft.nano.soap12;
 
-import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
+import com.leansoft.nano.annotation.Element;
+import com.leansoft.nano.annotation.Order;
 
 import javax.xml.namespace.QName;
+import java.io.Serializable;
 
 public class Subcode implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Value")
-	@Order(value=0)
-	public QName value;	
-	
-	@Element(name = "Subcode")
-	@Order(value=1)
-	public Subcode subcode;	
-	
-    
+    @Element(name = "Value")
+    @Order(value = 0)
+    public QName value;
+
+    @Element(name = "Subcode")
+    @Order(value = 1)
+    public Subcode subcode;
+
+
 }

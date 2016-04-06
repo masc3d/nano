@@ -3,113 +3,89 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Status of the delivery.
- * 
  */
 public enum ShipmentDeliveryStatusCodeType {
 
     /**
-     * 
-   * Created (default).
-   * 
+     * Created (default).
      */
     CREATED("Created"),
-  
+
 
     /**
-     * 
-   * Dropped off.
-   * 
+     * Dropped off.
      */
     DROPPED_OFF("DroppedOff"),
-  
+
 
     /**
-     * 
-   * In transit.
-   * 
+     * In transit.
      */
     IN_TRANSIT("InTransit"),
-  
+
 
     /**
-     * 
-   * Delivered.
-   * 
+     * Delivered.
      */
     DELIVERED("Delivered"),
-  
+
 
     /**
-     * 
-   * Returned.
-   * 
+     * Returned.
      */
     RETURNED("Returned"),
-  
+
 
     /**
-     * 
-   * Cancelled.
-   * 
+     * Cancelled.
      */
     CANCELED("Canceled"),
-  
+
 
     /**
-     * 
-   * Label printed.
-   * 
+     * Label printed.
      */
     LABEL_PRINTED("LabelPrinted"),
-  
+
 
     /**
-     * 
-   * Unconfirmed.
-   * 
+     * Unconfirmed.
      */
     UNCONFIRMED("Unconfirmed"),
-  
+
 
     /**
-     * 
-   * Unknown.
-   * 
+     * Unknown.
      */
     UNKNOWN("Unknown"),
-  
+
 
     /**
-     * 
-   * Error.
-   * 
+     * Error.
      */
     ERROR("Error"),
-  
+
 
     /**
-     * 
-   * Reserved for future use.
-   * 
+     * Reserved for future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     ShipmentDeliveryStatusCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static ShipmentDeliveryStatusCodeType fromValue(String v) {
         if (v != null) {
-            for (ShipmentDeliveryStatusCodeType c: ShipmentDeliveryStatusCodeType.values()) {
+            for (ShipmentDeliveryStatusCodeType c : ShipmentDeliveryStatusCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

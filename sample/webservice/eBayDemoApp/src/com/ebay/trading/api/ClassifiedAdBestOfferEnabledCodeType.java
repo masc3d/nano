@@ -3,58 +3,48 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Used to indicate whether Best Offer is enabled for a category belonging to the
  * Classified Ad Format.
- * 
  */
 public enum ClassifiedAdBestOfferEnabledCodeType {
 
     /**
-     * 
-   * The Best Offer feature is disabled for the category.
-   * 
+     * The Best Offer feature is disabled for the category.
      */
     DISABLED("Disabled"),
-  
+
 
     /**
-     * 
-   * The Best Offer feature is enabled for the category.
-   * 
+     * The Best Offer feature is enabled for the category.
      */
     ENABLED("Enabled"),
-  
+
 
     /**
-     * 
-   * The category supports the Best Offer feature only.
-   * 
+     * The category supports the Best Offer feature only.
      */
     REQUIRED("Required"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     ClassifiedAdBestOfferEnabledCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static ClassifiedAdBestOfferEnabledCodeType fromValue(String v) {
         if (v != null) {
-            for (ClassifiedAdBestOfferEnabledCodeType c: ClassifiedAdBestOfferEnabledCodeType.values()) {
+            for (ClassifiedAdBestOfferEnabledCodeType c : ClassifiedAdBestOfferEnabledCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

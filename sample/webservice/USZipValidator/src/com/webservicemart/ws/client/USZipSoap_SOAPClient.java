@@ -3,24 +3,24 @@
 package com.webservicemart.ws.client;
 
 
-import com.leansoft.nano.ws.SOAPServiceCallback;
 import com.leansoft.nano.ws.NanoSOAPClient;
-import com.webservicemart.ws.ValidateZipResponse;
+import com.leansoft.nano.ws.SOAPServiceCallback;
 import com.webservicemart.ws.ValidateZip;
+import com.webservicemart.ws.ValidateZipResponse;
 
 
 /**
- This class is the SOAP client to the USZipSoap Web Service.
-*/ 
+ * This class is the SOAP client to the USZipSoap Web Service.
+ */
 public class USZipSoap_SOAPClient extends NanoSOAPClient {
 
 
     /**
-     Returns United States Postal Service State Abbreviation, Latitude (decimal degrees) and Longitude (decimal degrees).
-    */
+     * Returns United States Postal Service State Abbreviation, Latitude (decimal degrees) and Longitude (decimal degrees).
+     */
     public void validateZip(ValidateZip requestObject, SOAPServiceCallback<ValidateZipResponse> serviceCallback) {
-       
-        
+
+
         super.invoke(requestObject, serviceCallback, ValidateZipResponse.class);
     }
 

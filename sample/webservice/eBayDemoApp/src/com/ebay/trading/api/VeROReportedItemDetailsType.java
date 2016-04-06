@@ -3,22 +3,19 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Container for a list of reported items. Can contain zero, one, or multiple
  * VeROReportedItemType objects, each of which conveys the data for one item listing.
- * 
  */
 public class VeROReportedItemDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ReportedItem")
-	@Order(value=0)
-	public List<VeROReportedItemType> reportedItem;	
-	
-    
+    @Element(name = "ReportedItem")
+    @Order(value = 0)
+    public List<VeROReportedItemType> reportedItem;
+
+
 }

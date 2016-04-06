@@ -1,58 +1,57 @@
 package com.leansoft.domain.jaxb;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
+import java.util.List;
 
 @XmlRootElement
 public class Customer {
 
-	@XmlAttribute
-	private long id;
-	
-	private String name;
-	
-	private Address address;
+    @XmlAttribute
+    private long id;
 
-	@XmlElement(name="phone-number")
-	private List<PhoneNumber> phoneNumbers;
-	
-	public Customer() {
-		phoneNumbers = new ArrayList<PhoneNumber>();
-	}
+    private String name;
 
-	public long getId() {
-		return id;
-	}
+    private Address address;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    @XmlElement(name = "phone-number")
+    private List<PhoneNumber> phoneNumbers;
 
-	public String getName() {
-		return name;
-	}
+    public Customer() {
+        phoneNumbers = new ArrayList<PhoneNumber>();
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public Address getAddress() {
-		return address;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setAddress(Address address) {
-		this.address = address;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public List<PhoneNumber> getPhoneNumbers() {
-		return phoneNumbers;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setPhoneNumbers(List<PhoneNumber> phoneNumbers) {
-		this.phoneNumbers = phoneNumbers;
-	}
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public List<PhoneNumber> getPhoneNumbers() {
+        return phoneNumbers;
+    }
+
+    public void setPhoneNumbers(List<PhoneNumber> phoneNumbers) {
+        this.phoneNumbers = phoneNumbers;
+    }
 }

@@ -5,27 +5,27 @@ package com.ebay.trading.api;
 public enum ShipmentStatusCodeType {
 
     ACTIVE("Active"),
-  
+
 
     CANCELED("Canceled"),
-  
+
 
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     ShipmentStatusCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static ShipmentStatusCodeType fromValue(String v) {
         if (v != null) {
-            for (ShipmentStatusCodeType c: ShipmentStatusCodeType.values()) {
+            for (ShipmentStatusCodeType c : ShipmentStatusCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

@@ -3,32 +3,29 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Type defining the <b>BuyerSatisfaction</b> container returned in the
  * <b>GetSellerDashboard</b> response. The <b>BuyerSatisfaction</b>
  * container consists of the seller's buyer satisfaction rating, as well as any alerts
  * related to customer service.
- * 
  */
 public class BuyerSatisfactionDashboardType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Status")
-	@Order(value=0)
-	public BuyerSatisfactionStatusCodeType status;	
-	
-	@Element(name = "Alert")
-	@Order(value=1)
-	public List<SellerDashboardAlertType> alert;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "Status")
+    @Order(value = 0)
+    public BuyerSatisfactionStatusCodeType status;
+
+    @Element(name = "Alert")
+    @Order(value = 1)
+    public List<SellerDashboardAlertType> alert;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

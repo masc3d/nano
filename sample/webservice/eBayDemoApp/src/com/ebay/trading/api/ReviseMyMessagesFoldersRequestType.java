@@ -3,31 +3,28 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Renames, removes, or restores the specified My Messages folders for
  * a given user.
- * 
  */
 @RootElement(name = "ReviseMyMessagesFoldersRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class ReviseMyMessagesFoldersRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Operation")
-	@Order(value=0)
-	public MyMessagesFolderOperationCodeType operation;	
-	
-	@Element(name = "FolderID")
-	@Order(value=1)
-	public List<Long> folderID;	
-	
-	@Element(name = "FolderName")
-	@Order(value=2)
-	public List<String> folderName;	
-	
-    
+    @Element(name = "Operation")
+    @Order(value = 0)
+    public MyMessagesFolderOperationCodeType operation;
+
+    @Element(name = "FolderID")
+    @Order(value = 1)
+    public List<Long> folderID;
+
+    @Element(name = "FolderName")
+    @Order(value = 2)
+    public List<String> folderName;
+
+
 }

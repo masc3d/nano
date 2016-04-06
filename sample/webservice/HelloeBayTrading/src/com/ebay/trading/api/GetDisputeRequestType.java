@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Retrieves the details of a specific eBay dispute corresponding to the supplied dispute ID.
- * 
  */
 @RootElement(name = "GetDisputeRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetDisputeRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "DisputeID")
-	@Order(value=0)
-	public String disputeID;	
-	
-    
+    @Element(name = "DisputeID")
+    @Order(value = 0)
+    public String disputeID;
+
+
 }

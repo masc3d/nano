@@ -38,36 +38,32 @@ public class ALog {
         }
         Log.v(tag, message);
     }
-    
-    
-	public static void debugLongMessage(final String tag, String msg) {
+
+
+    public static void debugLongMessage(final String tag, String msg) {
         if (isDebuggable(DebugLevel.DEBUG) == false) {
             return;
         }
-		println(tag, msg);
-	}
-	
-	private static void println(final String tag, String msg) {
-		if (msg == null) return;
+        println(tag, msg);
+    }
 
-	    int length = msg.length();
-	    int c = Log.println(Log.DEBUG, tag, msg);
-       final int len = c;
-	    while (c < length)
-       {
-          String str = null;
-          if (c + len > length)
-          {
-             str = msg.substring(c, length);
-          }
-          else
-          {
-             str = msg.substring(c, c + len);
-          }
-	       c += Log.println(Log.DEBUG, tag, msg);
-	    }
-	}
-    
+    private static void println(final String tag, String msg) {
+        if (msg == null) return;
+
+        int length = msg.length();
+        int c = Log.println(Log.DEBUG, tag, msg);
+        final int len = c;
+        while (c < length) {
+            String str = null;
+            if (c + len > length) {
+                str = msg.substring(c, length);
+            } else {
+                str = msg.substring(c, c + len);
+            }
+            c += Log.println(Log.DEBUG, tag, msg);
+        }
+    }
+
 
     public static void d(final String message) {
         ALog.d(debugTag, message, null);

@@ -2,36 +2,36 @@
 // DO NOT CHANGE!
 package com.leansoft.nano.soap11;
 
-import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
+import com.leansoft.nano.annotation.Element;
+import com.leansoft.nano.annotation.Order;
+import com.leansoft.nano.annotation.RootElement;
 
 import javax.xml.namespace.QName;
+import java.io.Serializable;
 
 /**
- * 
- *     Fault reporting structure
- *   
+ * Fault reporting structure
  */
 @RootElement(name = "Fault", namespace = "http://schemas.xmlsoap.org/soap/envelope/")
 public class Fault implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element
-	@Order(value=0)
-	public QName faultcode;	
-	
-	@Element
-	@Order(value=1)
-	public String faultstring;	
-	
-	@Element
-	@Order(value=2)
-	public String faultactor;	
-	
-	@Element
-	@Order(value=3)
-	public Detail detail;	
-	
-    
+    @Element
+    @Order(value = 0)
+    public QName faultcode;
+
+    @Element
+    @Order(value = 1)
+    public String faultstring;
+
+    @Element
+    @Order(value = 2)
+    public String faultactor;
+
+    @Element
+    @Order(value = 3)
+    public Detail detail;
+
+
 }

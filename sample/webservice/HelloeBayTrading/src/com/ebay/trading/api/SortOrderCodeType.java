@@ -3,49 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * No longer applicable to any category.
- * 
  */
 public enum SortOrderCodeType {
 
     /**
-     * 
-   * The results will be sorted by the specified attribute in ascending (low to high) order.
-   * 
+     * The results will be sorted by the specified attribute in ascending (low to high) order.
      */
     ASCENDING("Ascending"),
-  
+
 
     /**
-     * 
-   * The results will be sorted by the specified attribute in descending (high to low) order.
-   * 
+     * The results will be sorted by the specified attribute in descending (high to low) order.
      */
     DESCENDING("Descending"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     SortOrderCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static SortOrderCodeType fromValue(String v) {
         if (v != null) {
-            for (SortOrderCodeType c: SortOrderCodeType.values()) {
+            for (SortOrderCodeType c : SortOrderCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

@@ -2,18 +2,19 @@
 // DO NOT CHANGE!
 package com.leansoft.nano.soap12;
 
-import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
+import com.leansoft.nano.annotation.Element;
+import com.leansoft.nano.annotation.Order;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class Faultreason implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Text")
-	@Order(value=0)
-	public List<Reasontext> text;	
-	
-    
+    @Element(name = "Text")
+    @Order(value = 0)
+    public List<Reasontext> text;
+
+
 }

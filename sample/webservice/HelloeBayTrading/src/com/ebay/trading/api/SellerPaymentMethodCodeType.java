@@ -3,89 +3,71 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * These are payment methods that sellers can use to pay eBay fees.
- * 
  */
 public enum SellerPaymentMethodCodeType {
 
     /**
-     * 
-   * Used for all other payment methods which are not specifically listed in other columns.
-   * 
+     * Used for all other payment methods which are not specifically listed in other columns.
      */
     NOTHING_ON_FILE("NothingOnFile"),
-  
+
 
     /**
-     * 
-   * Credit Card
-   * 
+     * Credit Card
      */
     CREDIT_CARD("CreditCard"),
-  
+
 
     /**
-     * 
-   * PayPal
-   * 
+     * PayPal
      */
     PAY_PAL("PayPal"),
-  
+
 
     /**
-     * 
-   * Direct Debit
-   * 
+     * Direct Debit
      */
     DIRECT_DEBIT("DirectDebit"),
-  
+
 
     /**
-     * 
-   *  Direct Debit, pending signature mandate
-   * 
+     * Direct Debit, pending signature mandate
      */
     DIRECT_DEBIT_PENDING_SIGNATURE_MANDATE("DirectDebitPendingSignatureMandate"),
-  
+
 
     /**
-     * 
-   *  eBay Direct Pay
-   * 
+     * eBay Direct Pay
      */
     E_BAY_DIRECT_PAY("eBayDirectPay"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use
-   * 
+     * (out) Reserved for internal or future use
      */
     CUSTOM_CODE("CustomCode"),
-  
+
 
     /**
-     * 
-   *  Direct Debit, pending verification
-   * 
+     * Direct Debit, pending verification
      */
     DIRECT_DEBIT_PENDING_VERIFICATION("DirectDebitPendingVerification");
-  
-  
+
+
     private final String value;
-  
+
     SellerPaymentMethodCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static SellerPaymentMethodCodeType fromValue(String v) {
         if (v != null) {
-            for (SellerPaymentMethodCodeType c: SellerPaymentMethodCodeType.values()) {
+            for (SellerPaymentMethodCodeType c : SellerPaymentMethodCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

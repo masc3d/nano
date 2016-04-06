@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Container consisting for the list of locations to where the seller will not ship items.
- * 
  */
 public class SellerExcludeShipToLocationPreferencesType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ExcludeShipToLocation")
-	@Order(value=0)
-	public List<String> excludeShipToLocation;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "ExcludeShipToLocation")
+    @Order(value = 0)
+    public List<String> excludeShipToLocation;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

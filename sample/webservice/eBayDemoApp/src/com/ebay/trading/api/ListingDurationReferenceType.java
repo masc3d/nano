@@ -3,24 +3,21 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Identifies the type of listing as an attribute on the ListingDuration node.
- * 
  */
 public class ListingDurationReferenceType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Value
-	@Order(value=0)
-	public int value;	
-	
-	@Attribute  
-	@Order(value=1)
-	public ListingTypeCodeType type;	
-	
-    
+    @Value
+    @Order(value = 0)
+    public int value;
+
+    @Attribute
+    @Order(value = 1)
+    public ListingTypeCodeType type;
+
+
 }

@@ -3,116 +3,92 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * The set of valid states for an order.
- * 
  */
 public enum OrderStatusCodeType {
 
     /**
-     * 
-   * The cart is active. Items can only be added, deleted, or updated in the cart
-   * when status is Active.
-   * 
+     * The cart is active. Items can only be added, deleted, or updated in the cart
+     * when status is Active.
      */
     ACTIVE("Active"),
-  
+
 
     /**
-     * 
-   * The cart is invalid; it does not exist. An example is a cart that has expired.
-   * 
+     * The cart is invalid; it does not exist. An example is a cart that has expired.
      */
     INACTIVE("Inactive"),
-  
+
 
     /**
-     * 
-   * The order is completed.
-   * 
+     * The order is completed.
      */
     COMPLETED("Completed"),
-  
+
 
     /**
-     * 
-   * The cart was cancelled.
-   * 
+     * The cart was cancelled.
      */
     CANCELLED("Cancelled"),
-  
+
 
     /**
-     * 
-   * The order was shipped. Half.com users
-   * can specify this in the GetOrders input.
-   * 
+     * The order was shipped. Half.com users
+     * can specify this in the GetOrders input.
      */
     SHIPPED("Shipped"),
-  
+
 
     /**
-     * 
-   * Default status.
-   * 
+     * Default status.
      */
     DEFAULT("Default"),
-  
+
 
     /**
-     * 
-   * The cart was authenticated.
-   * 
+     * The cart was authenticated.
      */
     AUTHENTICATED("Authenticated"),
-  
+
 
     /**
-     * 
-   * After placing the order and before completion of checkout,
-   * the card is "in process."
-   * 
+     * After placing the order and before completion of checkout,
+     * the card is "in process."
      */
     IN_PROCESS("InProcess"),
-  
+
 
     /**
-     * 
-   * Invalid.
-   * 
+     * Invalid.
      */
     INVALID("Invalid"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode"),
-  
+
 
     /**
-     * 
-   * All the orders with active and completed status
-   * 
+     * All the orders with active and completed status
      */
     ALL("All");
-  
-  
+
+
     private final String value;
-  
+
     OrderStatusCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static OrderStatusCodeType fromValue(String v) {
         if (v != null) {
-            for (OrderStatusCodeType c: OrderStatusCodeType.values()) {
+            for (OrderStatusCodeType c : OrderStatusCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

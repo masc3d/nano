@@ -3,26 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * This type is deprecated because 3rd Party Checkout was deprecated.
- * 
- * 
  */
 public class ProStoresCheckoutPreferenceType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "CheckoutRedirectProStores")
-	@Order(value=0)
-	public Boolean checkoutRedirectProStores;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "CheckoutRedirectProStores")
+    @Order(value = 0)
+    public Boolean checkoutRedirectProStores;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

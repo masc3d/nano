@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Defines the multi-variation listing feature. If the field is present,
  * the  corresponding feature applies to the site. The field is returned as
  * an empty element (e.g., a boolean value is not returned).<br>
@@ -17,15 +15,14 @@ import java.util.List;
  * For example, a particular brand and style of shirt could be
  * available in different sizes and colors, such as "large blue" and
  * "medium black" variations.
- * 
  */
 public class VariationsEnabledDefinitionType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@AnyElement
-	@Order(value=0)
-	public List<Object> any;	
-	
-    
+    @AnyElement
+    @Order(value = 0)
+    public List<Object> any;
+
+
 }

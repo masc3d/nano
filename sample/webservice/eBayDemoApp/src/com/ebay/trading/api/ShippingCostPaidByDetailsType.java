@@ -3,24 +3,23 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 public class ShippingCostPaidByDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ShippingCostPaidByOption")
-	@Order(value=0)
-	public String shippingCostPaidByOption;	
-	
-	@Element(name = "Description")
-	@Order(value=1)
-	public String description;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "ShippingCostPaidByOption")
+    @Order(value = 0)
+    public String shippingCostPaidByOption;
+
+    @Element(name = "Description")
+    @Order(value = 1)
+    public String description;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

@@ -3,61 +3,51 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Defines the rules for using Item Specifics to classify
  * variation pictures.
- * 
  */
 public enum VariationPictureRuleCodeType {
 
     /**
-     * 
-   * If the name is used in VariationSpecifics, then it must
-   * be used as the Pictures.VariationSpecificName.
-   * 
+     * If the name is used in VariationSpecifics, then it must
+     * be used as the Pictures.VariationSpecificName.
      */
     REQUIRED("Required"),
-  
+
 
     /**
-     * 
-   * If the name is used in VariationSpecifics, then it can
-   * be used as the Pictures.VariationSpecificName.
-   * This is the default for variation-enabled categories.
-   * 
+     * If the name is used in VariationSpecifics, then it can
+     * be used as the Pictures.VariationSpecificName.
+     * This is the default for variation-enabled categories.
      */
     ENABLED("Enabled"),
-  
+
 
     /**
-     * 
-   * The name cannot be used as the Pictures.VariationSpecificName.
-   * 
+     * The name cannot be used as the Pictures.VariationSpecificName.
      */
     DISABLED("Disabled"),
-  
+
 
     /**
-     * 
-   * Reserved for future use.
-   * 
+     * Reserved for future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     VariationPictureRuleCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static VariationPictureRuleCodeType fromValue(String v) {
         if (v != null) {
-            for (VariationPictureRuleCodeType c: VariationPictureRuleCodeType.values()) {
+            for (VariationPictureRuleCodeType c : VariationPictureRuleCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

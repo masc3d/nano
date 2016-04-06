@@ -3,17 +3,14 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Response when an application has voluntarily revoked a user token.
- * 
  */
 @RootElement(name = "RevokeTokenResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class RevokeTokenResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-    
+
 }

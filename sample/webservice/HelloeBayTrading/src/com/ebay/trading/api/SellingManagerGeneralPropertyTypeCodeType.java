@@ -3,57 +3,47 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Container for other alerts for Selling Manager.
- * 
  */
 public enum SellingManagerGeneralPropertyTypeCodeType {
 
     /**
-     * 
-   * Items that received negative feeback.
-   * 
+     * Items that received negative feeback.
      */
     NEGATIVE_FEEDBACK_RECEIVED("NegativeFeedbackReceived"),
-  
+
 
     /**
-     * 
-   * Unpaid item disputes require your response.
-   * 
+     * Unpaid item disputes require your response.
      */
     UNPAID_ITEM_DISPUTE("UnpaidItemDispute"),
-  
+
 
     /**
-     * 
-   * Emails not set because of HTML or active content.
-   * 
+     * Emails not set because of HTML or active content.
      */
     BAD_EMAIL_TEMPLATE("BadEmailTemplate"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     SellingManagerGeneralPropertyTypeCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static SellingManagerGeneralPropertyTypeCodeType fromValue(String v) {
         if (v != null) {
-            for (SellingManagerGeneralPropertyTypeCodeType c: SellingManagerGeneralPropertyTypeCodeType.values()) {
+            for (SellingManagerGeneralPropertyTypeCodeType c : SellingManagerGeneralPropertyTypeCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

@@ -3,7 +3,6 @@
 package com.amazon.webservices.awsecommerceservice._2011_08_01;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.math.BigInteger;
 import java.util.List;
 
@@ -12,21 +11,21 @@ public class Variations implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "TotalVariations")
-	@Order(value=0)
-	public BigInteger totalVariations;	
-	
-	@Element(name = "TotalVariationPages")
-	@Order(value=1)
-	public BigInteger totalVariationPages;	
-	
-	@Element(name = "VariationDimensions")
-	@Order(value=2)
-	public VariationDimensions variationDimensions;	
-	
-	@Element(name = "Item")
-	@Order(value=3)
-	public List<Item> item;	
-	
-    
+    @Element(name = "TotalVariations")
+    @Order(value = 0)
+    public BigInteger totalVariations;
+
+    @Element(name = "TotalVariationPages")
+    @Order(value = 1)
+    public BigInteger totalVariationPages;
+
+    @Element(name = "VariationDimensions")
+    @Order(value = 2)
+    public VariationDimensions variationDimensions;
+
+    @Element(name = "Item")
+    @Order(value = 3)
+    public List<Item> item;
+
+
 }

@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Container for top-rated seller program information.
- * 
  */
 public class TopRatedSellerDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "TopRatedProgram")
-	@Order(value=0)
-	public List<TopRatedProgramCodeType> topRatedProgram;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "TopRatedProgram")
+    @Order(value = 0)
+    public List<TopRatedProgramCodeType> topRatedProgram;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

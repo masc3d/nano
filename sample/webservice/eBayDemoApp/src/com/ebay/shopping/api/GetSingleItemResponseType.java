@@ -3,21 +3,18 @@
 package com.ebay.shopping.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Response to GetSingleItem request.
- * 
  */
 @RootElement(name = "GetSingleItemResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetSingleItemResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Item")
-	@Order(value=0)
-	public SimpleItemType item;	
-	
-    
+    @Element(name = "Item")
+    @Order(value = 0)
+    public SimpleItemType item;
+
+
 }

@@ -3,22 +3,19 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Retrieves a session ID that identifies a user and your application when you make a
  * FetchToken request.
- * 
  */
 @RootElement(name = "GetSessionIDRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetSessionIDRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "RuName")
-	@Order(value=0)
-	public String ruName;	
-	
-    
+    @Element(name = "RuName")
+    @Order(value = 0)
+    public String ruName;
+
+
 }

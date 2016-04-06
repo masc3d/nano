@@ -3,49 +3,41 @@
 package com.ebay.shopping.api;
 
 /**
- * 
  * A means for identifying a person's role in doing business on eBay.
- * 
  */
 public enum TradingRoleCodeType {
 
     /**
-     * 
-   * Acting as buyer.
-   * 
+     * Acting as buyer.
      */
     BUYER("Buyer"),
-  
+
 
     /**
-     * 
-   * Acting as seller.
-   * 
+     * Acting as seller.
      */
     SELLER("Seller"),
-  
+
 
     /**
-     * 
-   * Reserved for future use
-   * 
+     * Reserved for future use
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     TradingRoleCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static TradingRoleCodeType fromValue(String v) {
         if (v != null) {
-            for (TradingRoleCodeType c: TradingRoleCodeType.values()) {
+            for (TradingRoleCodeType c : TradingRoleCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

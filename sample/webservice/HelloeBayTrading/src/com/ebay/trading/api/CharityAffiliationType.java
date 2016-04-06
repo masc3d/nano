@@ -3,29 +3,26 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
- *  Defines the affiliation status for a nonprofit charity organization registered with the dedicated eBay Giving Works provider.
- * 
+ * Defines the affiliation status for a nonprofit charity organization registered with the dedicated eBay Giving Works provider.
  */
 public class CharityAffiliationType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@AnyElement
-	@Order(value=0)
-	public List<Object> any;	
-	
-	@Attribute  
-	@Order(value=1)
-	public String id;	
-	
-	@Attribute  
-	@Order(value=2)
-	public CharityAffiliationTypeCodeType type;	
-	
-    
+    @AnyElement
+    @Order(value = 0)
+    public List<Object> any;
+
+    @Attribute
+    @Order(value = 1)
+    public String id;
+
+    @Attribute
+    @Order(value = 2)
+    public CharityAffiliationTypeCodeType type;
+
+
 }

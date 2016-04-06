@@ -3,17 +3,14 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Retrieves a token required for the GetUserAlerts call in the Client Alerts API.
- * 
  */
 @RootElement(name = "GetClientAlertsAuthTokenRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetClientAlertsAuthTokenRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-    
+
 }

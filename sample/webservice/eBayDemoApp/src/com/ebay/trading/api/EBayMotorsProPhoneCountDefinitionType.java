@@ -3,23 +3,20 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Indicates which phone option the category supports
  * for contacting the seller about Classified Ad format listings.
  * Added for EbayMotors Pro users.
- * 
  */
 public class EBayMotorsProPhoneCountDefinitionType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@AnyElement
-	@Order(value=0)
-	public List<Object> any;	
-	
-    
+    @AnyElement
+    @Order(value = 0)
+    public List<Object> any;
+
+
 }

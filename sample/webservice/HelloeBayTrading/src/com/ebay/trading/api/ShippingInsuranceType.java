@@ -3,29 +3,26 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Details about insurance for combined payment.
- * 
  */
 public class ShippingInsuranceType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "InsuranceOption")
-	@Order(value=0)
-	public InsuranceOptionCodeType insuranceOption;	
-	
-	@Element(name = "FlatRateInsuranceRangeCost")
-	@Order(value=1)
-	public List<FlatRateInsuranceRangeCostType> flatRateInsuranceRangeCost;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "InsuranceOption")
+    @Order(value = 0)
+    public InsuranceOptionCodeType insuranceOption;
+
+    @Element(name = "FlatRateInsuranceRangeCost")
+    @Order(value = 1)
+    public List<FlatRateInsuranceRangeCostType> flatRateInsuranceRangeCost;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

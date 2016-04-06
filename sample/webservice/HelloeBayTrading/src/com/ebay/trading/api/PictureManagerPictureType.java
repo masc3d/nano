@@ -3,39 +3,35 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
- * 
  * This type is deprecated as Pictures Manager was retired.
- * 
- * 
  */
 public class PictureManagerPictureType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "PictureURL")
-	@Order(value=0)
-	public String pictureURL;	
-	
-	@Element(name = "Name")
-	@Order(value=1)
-	public String name;	
-	
-	@Element(name = "Date")
-	@Order(value=2)
-	public Date date;	
-	
-	@Element(name = "DisplayFormat")
-	@Order(value=3)
-	public List<PictureManagerPictureDisplayType> displayFormat;	
-	
-	@AnyElement
-	@Order(value=4)
-	public List<Object> any;	
-	
-    
+    @Element(name = "PictureURL")
+    @Order(value = 0)
+    public String pictureURL;
+
+    @Element(name = "Name")
+    @Order(value = 1)
+    public String name;
+
+    @Element(name = "Date")
+    @Order(value = 2)
+    public Date date;
+
+    @Element(name = "DisplayFormat")
+    @Order(value = 3)
+    public List<PictureManagerPictureDisplayType> displayFormat;
+
+    @AnyElement
+    @Order(value = 4)
+    public List<Object> any;
+
+
 }

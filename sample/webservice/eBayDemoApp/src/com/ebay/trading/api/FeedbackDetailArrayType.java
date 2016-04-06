@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Contains multiple individual feedback detail entries.
- * 
  */
 public class FeedbackDetailArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "FeedbackDetail")
-	@Order(value=0)
-	public List<FeedbackDetailType> feedbackDetail;	
-	
-    
+    @Element(name = "FeedbackDetail")
+    @Order(value = 0)
+    public List<FeedbackDetailType> feedbackDetail;
+
+
 }

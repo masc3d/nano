@@ -3,10 +3,8 @@
 package ebay.apis.eblbasecomponents;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Gets shipping costs for an item. This is one of the ways a buyer or seller
  * can obtain shipping cost information for an existing item (for which the caller is
  * either the buyer or seller) at any point in the life of of the listing, before or
@@ -17,35 +15,34 @@ import com.leansoft.nano.annotation.*;
  * that insurance cost can only be determined once the final item price is known
  * when the listing ends. To determine whether a listing has ended, use GetSingleItem.
  * It is best to call GetShippingCosts only after determining via GetSingleItem
- * or findItemsAdvanced (<a 
- * href="http://www.developer.ebay.com/DevZone/finding/CallRef/index.html" 
+ * or findItemsAdvanced (<a
+ * href="http://www.developer.ebay.com/DevZone/finding/CallRef/index.html"
  * >Finding API</a>) that the item actually has shipping cost information.
- * 
  */
 @RootElement(name = "GetShippingCostsRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetShippingCostsRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ItemID")
-	@Order(value=0)
-	public String itemID;	
-	
-	@Element(name = "QuantitySold")
-	@Order(value=1)
-	public Integer quantitySold;	
-	
-	@Element(name = "DestinationPostalCode")
-	@Order(value=2)
-	public String destinationPostalCode;	
-	
-	@Element(name = "DestinationCountryCode")
-	@Order(value=3)
-	public CountryCodeType destinationCountryCode;	
-	
-	@Element(name = "IncludeDetails")
-	@Order(value=4)
-	public Boolean includeDetails;	
-	
-    
+    @Element(name = "ItemID")
+    @Order(value = 0)
+    public String itemID;
+
+    @Element(name = "QuantitySold")
+    @Order(value = 1)
+    public Integer quantitySold;
+
+    @Element(name = "DestinationPostalCode")
+    @Order(value = 2)
+    public String destinationPostalCode;
+
+    @Element(name = "DestinationCountryCode")
+    @Order(value = 3)
+    public CountryCodeType destinationCountryCode;
+
+    @Element(name = "IncludeDetails")
+    @Order(value = 4)
+    public Boolean includeDetails;
+
+
 }

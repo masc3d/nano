@@ -3,17 +3,14 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * The response to a call of SetShippingDiscountProfiles.
- * 
  */
 @RootElement(name = "SetShippingDiscountProfilesResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class SetShippingDiscountProfilesResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-    
+
 }

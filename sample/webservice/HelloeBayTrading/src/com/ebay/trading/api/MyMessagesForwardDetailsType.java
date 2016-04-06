@@ -3,31 +3,27 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
- * 
  * This type is deprecated because <b>MyMessagesAlert*</b> are deprecated.
- * 
- * 
  */
 public class MyMessagesForwardDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "UserForwardDate")
-	@Order(value=0)
-	public Date userForwardDate;	
-	
-	@Element(name = "ForwardMessageEncoding")
-	@Order(value=1)
-	public String forwardMessageEncoding;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "UserForwardDate")
+    @Order(value = 0)
+    public Date userForwardDate;
+
+    @Element(name = "ForwardMessageEncoding")
+    @Order(value = 1)
+    public String forwardMessageEncoding;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

@@ -3,31 +3,28 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Type defining the <b>PowerSellerStatus</b> container returned in the
  * <b>GetSellerDashboard</b> response. The <b>PowerSellerStatus</b>
  * container is only returned if the seller making the call is a Power Seller.
- * 
  */
 public class PowerSellerDashboardType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Level")
-	@Order(value=0)
-	public SellerLevelCodeType level;	
-	
-	@Element(name = "Alert")
-	@Order(value=1)
-	public List<SellerDashboardAlertType> alert;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "Level")
+    @Order(value = 0)
+    public SellerLevelCodeType level;
+
+    @Element(name = "Alert")
+    @Order(value = 1)
+    public List<SellerDashboardAlertType> alert;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

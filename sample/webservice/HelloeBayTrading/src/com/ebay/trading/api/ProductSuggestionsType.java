@@ -3,26 +3,23 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Provides a list of products recommended by eBay, which match the item information
  * provided by the seller.
- * 
  */
 public class ProductSuggestionsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ProductSuggestion")
-	@Order(value=0)
-	public List<ProductSuggestionType> productSuggestion;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "ProductSuggestion")
+    @Order(value = 0)
+    public List<ProductSuggestionType> productSuggestion;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

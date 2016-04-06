@@ -3,49 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * These are the various summary periods for which feedback is calculated.
- * 
  */
 public enum FeedbackSummaryPeriodCodeType {
 
     /**
-     * 
-   * Period including the last 30 days from today.
-   * 
+     * Period including the last 30 days from today.
      */
     THIRTY_DAYS("ThirtyDays"),
-  
+
 
     /**
-     * 
-   * Period including the last 52 weeks from today.
-   * 
+     * Period including the last 52 weeks from today.
      */
     FIFTY_TWO_WEEKS("FiftyTwoWeeks"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     FeedbackSummaryPeriodCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static FeedbackSummaryPeriodCodeType fromValue(String v) {
         if (v != null) {
-            for (FeedbackSummaryPeriodCodeType c: FeedbackSummaryPeriodCodeType.values()) {
+            for (FeedbackSummaryPeriodCodeType c : FeedbackSummaryPeriodCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

@@ -3,49 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
- *   Enumerated type defining the Skype contact options between seller and buyer.
- * 
+ * Enumerated type defining the Skype contact options between seller and buyer.
  */
 public enum SkypeContactOptionCodeType {
 
     /**
-     * 
-   * The seller can communicate with the buyer by Skype Chat.
-   * 
+     * The seller can communicate with the buyer by Skype Chat.
      */
     CHAT("Chat"),
-  
+
 
     /**
-     * 
-   * The seller can communicate with the buyer by Skype Voice.
-   * 
+     * The seller can communicate with the buyer by Skype Voice.
      */
     VOICE("Voice"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     SkypeContactOptionCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static SkypeContactOptionCodeType fromValue(String v) {
         if (v != null) {
-            for (SkypeContactOptionCodeType c: SkypeContactOptionCodeType.values()) {
+            for (SkypeContactOptionCodeType c : SkypeContactOptionCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

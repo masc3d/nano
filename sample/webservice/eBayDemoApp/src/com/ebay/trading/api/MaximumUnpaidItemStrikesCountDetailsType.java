@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Type defining the <b>MaximumUnpaidItemStrikesCount</b> container that is returned
  * in the <b>GeteBayDetails</b> response. The <b>MaximumUnpaidItemStrikesCount</b>
  * container consists of multiple <b>Count</b> fields with values that can be
@@ -18,19 +16,18 @@ import java.util.List;
  * API calls is used to block buyers with unpaid item strikes equal to or exceeding
  * the specified <b>Count</b> value during the specified <b>Period</b>
  * value from buying/bidding on the item.
- * 
  */
 public class MaximumUnpaidItemStrikesCountDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Count")
-	@Order(value=0)
-	public List<Integer> count;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "Count")
+    @Order(value = 0)
+    public List<Integer> count;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

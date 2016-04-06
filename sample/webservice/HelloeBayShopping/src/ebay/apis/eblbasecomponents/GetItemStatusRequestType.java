@@ -3,22 +3,19 @@
 package ebay.apis.eblbasecomponents;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Contains a single ItemID or an array of ItemIDs.
- * 
  */
 @RootElement(name = "GetItemStatusRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetItemStatusRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ItemID")
-	@Order(value=0)
-	public List<String> itemID;	
-	
-    
+    @Element(name = "ItemID")
+    @Order(value = 0)
+    public List<String> itemID;
+
+
 }

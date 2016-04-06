@@ -23,22 +23,21 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.ProgressBar;
 import android.widget.ViewSwitcher;
-import android.widget.ImageView.ScaleType;
-
 import com.github.droidfu.imageloader.ImageLoader;
 import com.github.droidfu.imageloader.ImageLoaderHandler;
 
 /**
  * An image view that fetches its image off the web using the supplied URL. While the image is being
  * downloaded, a progress indicator will be shown.
- * 
+ *
  * @author Matthias Kaeppler
  */
 public class WebImageView extends ViewSwitcher {
-	
-	static final String XMLNS = "http://github.com/droidfu/schema";
+
+    static final String XMLNS = "http://github.com/droidfu/schema";
 
     private String imageUrl;
 
@@ -53,13 +52,10 @@ public class WebImageView extends ViewSwitcher {
     private Drawable progressDrawable, errorDrawable;
 
     /**
-     * @param context
-     *            the view's current context
-     * @param imageUrl
-     *            the URL of the image to download and show
-     * @param autoLoad
-     *            Whether the download should start immediately after creating the view. If set to
-     *            false, use {@link #loadImage()} to manually trigger the image download.
+     * @param context  the view's current context
+     * @param imageUrl the URL of the image to download and show
+     * @param autoLoad Whether the download should start immediately after creating the view. If set to
+     *                 false, use {@link #loadImage()} to manually trigger the image download.
      */
     public WebImageView(Context context, String imageUrl, boolean autoLoad) {
         super(context);
@@ -67,39 +63,30 @@ public class WebImageView extends ViewSwitcher {
     }
 
     /**
-     * @param context
-     *            the view's current context
-     * @param imageUrl
-     *            the URL of the image to download and show
-     * @param progressDrawable
-     *            the drawable to be used for the {@link ProgressBar} which is displayed while the
-     *            image is loading
-     * @param autoLoad
-     *            Whether the download should start immediately after creating the view. If set to
-     *            false, use {@link #loadImage()} to manually trigger the image download.
+     * @param context          the view's current context
+     * @param imageUrl         the URL of the image to download and show
+     * @param progressDrawable the drawable to be used for the {@link ProgressBar} which is displayed while the
+     *                         image is loading
+     * @param autoLoad         Whether the download should start immediately after creating the view. If set to
+     *                         false, use {@link #loadImage()} to manually trigger the image download.
      */
     public WebImageView(Context context, String imageUrl, Drawable progressDrawable,
-            boolean autoLoad) {
+                        boolean autoLoad) {
         super(context);
         initialize(context, imageUrl, progressDrawable, null, autoLoad);
     }
 
     /**
-     * @param context
-     *            the view's current context
-     * @param imageUrl
-     *            the URL of the image to download and show
-     * @param progressDrawable
-     *            the drawable to be used for the {@link ProgressBar} which is displayed while the
-     *            image is loading
-     * @param errorDrawable
-     *            the drawable to be used if a download error occurs
-     * @param autoLoad
-     *            Whether the download should start immediately after creating the view. If set to
-     *            false, use {@link #loadImage()} to manually trigger the image download.
+     * @param context          the view's current context
+     * @param imageUrl         the URL of the image to download and show
+     * @param progressDrawable the drawable to be used for the {@link ProgressBar} which is displayed while the
+     *                         image is loading
+     * @param errorDrawable    the drawable to be used if a download error occurs
+     * @param autoLoad         Whether the download should start immediately after creating the view. If set to
+     *                         false, use {@link #loadImage()} to manually trigger the image download.
      */
     public WebImageView(Context context, String imageUrl, Drawable progressDrawable,
-            Drawable errorDrawable, boolean autoLoad) {
+                        Drawable errorDrawable, boolean autoLoad) {
         super(context);
         initialize(context, imageUrl, progressDrawable, errorDrawable, autoLoad);
     }
@@ -128,8 +115,8 @@ public class WebImageView extends ViewSwitcher {
     }
 
     private void initialize(Context context, String imageUrl, Drawable progressDrawable,
-            Drawable errorDrawable,
-            boolean autoLoad) {
+                            Drawable errorDrawable,
+                            boolean autoLoad) {
         this.imageUrl = imageUrl;
         this.progressDrawable = progressDrawable;
         this.errorDrawable = errorDrawable;
@@ -201,9 +188,8 @@ public class WebImageView extends ViewSwitcher {
     /**
      * Often you have resources which usually have an image, but some don't. For these cases, use
      * this method to supply a placeholder drawable which will be loaded instead of a web image.
-     * 
-     * @param imageResourceId
-     *            the resource of the placeholder image drawable
+     *
+     * @param imageResourceId the resource of the placeholder image drawable
      */
     public void setNoImageDrawable(int imageResourceId) {
         imageView.setImageDrawable(getContext().getResources().getDrawable(imageResourceId));
@@ -236,9 +222,10 @@ public class WebImageView extends ViewSwitcher {
 
     /**
      * Returns the URL of the image to show
+     *
      * @return
      */
-	public String getImageUrl() {
-		return imageUrl;
-	}
+    public String getImageUrl() {
+        return imageUrl;
+    }
 }

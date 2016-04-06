@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Lists the nonprofit charity organization affiliations for a specified user.
- * 
  */
 public class CharityAffiliationDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "CharityAffiliationDetail")
-	@Order(value=0)
-	public List<CharityAffiliationDetailType> charityAffiliationDetail;	
-	
-    
+    @Element(name = "CharityAffiliationDetail")
+    @Order(value = 0)
+    public List<CharityAffiliationDetailType> charityAffiliationDetail;
+
+
 }

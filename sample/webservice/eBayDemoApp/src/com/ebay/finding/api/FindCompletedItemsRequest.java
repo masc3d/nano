@@ -3,11 +3,9 @@
 package com.ebay.finding.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Request container for the findCompletedItems call.
  * <br><br>
  * You can expect response times for this call to be longer than other types of Finding Service
@@ -19,40 +17,39 @@ import java.util.List;
  * Be aware that it is possible to use this call in such a way as to violate the terms and
  * conditions of your API License Agreement. Ensure that you do not store the results retrieved
  * from this call or use the results for market research purposes.
- * 
  */
 @RootElement(name = "findCompletedItemsRequest", namespace = "http://www.ebay.com/marketplace/search/v1/services")
 public class FindCompletedItemsRequest extends BaseFindingServiceRequest implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element
-	@Order(value=0)
-	public String keywords;	
-	
-	@Element
-	@Order(value=1)
-	public List<String> categoryId;	
-	
-	@Element
-	@Order(value=2)
-	public List<ItemFilter> itemFilter;	
-	
-	@Element
-	@Order(value=3)
-	public List<AspectFilter> aspectFilter;	
-	
-	@Element
-	@Order(value=4)
-	public List<OutputSelectorType> outputSelector;	
-	
-	@Element
-	@Order(value=5)
-	public List<DomainFilter> domainFilter;	
-	
-	@Element
-	@Order(value=6)
-	public ProductId productId;	
-	
-    
+    @Element
+    @Order(value = 0)
+    public String keywords;
+
+    @Element
+    @Order(value = 1)
+    public List<String> categoryId;
+
+    @Element
+    @Order(value = 2)
+    public List<ItemFilter> itemFilter;
+
+    @Element
+    @Order(value = 3)
+    public List<AspectFilter> aspectFilter;
+
+    @Element
+    @Order(value = 4)
+    public List<OutputSelectorType> outputSelector;
+
+    @Element
+    @Order(value = 5)
+    public List<DomainFilter> domainFilter;
+
+    @Element
+    @Order(value = 6)
+    public ProductId productId;
+
+
 }

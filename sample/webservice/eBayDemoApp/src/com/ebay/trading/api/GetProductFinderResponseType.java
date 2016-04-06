@@ -3,26 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * This type is deprecated as the call is no longer available.
- * 
- * 
  */
 @RootElement(name = "GetProductFinderResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetProductFinderResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "AttributeSystemVersion")
-	@Order(value=0)
-	public String attributeSystemVersion;	
-	
-	@Element(name = "ProductFinderData")
-	@Order(value=1)
-	public String productFinderData;	
-	
-    
+    @Element(name = "AttributeSystemVersion")
+    @Order(value = 0)
+    public String attributeSystemVersion;
+
+    @Element(name = "ProductFinderData")
+    @Order(value = 1)
+    public String productFinderData;
+
+
 }

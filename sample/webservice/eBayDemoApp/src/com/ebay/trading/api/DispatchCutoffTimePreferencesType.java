@@ -3,26 +3,23 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
- * 
- *   Contains a seller's preferences for cutoff time for zero day handling for item shipping.
- * 
+ * Contains a seller's preferences for cutoff time for zero day handling for item shipping.
  */
 public class DispatchCutoffTimePreferencesType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "CutoffTime")
-	@Order(value=0)
-	public Date cutoffTime;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "CutoffTime")
+    @Order(value = 0)
+    public Date cutoffTime;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

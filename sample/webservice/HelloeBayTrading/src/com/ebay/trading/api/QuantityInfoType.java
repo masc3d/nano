@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Currently applies to tickets. May apply to other categories in the future.
- * 
  */
 public class QuantityInfoType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "MinimumRemnantSet")
-	@Order(value=0)
-	public Integer minimumRemnantSet;	
-	
-	@AnyElement
-	@Order(value=1)
-	public List<Object> any;	
-	
-    
+    @Element(name = "MinimumRemnantSet")
+    @Order(value = 0)
+    public Integer minimumRemnantSet;
+
+    @AnyElement
+    @Order(value = 1)
+    public List<Object> any;
+
+
 }

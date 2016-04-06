@@ -3,41 +3,35 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * The schema options for Platform Notifications.
- * 
  */
 public enum NotificationPayloadTypeCodeType {
 
     /**
-     * 
-   * New Schema format (used by the new schema XML API and SOAP API).
-   * 
+     * New Schema format (used by the new schema XML API and SOAP API).
      */
     E_BL_SCHEMA_SOAP("eBLSchemaSOAP"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use
-   * 
+     * Reserved for internal or future use
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     NotificationPayloadTypeCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static NotificationPayloadTypeCodeType fromValue(String v) {
         if (v != null) {
-            for (NotificationPayloadTypeCodeType c: NotificationPayloadTypeCodeType.values()) {
+            for (NotificationPayloadTypeCodeType c : NotificationPayloadTypeCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

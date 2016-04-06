@@ -3,22 +3,19 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Defines from one to five items and lists them on a specified eBay site.
- * 
  */
 @RootElement(name = "AddItemsRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class AddItemsRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "AddItemRequestContainer")
-	@Order(value=0)
-	public List<AddItemRequestContainerType> addItemRequestContainer;	
-	
-    
+    @Element(name = "AddItemRequestContainer")
+    @Order(value = 0)
+    public List<AddItemRequestContainerType> addItemRequestContainer;
+
+
 }

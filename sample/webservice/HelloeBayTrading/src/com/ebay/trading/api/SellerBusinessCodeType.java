@@ -3,58 +3,48 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Type of seller account. This value is returned if the user is a
  * business seller with a site ID of 77 (Germany), 3 (UK), 205 (Ireland) or 100 (Motors).
- * 
  */
 public enum SellerBusinessCodeType {
 
     /**
-     * 
-   * Type of seller account not defined.
-   * 
+     * Type of seller account not defined.
      */
     UNDEFINED("Undefined"),
-  
+
 
     /**
-     * 
-   * Private seller account.
-   * 
+     * Private seller account.
      */
     PRIVATE("Private"),
-  
+
 
     /**
-     * 
-   * Commercial seller account.
-   * 
+     * Commercial seller account.
      */
     COMMERCIAL("Commercial"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     SellerBusinessCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static SellerBusinessCodeType fromValue(String v) {
         if (v != null) {
-            for (SellerBusinessCodeType c: SellerBusinessCodeType.values()) {
+            for (SellerBusinessCodeType c : SellerBusinessCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

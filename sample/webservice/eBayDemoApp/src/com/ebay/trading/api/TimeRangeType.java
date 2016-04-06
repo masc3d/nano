@@ -3,30 +3,27 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
- * 
  * Specifies the Date range.
- * 
  */
 public class TimeRangeType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "TimeFrom")
-	@Order(value=0)
-	public Date timeFrom;	
-	
-	@Element(name = "TimeTo")
-	@Order(value=1)
-	public Date timeTo;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "TimeFrom")
+    @Order(value = 0)
+    public Date timeFrom;
+
+    @Element(name = "TimeTo")
+    @Order(value = 1)
+    public Date timeTo;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

@@ -3,27 +3,23 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * his type is deprecated as the call is no longer available.
- * 
- * 
  */
 @RootElement(name = "GetProductSellingPagesRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetProductSellingPagesRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "UseCase")
-	@Order(value=0)
-	public ProductUseCaseCodeType useCase;	
-	
-	@Element(name = "Product")
-	@Order(value=1)
-	public List<ProductType> product;	
-	
-    
+    @Element(name = "UseCase")
+    @Order(value = 0)
+    public ProductUseCaseCodeType useCase;
+
+    @Element(name = "Product")
+    @Order(value = 1)
+    public List<ProductType> product;
+
+
 }

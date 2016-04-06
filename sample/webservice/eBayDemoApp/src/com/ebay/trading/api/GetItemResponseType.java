@@ -3,22 +3,19 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Contains the item data returned by the call. The data for the specified item
  * listing is returned in an ItemType object.
- * 
  */
 @RootElement(name = "GetItemResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetItemResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Item")
-	@Order(value=0)
-	public ItemType item;	
-	
-    
+    @Element(name = "Item")
+    @Order(value = 0)
+    public ItemType item;
+
+
 }

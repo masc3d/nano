@@ -3,62 +3,47 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * This type is deprecated because this type is not used by any call.
- * 
- * 
  */
 public enum EscrowCodeType {
 
     /**
-     * 
-   * 
-   * By Buyer
-   * 
+     * By Buyer
      */
     BY_BUYER("ByBuyer"),
-  
+
 
     /**
-     * 
-   * 
-   * By Seller
-   * 
+     * By Seller
      */
     BY_SELLER("BySeller"),
-  
+
 
     /**
-     * 
-   * 
-   * None
-   * 
+     * None
      */
     NONE("None"),
-  
+
 
     /**
-     * 
-   * 
-   * Reserved for internal or future use
-   * 
+     * Reserved for internal or future use
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     EscrowCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static EscrowCodeType fromValue(String v) {
         if (v != null) {
-            for (EscrowCodeType c: EscrowCodeType.values()) {
+            for (EscrowCodeType c : EscrowCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

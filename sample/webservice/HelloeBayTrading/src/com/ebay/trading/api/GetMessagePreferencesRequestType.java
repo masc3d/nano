@@ -3,26 +3,23 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Returns a seller's Ask Seller a Question (ASQ) subjects, each in
  * its own Subject node.
- * 
  */
 @RootElement(name = "GetMessagePreferencesRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetMessagePreferencesRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "SellerID")
-	@Order(value=0)
-	public String sellerID;	
-	
-	@Element(name = "IncludeASQPreferences")
-	@Order(value=1)
-	public Boolean includeASQPreferences;	
-	
-    
+    @Element(name = "SellerID")
+    @Order(value = 0)
+    public String sellerID;
+
+    @Element(name = "IncludeASQPreferences")
+    @Order(value = 1)
+    public Boolean includeASQPreferences;
+
+
 }

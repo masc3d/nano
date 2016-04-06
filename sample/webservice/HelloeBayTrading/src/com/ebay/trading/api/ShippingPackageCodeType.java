@@ -3,275 +3,211 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * The nature of the package used to ship the item(s).
  * Required for calculated shipping only. Not all package types
  * are supported by a specific shipping service (ShippingServiceCodeType).
- * 
  */
 public enum ShippingPackageCodeType {
 
     /**
-     * 
-   * None
-   * 
+     * None
      */
     NONE("None"),
-  
+
 
     /**
-     * 
-   * Letter
-   * 
+     * Letter
      */
     LETTER("Letter"),
-  
+
 
     /**
-     * 
-   * LargeEnvelope
-   * 
+     * LargeEnvelope
      */
     LARGE_ENVELOPE("LargeEnvelope"),
-  
+
 
     /**
-     * 
-   * USPS Large Package/Oversize 1
-   * 
+     * USPS Large Package/Oversize 1
      */
     USPS_LARGE_PACK("USPSLargePack"),
-  
+
 
     /**
-     * 
-   * Very Large Package/Oversize 2
-   * 
+     * Very Large Package/Oversize 2
      */
     VERY_LARGE_PACK("VeryLargePack"),
-  
+
 
     /**
-     * 
-   * Extra Large Package/Oversize 3
-   * 
+     * Extra Large Package/Oversize 3
      */
     EXTRA_LARGE_PACK("ExtraLargePack"),
-  
+
 
     /**
-     * 
-   * UPS Letter
-   * 
+     * UPS Letter
      */
     UPS_LETTER("UPSLetter"),
-  
+
 
     /**
-     * 
-   * USPS Flat Rate Envelope
-   * 
+     * USPS Flat Rate Envelope
      */
     USPS_FLAT_RATE_ENVELOPE("USPSFlatRateEnvelope"),
-  
+
 
     /**
-     * 
-   * Package/thick envelope
-   * 
+     * Package/thick envelope
      */
     PACKAGE_THICK_ENVELOPE("PackageThickEnvelope"),
-  
+
 
     /**
-     * 
-   * Roll
-   * 
+     * Roll
      */
     ROLL("Roll"),
-  
+
 
     /**
-     * 
-   * Europallet
-   * 
+     * Europallet
      */
     EUROPALLET("Europallet"),
-  
+
 
     /**
-     * 
-   * Onewaypallet
-   * 
+     * Onewaypallet
      */
     ONE_WAY_PALLET("OneWayPallet"),
-  
+
 
     /**
-     * 
-   * Bulky goods
-   * 
+     * Bulky goods
      */
     BULKY_GOODS("BulkyGoods"),
-  
+
 
     /**
-     * 
-   * Furniture
-   * 
+     * Furniture
      */
     FURNITURE("Furniture"),
-  
+
 
     /**
-     * 
-   * Cars
-   * 
+     * Cars
      */
     CARS("Cars"),
-  
+
 
     /**
-     * 
-   * Motorbikes
-   * 
+     * Motorbikes
      */
     MOTORBIKES("Motorbikes"),
-  
+
 
     /**
-     * 
-   * Caravan
-   * 
+     * Caravan
      */
     CARAVAN("Caravan"),
-  
+
 
     /**
-     * 
-   * Industry vehicles
-   * 
+     * Industry vehicles
      */
     INDUSTRY_VEHICLES("IndustryVehicles"),
-  
+
 
     /**
-     * 
-   * Parcel or padded Envelope
-   * 
+     * Parcel or padded Envelope
      */
     PARCEL_OR_PADDED_ENVELOPE("ParcelOrPaddedEnvelope"),
-  
+
 
     /**
-     * 
-   * Small Canada Post Box
-   * 
+     * Small Canada Post Box
      */
     SMALL_CANADA_POST_BOX("SmallCanadaPostBox"),
-  
+
 
     /**
-     * 
-   * Medium Canada Post Box
-   * 
+     * Medium Canada Post Box
      */
     MEDIUM_CANADA_POST_BOX("MediumCanadaPostBox"),
-  
+
 
     /**
-     * 
-   * Large Canada Post Box
-   * 
+     * Large Canada Post Box
      */
     LARGE_CANADA_POST_BOX("LargeCanadaPostBox"),
-  
+
 
     /**
-     * 
-   * Small Canada Post Bubble Mailer
-   * 
+     * Small Canada Post Bubble Mailer
      */
     SMALL_CANADA_POST_BUBBLE_MAILER("SmallCanadaPostBubbleMailer"),
-  
+
 
     /**
-     * 
-   * Medium Canada Post Bubble Mailer
-   * 
+     * Medium Canada Post Bubble Mailer
      */
     MEDIUM_CANADA_POST_BUBBLE_MAILER("MediumCanadaPostBubbleMailer"),
-  
+
 
     /**
-     * 
-   * Large Canada Post Bubble Mailer
-   * 
+     * Large Canada Post Bubble Mailer
      */
     LARGE_CANADA_POST_BUBBLE_MAILER("LargeCanadaPostBubbleMailer"),
-  
+
 
     /**
-     * 
-   * Padded Bags
-   * 
+     * Padded Bags
      */
     PADDED_BAGS("PaddedBags"),
-  
+
 
     /**
-     * 
-   * Tough Bags
-   * 
+     * Tough Bags
      */
     TOUGH_BAGS("ToughBags"),
-  
+
 
     /**
-     * 
-   * Expandable Tough Bags
-   * 
+     * Expandable Tough Bags
      */
     EXPANDABLE_TOUGH_BAGS("ExpandableToughBags"),
-  
+
 
     /**
-     * 
-   * Mailing Boxes
-   * 
+     * Mailing Boxes
      */
     MAILING_BOXES("MailingBoxes"),
-  
+
 
     /**
-     * 
-   * Winepak
-   * 
+     * Winepak
      */
     WINEPAK("Winepak"),
-  
+
 
     /**
-     * 
-   *  Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     ShippingPackageCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static ShippingPackageCodeType fromValue(String v) {
         if (v != null) {
-            for (ShippingPackageCodeType c: ShippingPackageCodeType.values()) {
+            for (ShippingPackageCodeType c : ShippingPackageCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

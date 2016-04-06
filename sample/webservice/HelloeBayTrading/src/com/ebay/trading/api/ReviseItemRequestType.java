@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Enables a seller to change the properties of a currently active listing.&nbsp;<b>Also for Half.com</b>.
  * <br>
  * <br>
@@ -19,24 +17,23 @@ import java.util.List;
  * <br>
  * Inputs are the Item ID of the listing you are revising, and the field or fields
  * that you are updating.
- * 
  */
 @RootElement(name = "ReviseItemRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class ReviseItemRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Item")
-	@Order(value=0)
-	public ItemType item;	
-	
-	@Element(name = "DeletedField")
-	@Order(value=1)
-	public List<String> deletedField;	
-	
-	@Element(name = "VerifyOnly")
-	@Order(value=2)
-	public Boolean verifyOnly;	
-	
-    
+    @Element(name = "Item")
+    @Order(value = 0)
+    public ItemType item;
+
+    @Element(name = "DeletedField")
+    @Order(value = 1)
+    public List<String> deletedField;
+
+    @Element(name = "VerifyOnly")
+    @Order(value = 2)
+    public Boolean verifyOnly;
+
+
 }

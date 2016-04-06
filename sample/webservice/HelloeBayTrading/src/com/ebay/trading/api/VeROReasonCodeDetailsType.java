@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Container for reason code details for all sites.
- * 
  */
 public class VeROReasonCodeDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "VeROSiteDetail")
-	@Order(value=0)
-	public List<VeROSiteDetailType> veROSiteDetail;	
-	
-    
+    @Element(name = "VeROSiteDetail")
+    @Order(value = 0)
+    public List<VeROSiteDetailType> veROSiteDetail;
+
+
 }

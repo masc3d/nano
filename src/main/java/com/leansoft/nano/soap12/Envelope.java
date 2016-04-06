@@ -2,21 +2,24 @@
 // DO NOT CHANGE!
 package com.leansoft.nano.soap12;
 
+import com.leansoft.nano.annotation.Element;
+import com.leansoft.nano.annotation.Order;
+import com.leansoft.nano.annotation.RootElement;
+
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 @RootElement(name = "Envelope", namespace = "http://www.w3.org/2003/05/soap-envelope")
 public class Envelope implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Header")
-	@Order(value=0)
-	public Header header;	
-	
-	@Element(name = "Body")
-	@Order(value=1)
-	public Body body;	
-	
-    
+    @Element(name = "Header")
+    @Order(value = 0)
+    public Header header;
+
+    @Element(name = "Body")
+    @Order(value = 1)
+    public Body body;
+
+
 }

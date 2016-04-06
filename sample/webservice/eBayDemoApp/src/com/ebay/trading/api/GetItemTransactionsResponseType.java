@@ -3,10 +3,8 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Returns an array of order line item (transaction) data for the item specified in the request.
  * The results can be used to create a report of data that is commonly
  * necessary for order processing.
@@ -24,44 +22,43 @@ import com.leansoft.nano.annotation.*;
  * FixedPriceTransactionForSeller, FixedPriceTransactionForBuyer, ItemMarkedAsShipped,
  * and ItemMarkedAsPaid. Each notification will be based on the state of the item
  * (a 'snapshot' of the item) at the time the order line item was created.
- * 
  */
 @RootElement(name = "GetItemTransactionsResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetItemTransactionsResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "PaginationResult")
-	@Order(value=0)
-	public PaginationResultType paginationResult;	
-	
-	@Element(name = "HasMoreTransactions")
-	@Order(value=1)
-	public Boolean hasMoreTransactions;	
-	
-	@Element(name = "TransactionsPerPage")
-	@Order(value=2)
-	public Integer transactionsPerPage;	
-	
-	@Element(name = "PageNumber")
-	@Order(value=3)
-	public Integer pageNumber;	
-	
-	@Element(name = "ReturnedTransactionCountActual")
-	@Order(value=4)
-	public Integer returnedTransactionCountActual;	
-	
-	@Element(name = "Item")
-	@Order(value=5)
-	public ItemType item;	
-	
-	@Element(name = "TransactionArray")
-	@Order(value=6)
-	public TransactionArrayType transactionArray;	
-	
-	@Element(name = "PayPalPreferred")
-	@Order(value=7)
-	public Boolean payPalPreferred;	
-	
-    
+    @Element(name = "PaginationResult")
+    @Order(value = 0)
+    public PaginationResultType paginationResult;
+
+    @Element(name = "HasMoreTransactions")
+    @Order(value = 1)
+    public Boolean hasMoreTransactions;
+
+    @Element(name = "TransactionsPerPage")
+    @Order(value = 2)
+    public Integer transactionsPerPage;
+
+    @Element(name = "PageNumber")
+    @Order(value = 3)
+    public Integer pageNumber;
+
+    @Element(name = "ReturnedTransactionCountActual")
+    @Order(value = 4)
+    public Integer returnedTransactionCountActual;
+
+    @Element(name = "Item")
+    @Order(value = 5)
+    public ItemType item;
+
+    @Element(name = "TransactionArray")
+    @Order(value = 6)
+    public TransactionArrayType transactionArray;
+
+    @Element(name = "PayPalPreferred")
+    @Order(value = 7)
+    public Boolean payPalPreferred;
+
+
 }

@@ -3,31 +3,28 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
- *   Adds a new product folder to a user's Selling Manager account.
+ * Adds a new product folder to a user's Selling Manager account.
  * This call is subject to change without notice; the deprecation process is
  * inapplicable to this call.
- * 
  */
 @RootElement(name = "AddSellingManagerInventoryFolderRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class AddSellingManagerInventoryFolderRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "FolderName")
-	@Order(value=0)
-	public String folderName;	
-	
-	@Element(name = "ParentFolderID")
-	@Order(value=1)
-	public Long parentFolderID;	
-	
-	@Element(name = "Comment")
-	@Order(value=2)
-	public String comment;	
-	
-    
+    @Element(name = "FolderName")
+    @Order(value = 0)
+    public String folderName;
+
+    @Element(name = "ParentFolderID")
+    @Order(value = 1)
+    public Long parentFolderID;
+
+    @Element(name = "Comment")
+    @Order(value = 2)
+    public String comment;
+
+
 }

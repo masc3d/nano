@@ -3,38 +3,35 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Response contains the Want It Now posts that have the specified keyword(s) in the
  * title and (optionally) the description.
- *  
  */
 @RootElement(name = "GetWantItNowSearchResultsResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetWantItNowSearchResultsResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "WantItNowPostArray")
-	@Order(value=0)
-	public WantItNowPostArrayType wantItNowPostArray;	
-	
-	@Element(name = "HasMoreItems")
-	@Order(value=1)
-	public Boolean hasMoreItems;	
-	
-	@Element(name = "ItemsPerPage")
-	@Order(value=2)
-	public Integer itemsPerPage;	
-	
-	@Element(name = "PageNumber")
-	@Order(value=3)
-	public Integer pageNumber;	
-	
-	@Element(name = "PaginationResult")
-	@Order(value=4)
-	public PaginationResultType paginationResult;	
-	
-    
+    @Element(name = "WantItNowPostArray")
+    @Order(value = 0)
+    public WantItNowPostArrayType wantItNowPostArray;
+
+    @Element(name = "HasMoreItems")
+    @Order(value = 1)
+    public Boolean hasMoreItems;
+
+    @Element(name = "ItemsPerPage")
+    @Order(value = 2)
+    public Integer itemsPerPage;
+
+    @Element(name = "PageNumber")
+    @Order(value = 3)
+    public Integer pageNumber;
+
+    @Element(name = "PaginationResult")
+    @Order(value = 4)
+    public PaginationResultType paginationResult;
+
+
 }

@@ -5,80 +5,66 @@ package com.ebay.trading.api;
 public enum ValueTypeCodeType {
 
     /**
-     * 
-   * A number with a possible decimal point, e.g. -3.14159.
-   * (Item Specifics don't distinguish between float and double.)
-   * 
+     * A number with a possible decimal point, e.g. -3.14159.
+     * (Item Specifics don't distinguish between float and double.)
      */
     DECIMAL("Decimal"),
-  
+
 
     /**
-     * 
-   * Free-form text. This is the default.
-   * Max length 50.
-   * 
+     * Free-form text. This is the default.
+     * Max length 50.
      */
     TEXT("Text"),
-  
+
 
     /**
-     * 
-   * International Standard Book Number (ISBN).
-   * ISBNs can contain either 10 or 13 characters.
-   * Max length 13.
-   * 
+     * International Standard Book Number (ISBN).
+     * ISBNs can contain either 10 or 13 characters.
+     * Max length 13.
      */
     ISBN("ISBN"),
-  
+
 
     /**
-     * 
-   * Universal Product Code. Max length 12.
-   * 
+     * Universal Product Code. Max length 12.
      */
     UPC("UPC"),
-  
+
 
     /**
-     * 
-   * European Article Number. Max length 13.
-   * 
+     * European Article Number. Max length 13.
      */
     EAN("EAN"),
-  
+
 
     /**
-     * 
-   * A Date value, which can assume one of these formats:
-   * YYYYMMDD, YYYYMM, or YYYY. See ValueFormat for the
-   * recommended format to use in listings.
-   * 
+     * A Date value, which can assume one of these formats:
+     * YYYYMMDD, YYYYMM, or YYYY. See ValueFormat for the
+     * recommended format to use in listings.
      */
     DATE("Date"),
-  
+
 
     /**
-     * 
-   * Reserved for future use.
-   * 
+     * Reserved for future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     ValueTypeCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static ValueTypeCodeType fromValue(String v) {
         if (v != null) {
-            for (ValueTypeCodeType c: ValueTypeCodeType.values()) {
+            for (ValueTypeCodeType c : ValueTypeCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

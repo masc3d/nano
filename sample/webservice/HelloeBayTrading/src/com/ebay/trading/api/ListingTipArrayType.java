@@ -3,21 +3,18 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
- *       (out) Contains a list of tips on improving a listing's details, if any.
- * 
+ * (out) Contains a list of tips on improving a listing's details, if any.
  */
 public class ListingTipArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ListingTip")
-	@Order(value=0)
-	public List<ListingTipType> listingTip;	
-	
-    
+    @Element(name = "ListingTip")
+    @Order(value = 0)
+    public List<ListingTipType> listingTip;
+
+
 }

@@ -3,16 +3,15 @@
 package com.webservicemart.ws;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 @RootElement(name = "ValidateZip", namespace = "http://webservicemart.com/ws/")
 public class ValidateZip implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ZipCode")
-	@Order(value=0)
-	public String zipCode;	
-	
-    
+    @Element(name = "ZipCode")
+    @Order(value = 0)
+    public String zipCode;
+
+
 }

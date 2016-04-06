@@ -3,29 +3,26 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * The number of disputes that match a given filter.
- * 
  */
 public class DisputeFilterCountType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "DisputeFilterType")
-	@Order(value=0)
-	public DisputeFilterTypeCodeType disputeFilterType;	
-	
-	@Element(name = "TotalAvailable")
-	@Order(value=1)
-	public Integer totalAvailable;	
-	
-	@AnyElement
-	@Order(value=2)
-	public List<Object> any;	
-	
-    
+    @Element(name = "DisputeFilterType")
+    @Order(value = 0)
+    public DisputeFilterTypeCodeType disputeFilterType;
+
+    @Element(name = "TotalAvailable")
+    @Order(value = 1)
+    public Integer totalAvailable;
+
+    @AnyElement
+    @Order(value = 2)
+    public List<Object> any;
+
+
 }

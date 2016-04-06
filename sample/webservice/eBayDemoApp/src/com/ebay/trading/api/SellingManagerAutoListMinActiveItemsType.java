@@ -3,43 +3,40 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
- * 
  * Defines the options available for an automated listing rule that
  * keeps a minimum number of items on the site.
- * 
  */
 public class SellingManagerAutoListMinActiveItemsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "MinActiveItemCount")
-	@Order(value=0)
-	public Integer minActiveItemCount;	
-	
-	@Element(name = "ListTimeFrom")
-	@Order(value=1)
-	public Date listTimeFrom;	
-	
-	@Element(name = "ListTimeTo")
-	@Order(value=2)
-	public Date listTimeTo;	
-	
-	@Element(name = "SpacingIntervalInMinutes")
-	@Order(value=3)
-	public Integer spacingIntervalInMinutes;	
-	
-	@Element(name = "ListingHoldInventoryLevel")
-	@Order(value=4)
-	public Integer listingHoldInventoryLevel;	
-	
-	@AnyElement
-	@Order(value=5)
-	public List<Object> any;	
-	
-    
+    @Element(name = "MinActiveItemCount")
+    @Order(value = 0)
+    public Integer minActiveItemCount;
+
+    @Element(name = "ListTimeFrom")
+    @Order(value = 1)
+    public Date listTimeFrom;
+
+    @Element(name = "ListTimeTo")
+    @Order(value = 2)
+    public Date listTimeTo;
+
+    @Element(name = "SpacingIntervalInMinutes")
+    @Order(value = 3)
+    public Integer spacingIntervalInMinutes;
+
+    @Element(name = "ListingHoldInventoryLevel")
+    @Order(value = 4)
+    public Integer listingHoldInventoryLevel;
+
+    @AnyElement
+    @Order(value = 5)
+    public List<Object> any;
+
+
 }

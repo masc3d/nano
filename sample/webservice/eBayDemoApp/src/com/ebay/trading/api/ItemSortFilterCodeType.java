@@ -3,81 +3,65 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Specifies how items should be sorted.
- * 
  */
 public enum ItemSortFilterCodeType {
 
     /**
-     * 
-   * Sort items by ending time, with items ending last first.
-   * 
+     * Sort items by ending time, with items ending last first.
      */
     ENDING_LAST("EndingLast"),
-  
+
 
     /**
-     * 
-   * Sort items by ending time, with items ending soonest first.
-   * 
+     * Sort items by ending time, with items ending soonest first.
      */
     ENDING_SOONEST("EndingSoonest"),
-  
+
 
     /**
-     * 
-   * Sort items by price, with the highest price first.
-   * 
+     * Sort items by price, with the highest price first.
      */
     HIGHEST_PRICE("HighestPrice"),
-  
+
 
     /**
-     * 
-   * Sort items by price, with the lowest price first.
-   * 
+     * Sort items by price, with the lowest price first.
      */
     LOWEST_PRICE("LowestPrice"),
-  
+
 
     /**
-     * 
-   * Sort items by listing time, with newly listed items first.
-   * 
+     * Sort items by listing time, with newly listed items first.
      */
     NEWLY_LISTED("NewlyListed"),
-  
+
 
     /**
-     * 
-   * Sort items in a randomly selected order.
-   * 
+     * Sort items in a randomly selected order.
      */
     RANDOMLY_SELECTED("RandomlySelected"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     ItemSortFilterCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static ItemSortFilterCodeType fromValue(String v) {
         if (v != null) {
-            for (ItemSortFilterCodeType c: ItemSortFilterCodeType.values()) {
+            for (ItemSortFilterCodeType c : ItemSortFilterCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

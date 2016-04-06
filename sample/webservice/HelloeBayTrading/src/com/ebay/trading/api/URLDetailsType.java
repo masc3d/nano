@@ -3,38 +3,35 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
- * 
  * Details about a specific eBay URL.
- * 
  */
 public class URLDetailsType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "URLType")
-	@Order(value=0)
-	public URLTypeCodeType urlType;	
-	
-	@Element(name = "URL")
-	@Order(value=1)
-	public String url;	
-	
-	@Element(name = "DetailVersion")
-	@Order(value=2)
-	public String detailVersion;	
-	
-	@Element(name = "UpdateTime")
-	@Order(value=3)
-	public Date updateTime;	
-	
-	@AnyElement
-	@Order(value=4)
-	public List<Object> any;	
-	
-    
+    @Element(name = "URLType")
+    @Order(value = 0)
+    public URLTypeCodeType urlType;
+
+    @Element(name = "URL")
+    @Order(value = 1)
+    public String url;
+
+    @Element(name = "DetailVersion")
+    @Order(value = 2)
+    public String detailVersion;
+
+    @Element(name = "UpdateTime")
+    @Order(value = 3)
+    public Date updateTime;
+
+    @AnyElement
+    @Order(value = 4)
+    public List<Object> any;
+
+
 }

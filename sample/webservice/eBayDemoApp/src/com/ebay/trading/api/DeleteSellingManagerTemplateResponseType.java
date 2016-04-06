@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Response for deleting a Selling Manager template.
- * 
  */
 @RootElement(name = "DeleteSellingManagerTemplateResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class DeleteSellingManagerTemplateResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "DeletedSaleTemplateID")
-	@Order(value=0)
-	public String deletedSaleTemplateID;	
-	
-	@Element(name = "DeletedSaleTemplateName")
-	@Order(value=1)
-	public String deletedSaleTemplateName;	
-	
-    
+    @Element(name = "DeletedSaleTemplateID")
+    @Order(value = 0)
+    public String deletedSaleTemplateID;
+
+    @Element(name = "DeletedSaleTemplateName")
+    @Order(value = 1)
+    public String deletedSaleTemplateName;
+
+
 }

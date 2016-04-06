@@ -3,49 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Specifies whether a listing feature is available for the site specified in the request.
- * 
  */
 public enum HomePageFeaturedCodeType {
 
     /**
-     * 
-   * The listing feature is enabled for the site.
-   * 
+     * The listing feature is enabled for the site.
      */
     ENABLED("Enabled"),
-  
+
 
     /**
-     * 
-   * The listing feature is disabled for the site.
-   * 
+     * The listing feature is disabled for the site.
      */
     DISABLED("Disabled"),
-  
+
 
     /**
-     * 
-   * Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     HomePageFeaturedCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static HomePageFeaturedCodeType fromValue(String v) {
         if (v != null) {
-            for (HomePageFeaturedCodeType c: HomePageFeaturedCodeType.values()) {
+            for (HomePageFeaturedCodeType c : HomePageFeaturedCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

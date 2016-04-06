@@ -3,24 +3,21 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Contains a paginated list of order line items.
- * 
  */
 public class PaginatedTransactionArrayType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "TransactionArray")
-	@Order(value=0)
-	public TransactionArrayType transactionArray;	
-	
-	@Element(name = "PaginationResult")
-	@Order(value=1)
-	public PaginationResultType paginationResult;	
-	
-    
+    @Element(name = "TransactionArray")
+    @Order(value = 0)
+    public TransactionArrayType transactionArray;
+
+    @Element(name = "PaginationResult")
+    @Order(value = 1)
+    public PaginationResultType paginationResult;
+
+
 }

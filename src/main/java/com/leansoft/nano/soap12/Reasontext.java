@@ -2,20 +2,23 @@
 // DO NOT CHANGE!
 package com.leansoft.nano.soap12;
 
+import com.leansoft.nano.annotation.Attribute;
+import com.leansoft.nano.annotation.Order;
+import com.leansoft.nano.annotation.Value;
+
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 public class Reasontext implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Value
-	@Order(value=0)
-	public String value;	
-	
-	@Attribute
-	@Order(value=1)
-	public String lang;	
-	
-    
+    @Value
+    @Order(value = 0)
+    public String value;
+
+    @Attribute
+    @Order(value = 1)
+    public String lang;
+
+
 }

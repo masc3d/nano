@@ -3,26 +3,23 @@
 package com.ebay.shopping.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * This call will give you the ability to retrieve high level
  * Category information, relevant for a buy-side application.
- * 
  */
 @RootElement(name = "GetCategoryInfoRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetCategoryInfoRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "CategoryID")
-	@Order(value=0)
-	public String categoryID;	
-	
-	@Element(name = "IncludeSelector")
-	@Order(value=1)
-	public String includeSelector;	
-	
-    
+    @Element(name = "CategoryID")
+    @Order(value = 0)
+    public String categoryID;
+
+    @Element(name = "IncludeSelector")
+    @Order(value = 1)
+    public String includeSelector;
+
+
 }

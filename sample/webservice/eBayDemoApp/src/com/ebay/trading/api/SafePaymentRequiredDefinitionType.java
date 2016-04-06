@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * For the US, Canada and Australia sites, users registered after January 17,2007 are
  * required to offer at least one safe payment method (i.e. PayPal/PaisaPay, or one
  * of the credit cards specified in Item.PaymentMethods).
@@ -33,15 +31,14 @@ import java.util.List;
  * <br>
  * Use SiteDefaults.SafePaymentRequired and Category.SafePaymentRequired to determine
  * which categories require a safe payment method.
- * 
  */
 public class SafePaymentRequiredDefinitionType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@AnyElement
-	@Order(value=0)
-	public List<Object> any;	
-	
-    
+    @AnyElement
+    @Order(value = 0)
+    public List<Object> any;
+
+
 }

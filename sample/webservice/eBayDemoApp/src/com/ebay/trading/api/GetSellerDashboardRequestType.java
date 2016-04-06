@@ -3,17 +3,14 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Retrieves a brief summary of the requester's status as an eBay seller.
- * 
  */
 @RootElement(name = "GetSellerDashboardRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetSellerDashboardRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-    
+
 }

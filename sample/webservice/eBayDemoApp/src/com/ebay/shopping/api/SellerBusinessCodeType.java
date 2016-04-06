@@ -3,58 +3,48 @@
 package com.ebay.shopping.api;
 
 /**
- * 
  * Type of seller account. This value can be returned if the German site (site ID
  * 77) or eBay Motors site (site ID 100) is specified.
- * 
  */
 public enum SellerBusinessCodeType {
 
     /**
-     * 
-   * Type of seller account not defined.
-   * 
+     * Type of seller account not defined.
      */
     UNDEFINED("Undefined"),
-  
+
 
     /**
-     * 
-   * Private seller account.
-   * 
+     * Private seller account.
      */
     PRIVATE("Private"),
-  
+
 
     /**
-     * 
-   * Commercial seller account.
-   * 
+     * Commercial seller account.
      */
     COMMERCIAL("Commercial"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     SellerBusinessCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static SellerBusinessCodeType fromValue(String v) {
         if (v != null) {
-            for (SellerBusinessCodeType c: SellerBusinessCodeType.values()) {
+            for (SellerBusinessCodeType c : SellerBusinessCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

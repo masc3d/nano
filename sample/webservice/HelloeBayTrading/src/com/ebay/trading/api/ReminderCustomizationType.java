@@ -3,24 +3,21 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Specifies how to return certain reminder types from the user's My eBay account.
- * 
  */
 public class ReminderCustomizationType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "DurationInDays")
-	@Order(value=0)
-	public Integer durationInDays;	
-	
-	@Element(name = "Include")
-	@Order(value=1)
-	public Boolean include;	
-	
-    
+    @Element(name = "DurationInDays")
+    @Order(value = 0)
+    public Integer durationInDays;
+
+    @Element(name = "Include")
+    @Order(value = 1)
+    public Boolean include;
+
+
 }

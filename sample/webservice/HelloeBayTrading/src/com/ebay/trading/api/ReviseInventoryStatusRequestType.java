@@ -3,11 +3,9 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 /**
- * 
  * Enables a seller to change the price and quantity of a currently-
  * active, fixed-price listing. Using ReviseInventoryStatus to modify
  * data qualifies as revising the listing.
@@ -34,16 +32,15 @@ import java.util.List;
  * it must be enclosed within two BulkDataExchangeRequest tags.
  * After release 637, a namespace is returned in the BulkDataExchangeResponseType
  * (top level) of the response. The BulkDataExchange tags are not shown in the call input/output descriptions.
- * 
  */
 @RootElement(name = "ReviseInventoryStatusRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class ReviseInventoryStatusRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "InventoryStatus")
-	@Order(value=0)
-	public List<InventoryStatusType> inventoryStatus;	
-	
-    
+    @Element(name = "InventoryStatus")
+    @Order(value = 0)
+    public List<InventoryStatusType> inventoryStatus;
+
+
 }

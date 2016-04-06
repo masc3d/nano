@@ -3,53 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * This type is deprecated as <b>GetProduct*</b> calls were deprecated.
- * 
- * 
  */
 public enum RangeCodeType {
 
     /**
-     * 
-   * 
-   * High end of the range.
-   * 
+     * High end of the range.
      */
     HIGH("High"),
-  
+
 
     /**
-     * 
-   * 
-   * Low end of the range.
-   * 
+     * Low end of the range.
      */
     LOW("Low"),
-  
+
 
     /**
-     * 
-   * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     RangeCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static RangeCodeType fromValue(String v) {
         if (v != null) {
-            for (RangeCodeType c: RangeCodeType.values()) {
+            for (RangeCodeType c : RangeCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

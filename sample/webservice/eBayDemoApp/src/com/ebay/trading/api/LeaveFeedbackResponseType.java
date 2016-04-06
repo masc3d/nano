@@ -3,22 +3,19 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
- *           LeaveFeedback response message includes an acknowledgement if the
- *           feedback was successfully left.
- * 
+ * LeaveFeedback response message includes an acknowledgement if the
+ * feedback was successfully left.
  */
 @RootElement(name = "LeaveFeedbackResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class LeaveFeedbackResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "FeedbackID")
-	@Order(value=0)
-	public String feedbackID;	
-	
-    
+    @Element(name = "FeedbackID")
+    @Order(value = 0)
+    public String feedbackID;
+
+
 }

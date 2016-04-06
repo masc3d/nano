@@ -3,52 +3,44 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * This enumeration type indicates the applicable buyer protection program that the item is
  * eligible to be covered under.
- * 
  */
 public enum BuyerProtectionSourceCodeType {
 
     /**
-     * 
-   * This value indicates that the item is possibly eligible for buyer protection under
-   * the eBay Buyer Protection Program.
-   * 
+     * This value indicates that the item is possibly eligible for buyer protection under
+     * the eBay Buyer Protection Program.
      */
     E_BAY("eBay"),
-  
+
 
     /**
-     * 
-   * This value indicates that the item is possibly eligible for buyer protection under
-   * the PayPal Purchase Protection Program.
-   * 
+     * This value indicates that the item is possibly eligible for buyer protection under
+     * the PayPal Purchase Protection Program.
      */
     PAY_PAL("PayPal"),
-  
+
 
     /**
-     * 
-   *  Reserved for internal or future use.
-   * 
+     * Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     BuyerProtectionSourceCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static BuyerProtectionSourceCodeType fromValue(String v) {
         if (v != null) {
-            for (BuyerProtectionSourceCodeType c: BuyerProtectionSourceCodeType.values()) {
+            for (BuyerProtectionSourceCodeType c : BuyerProtectionSourceCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

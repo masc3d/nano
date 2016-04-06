@@ -3,49 +3,41 @@
 package com.ebay.trading.api;
 
 /**
- * 
  * Types of feedback responses.
- * 
  */
 public enum FeedbackResponseCodeType {
 
     /**
-     * 
-   * A reply to feedback left by another user.
-   * 
+     * A reply to feedback left by another user.
      */
     REPLY("Reply"),
-  
+
 
     /**
-     * 
-   * A follow-up to a feedback comment left for another user.
-   * 
+     * A follow-up to a feedback comment left for another user.
      */
     FOLLOW_UP("FollowUp"),
-  
+
 
     /**
-     * 
-   * Reserved for future use.
-   * 
+     * Reserved for future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     FeedbackResponseCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static FeedbackResponseCodeType fromValue(String v) {
         if (v != null) {
-            for (FeedbackResponseCodeType c: FeedbackResponseCodeType.values()) {
+            for (FeedbackResponseCodeType c : FeedbackResponseCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

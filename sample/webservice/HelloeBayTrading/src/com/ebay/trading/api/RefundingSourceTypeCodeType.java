@@ -3,72 +3,62 @@
 package com.ebay.trading.api;
 
 /**
- * 
- *  A code indicating the source from which the refund was made.
- * 
+ * A code indicating the source from which the refund was made.
  */
 public enum RefundingSourceTypeCodeType {
 
     /**
-     * 
-   *  The seller's scheduled payout account with eBay. When a buyer pays for an item the purchase amount goes into this account. This value indicates that the refund has been issued from the seller's scheduled payout account.<br/><br/>
-   *  <span class="tablenote">
-   *  <strong>Note:</strong> RefundingSourceType values are returned
-   *  (for GetOrders and other order retrieval calls) for DE/AT orders subject to the
-   *  new eBay payment process.
-   *  </span>
-   * 
+     * The seller's scheduled payout account with eBay. When a buyer pays for an item the purchase amount goes into this account. This value indicates that the refund has been issued from the seller's scheduled payout account.<br/><br/>
+     * <span class="tablenote">
+     * <strong>Note:</strong> RefundingSourceType values are returned
+     * (for GetOrders and other order retrieval calls) for DE/AT orders subject to the
+     * new eBay payment process.
+     * </span>
      */
     SCHEDULED_PAYOUT("ScheduledPayout"),
-  
+
 
     /**
-     * 
-   *  The seller's PayPal account associated with the transaction.<br/><br/>
-   *  <span class="tablenote">
-   *  <strong>Note:</strong> RefundingSourceType values are returned
-   *  (for GetOrders and other order retrieval calls) for DE/AT orders subject to the
-   *  new eBay payment process.
-   *  </span>
-   * 
+     * The seller's PayPal account associated with the transaction.<br/><br/>
+     * <span class="tablenote">
+     * <strong>Note:</strong> RefundingSourceType values are returned
+     * (for GetOrders and other order retrieval calls) for DE/AT orders subject to the
+     * new eBay payment process.
+     * </span>
      */
     PAYPAL("Paypal"),
-  
+
 
     /**
-     * 
-   *  The seller's bank account associated with the transaction.<br/><br/>
-   *  <span class="tablenote">
-   *  <strong>Note:</strong> RefundingSourceType values are returned
-   *  (for GetOrders and other order retrieval calls) for DE/AT orders subject to the
-   *  new eBay payment process.
-   *  </span>
-   * 
+     * The seller's bank account associated with the transaction.<br/><br/>
+     * <span class="tablenote">
+     * <strong>Note:</strong> RefundingSourceType values are returned
+     * (for GetOrders and other order retrieval calls) for DE/AT orders subject to the
+     * new eBay payment process.
+     * </span>
      */
     BANK_ACCOUNT("BankAccount"),
-  
+
 
     /**
-     * 
-   * (out) Reserved for internal or future use.
-   * 
+     * (out) Reserved for internal or future use.
      */
     CUSTOM_CODE("CustomCode");
-  
-  
+
+
     private final String value;
-  
+
     RefundingSourceTypeCodeType(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static RefundingSourceTypeCodeType fromValue(String v) {
         if (v != null) {
-            for (RefundingSourceTypeCodeType c: RefundingSourceTypeCodeType.values()) {
+            for (RefundingSourceTypeCodeType c : RefundingSourceTypeCodeType.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

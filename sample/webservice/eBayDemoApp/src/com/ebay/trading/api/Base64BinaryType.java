@@ -3,24 +3,21 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Used for storing an optional reference ID to the binary attachment
- * 
  */
 public class Base64BinaryType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Value
-	@Order(value=0)
-	public byte[] value;	
-	
-	@Attribute  
-	@Order(value=1)
-	public String contentType;	
-	
-    
+    @Value
+    @Order(value = 0)
+    public byte[] value;
+
+    @Attribute
+    @Order(value = 1)
+    public String contentType;
+
+
 }

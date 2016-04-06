@@ -3,17 +3,14 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Retrieves the current list of eBay store configuration settings.
- * 
  */
 @RootElement(name = "GetStoreOptionsRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetStoreOptionsRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-    
+
 }

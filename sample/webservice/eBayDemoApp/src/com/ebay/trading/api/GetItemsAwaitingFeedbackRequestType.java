@@ -3,26 +3,23 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Returns orders in which the user was involved and for which feedback
  * is still needed from either the buyer or seller.
- * 
  */
 @RootElement(name = "GetItemsAwaitingFeedbackRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GetItemsAwaitingFeedbackRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "Sort")
-	@Order(value=0)
-	public ItemSortTypeCodeType sort;	
-	
-	@Element(name = "Pagination")
-	@Order(value=1)
-	public PaginationType pagination;	
-	
-    
+    @Element(name = "Sort")
+    @Order(value = 0)
+    public ItemSortTypeCodeType sort;
+
+    @Element(name = "Pagination")
+    @Order(value = 1)
+    public PaginationType pagination;
+
+
 }

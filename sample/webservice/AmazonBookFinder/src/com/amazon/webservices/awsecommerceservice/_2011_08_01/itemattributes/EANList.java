@@ -3,16 +3,15 @@
 package com.amazon.webservices.awsecommerceservice._2011_08_01.itemattributes;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.util.List;
 
 public class EANList implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "EANListElement")
-	@Order(value=0)
-	public List<String> eanListElement;	
-	
-    
+    @Element(name = "EANListElement")
+    @Order(value = 0)
+    public List<String> eanListElement;
+
+
 }

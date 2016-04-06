@@ -6,11 +6,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * This annotation, if presents on a POJO, 
+ * This annotation, if presents on a POJO,
  * indicates all fields of the type should map to xml element unless explicitly specified.
- * 
- * @author bulldog
  *
+ * @author bulldog
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)

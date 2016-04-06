@@ -3,29 +3,26 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * This event is not functional.
- * 
  */
 @RootElement(name = "ItemsCanceledEvent", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class ItemsCanceledEventType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "CanceledItemIDArray")
-	@Order(value=0)
-	public ItemIDArrayType canceledItemIDArray;	
-	
-	@Element(name = "EligibleForRelist")
-	@Order(value=1)
-	public Boolean eligibleForRelist;	
-	
-	@Element(name = "SellerID")
-	@Order(value=2)
-	public String sellerID;	
-	
-    
+    @Element(name = "CanceledItemIDArray")
+    @Order(value = 0)
+    public ItemIDArrayType canceledItemIDArray;
+
+    @Element(name = "EligibleForRelist")
+    @Order(value = 1)
+    public Boolean eligibleForRelist;
+
+    @Element(name = "SellerID")
+    @Order(value = 2)
+    public String sellerID;
+
+
 }

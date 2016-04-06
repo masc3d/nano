@@ -3,43 +3,40 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
-import java.util.List;
 import java.util.Date;
+import java.util.List;
 
 /**
- * 
  * Returns the estimated fees for the listing that is being verified for a re-list.
- * 
  */
 @RootElement(name = "VerifyRelistItemResponse", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class VerifyRelistItemResponseType extends AbstractResponseType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ItemID")
-	@Order(value=0)
-	public String itemID;	
-	
-	@Element(name = "Fees")
-	@Order(value=1)
-	public FeesType fees;	
-	
-	@Element(name = "StartTime")
-	@Order(value=2)
-	public Date startTime;	
-	
-	@Element(name = "EndTime")
-	@Order(value=3)
-	public Date endTime;	
-	
-	@Element(name = "DiscountReason")
-	@Order(value=4)
-	public List<DiscountReasonCodeType> discountReason;	
-	
-	@Element(name = "ProductSuggestions")
-	@Order(value=5)
-	public ProductSuggestionsType productSuggestions;	
-	
-    
+    @Element(name = "ItemID")
+    @Order(value = 0)
+    public String itemID;
+
+    @Element(name = "Fees")
+    @Order(value = 1)
+    public FeesType fees;
+
+    @Element(name = "StartTime")
+    @Order(value = 2)
+    public Date startTime;
+
+    @Element(name = "EndTime")
+    @Order(value = 3)
+    public Date endTime;
+
+    @Element(name = "DiscountReason")
+    @Order(value = 4)
+    public List<DiscountReasonCodeType> discountReason;
+
+    @Element(name = "ProductSuggestions")
+    @Order(value = 5)
+    public ProductSuggestionsType productSuggestions;
+
+
 }

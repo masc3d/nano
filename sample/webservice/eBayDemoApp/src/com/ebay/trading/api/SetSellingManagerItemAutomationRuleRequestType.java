@@ -3,10 +3,8 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Revises, or adds to, the set of Selling Manager automation
  * rules associated with an item.
  * <br>
@@ -33,24 +31,23 @@ import com.leansoft.nano.annotation.*;
  * Although this call can revise (overwrite) an existing rule,
  * this call cannot delete an automation rule.
  * (Instead, use DeleteSellingManagerItemAutomationRule.)
- * 
  */
 @RootElement(name = "SetSellingManagerItemAutomationRuleRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class SetSellingManagerItemAutomationRuleRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Element(name = "ItemID")
-	@Order(value=0)
-	public String itemID;	
-	
-	@Element(name = "AutomatedRelistingRule")
-	@Order(value=1)
-	public SellingManagerAutoRelistType automatedRelistingRule;	
-	
-	@Element(name = "AutomatedSecondChanceOfferRule")
-	@Order(value=2)
-	public SellingManagerAutoSecondChanceOfferType automatedSecondChanceOfferRule;	
-	
-    
+    @Element(name = "ItemID")
+    @Order(value = 0)
+    public String itemID;
+
+    @Element(name = "AutomatedRelistingRule")
+    @Order(value = 1)
+    public SellingManagerAutoRelistType automatedRelistingRule;
+
+    @Element(name = "AutomatedSecondChanceOfferRule")
+    @Order(value = 2)
+    public SellingManagerAutoSecondChanceOfferType automatedSecondChanceOfferRule;
+
+
 }

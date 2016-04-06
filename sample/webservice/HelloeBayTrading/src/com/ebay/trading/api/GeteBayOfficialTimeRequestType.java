@@ -3,17 +3,14 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 
 /**
- * 
  * Gets the official eBay system time in GMT.
- * 
  */
 @RootElement(name = "GeteBayOfficialTimeRequest", namespace = "urn:ebay:apis:eBLBaseComponents")
 public class GeteBayOfficialTimeRequestType extends AbstractRequestType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-    
+
 }

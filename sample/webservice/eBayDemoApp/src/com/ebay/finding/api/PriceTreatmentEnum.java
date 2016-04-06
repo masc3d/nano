@@ -3,42 +3,36 @@
 package com.ebay.finding.api;
 
 /**
- * 
  * Defines the type of treatment to be applied to a discounted item,
- * either Strike-Through Pricing (STP) or Minimum Advertised Price (MAP). 
- * 
+ * either Strike-Through Pricing (STP) or Minimum Advertised Price (MAP).
  */
 public enum PriceTreatmentEnum {
 
     /**
-     * 
-   * STP stands for Strike-Through Pricing.
-   * 
+     * STP stands for Strike-Through Pricing.
      */
     STP("STP"),
-  
+
 
     /**
-     * 
-   * MAP stands for Miminum Advertised Price.
-   * 
+     * MAP stands for Miminum Advertised Price.
      */
     MAP("MAP");
-  
-  
+
+
     private final String value;
-  
+
     PriceTreatmentEnum(String v) {
         value = v;
     }
-    
+
     public String value() {
         return value;
     }
-    
+
     public static PriceTreatmentEnum fromValue(String v) {
         if (v != null) {
-            for (PriceTreatmentEnum c: PriceTreatmentEnum.values()) {
+            for (PriceTreatmentEnum c : PriceTreatmentEnum.values()) {
                 if (c.value.equals(v)) {
                     return c;
                 }

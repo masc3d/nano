@@ -3,25 +3,22 @@
 package com.ebay.trading.api;
 
 import java.io.Serializable;
-import com.leansoft.nano.annotation.*;
 import java.math.BigDecimal;
 
 /**
- * 
- *         Basic type for specifying quantities.
- * 
+ * Basic type for specifying quantities.
  */
 public class QuantityType implements Serializable {
 
     private static final long serialVersionUID = -1L;
 
-	@Value
-	@Order(value=0)
-	public BigDecimal value;	
-	
-	@Attribute  
-	@Order(value=1)
-	public String unit;	
-	
-    
+    @Value
+    @Order(value = 0)
+    public BigDecimal value;
+
+    @Attribute
+    @Order(value = 1)
+    public String unit;
+
+
 }
