@@ -7,13 +7,18 @@ import com.leansoft.nano.exception.MarshallException;
 import com.leansoft.nano.impl.SOAPWriter;
 import com.leansoft.nano.log.ALog;
 import com.leansoft.nano.util.MapPrettyPrinter;
+import com.leansoft.nano.ws.SoapQueryHandler;
+
 import com.loopj.android.http.AsyncHttpClient;
+
+import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import java.lang.ref.WeakReference;
 /**
  * Nano async client supporting SOAP Messaging.
  * 
@@ -29,6 +34,7 @@ public abstract class NanoSOAPClient {
 	
 	private String charset = "UTF-8";
 	
+   private boolean qualifiedFromDefault = false;
 	private boolean debug = false;
 	
 	private SOAPVersion soapVersion = SOAPVersion.SOAP11;
@@ -36,6 +42,9 @@ public abstract class NanoSOAPClient {
 	private List<Object> customSOAPHeaders = null;
 	
 	private AsyncHttpClient asyncHttpClient = null;
+   
+   private Context context = null;
+   private SoapQueryHandler soapHandler;
 	
     private final Map<String, String> urlParams = new HashMap<String, String>();
 	
@@ -43,6 +52,21 @@ public abstract class NanoSOAPClient {
 		asyncHttpClient = new AsyncHttpClient();
 		asyncHttpClient.addHeader("Accept", "text/xml");
 	}
+   
+   public void setContext(Context context)
+   {
+      this.context = context;
+   }
+   
+   public void setSoapQueryHandler(SoapQueryHandler soapHandler)
+   {
+      this.soapHandler = soapHandler;
+   }
+   
+   public SoapQueryHandler getSoapQueryHandler(SoapQueryHandler soapHandler)
+   {
+      return soapHandler;
+   }
 	
 	protected void invoke(Object requestObject, SOAPServiceCallback<?> callback, Class<?> bindClazz) {
 		
@@ -67,12 +91,20 @@ public abstract class NanoSOAPClient {
 			
 			StringEntity soapEntiry = new StringEntity(soapMessage, charset);
 			
-			SOAPHttpResponseHandler soapHttpResponseHandler = new SOAPHttpResponseHandler(callback, bindClazz, soapVersion);
+			SOAPHttpResponseHandler soapHttpResponseHandler = new SOAPHttpResponseHandler(soapHandler, callback, bindClazz, soapVersion);
 			soapHttpResponseHandler.setCharset(charset);
 			soapHttpResponseHandler.setDebug(debug);
 			
 			String urlWithQueryString = NanoXMLClient.getUrlWithQueryString(endpointUrl, urlParams);
 			
+         if (soapHandler != null)
+         {
+            StringBuilder sb = new StringBuilder(soapMessage);
+            new WeakReference<StringBuilder>(sb);
+            soapHandler.handleRequest(urlWithQueryString, MapPrettyPrinter.printMap(asyncHttpClient.getHeaders()), sb);
+            sb = null;
+         }
+         
 			if (debug) {
 				ALog.d(TAG, "Sending request to : " + urlWithQueryString);
 				ALog.d(TAG, "Request HTTP headers : ");
@@ -82,7 +114,7 @@ public abstract class NanoSOAPClient {
 				ALog.debugLongMessage(TAG, soapMessage);
 			}
 			
-			asyncHttpClient.post(null, urlWithQueryString, null, soapEntiry, contentType, soapHttpResponseHandler);
+			asyncHttpClient.post(context, urlWithQueryString, null, soapEntiry, contentType, soapHttpResponseHandler);
 			
 		} catch (Exception e) {
 			ALog.e(TAG, "Fail to send request", e);
@@ -99,10 +131,14 @@ public abstract class NanoSOAPClient {
 		
 	}
 	
+   public void setQualifiedFromDefault(boolean qualifiedFromDefault)
+   {
+      this.qualifiedFromDefault = qualifiedFromDefault;
+   }
 	
 	private String convertObjectToSOAP(Object requestObject) throws MarshallException {
 		Format format = new Format(true, charset);
-		SOAPWriter soapWriter = new SOAPWriter(format);
+		SOAPWriter soapWriter = new SOAPWriter(format, qualifiedFromDefault);
 		try {
 			if (soapVersion == SOAPVersion.SOAP11) {
 				com.leansoft.nano.soap11.Envelope envelope = new com.leansoft.nano.soap11.Envelope();
